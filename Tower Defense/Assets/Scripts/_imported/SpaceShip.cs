@@ -43,16 +43,16 @@ namespace SpaceShooter
         /// Отображение ворсунок корабля
         /// </summary>
 
-        [Header("Ship Injectors")]
-        [Space(6)]
+        //[Header("Ship Injectors")]
+        //[Space(6)]
 
-        [SerializeField] private GameObject m_BackInjectors; //Ссылка на задние форсунки.
+        //[SerializeField] private GameObject m_BackInjectors; //Ссылка на задние форсунки.
 
-        [SerializeField] private GameObject m_ForwardInjectors; //Ссылка на передние форсунки.
+        //[SerializeField] private GameObject m_ForwardInjectors; //Ссылка на передние форсунки.
 
-        [SerializeField] private GameObject m_LeftInjectors; //Ссылка на левые форсунки.
+        //[SerializeField] private GameObject m_LeftInjectors; //Ссылка на левые форсунки.
 
-        [SerializeField] private GameObject m_RightInjectors; //Ссылка на правые форсунки.
+        //[SerializeField] private GameObject m_RightInjectors; //Ссылка на правые форсунки.
 
         /// <summary>
         /// Сохраненная ссылка на ригид.
@@ -117,7 +117,7 @@ namespace SpaceShooter
         {
             UpdateRigidbody();
 
-            PlayShipEffectInjectors();
+            //PlayShipEffectInjectors();
 
             //UpdateEnergyRegeneration();
 
@@ -132,46 +132,47 @@ namespace SpaceShooter
         }
 
         /// <summary>
+        /// TODO: возможно этот скрипт нужно заменить на выполнение другого действия эффектов передвижения.
         /// Проигрывает эффекты форсунок корабля.
         /// </summary>
-        private void PlayShipEffectInjectors()
-        {
-            if (ThrustControl < 0)
-            {
-                m_ForwardInjectors.SetActive(true);
-                m_BackInjectors.SetActive(false);
-            }
+        //private void PlayShipEffectInjectors()
+        //{
+        //    if (ThrustControl < 0)
+        //    {
+        //        m_ForwardInjectors.SetActive(true);
+        //        m_BackInjectors.SetActive(false);
+        //    }
 
-            if (ThrustControl > 0)
-            {
-                m_ForwardInjectors.SetActive(false);
-                m_BackInjectors.SetActive(true);
-            }
+        //    if (ThrustControl > 0)
+        //    {
+        //        m_ForwardInjectors.SetActive(false);
+        //        m_BackInjectors.SetActive(true);
+        //    }
 
-            if (ThrustControl == 0)
-            {
-                m_ForwardInjectors.SetActive(false);
-                m_BackInjectors.SetActive(false);
-            }
+        //    if (ThrustControl == 0)
+        //    {
+        //        m_ForwardInjectors.SetActive(false);
+        //        m_BackInjectors.SetActive(false);
+        //    }
 
-            if (TorqueControl > -0.5f && TorqueControl < 0.5f)
-            {
-                m_LeftInjectors.SetActive(false);
-                m_RightInjectors.SetActive(false);
-            }
+        //    if (TorqueControl > -0.5f && TorqueControl < 0.5f)
+        //    {
+        //        m_LeftInjectors.SetActive(false);
+        //        m_RightInjectors.SetActive(false);
+        //    }
 
-            if (TorqueControl < -0.5f)
-            {
-                m_LeftInjectors.SetActive(true);
-                m_RightInjectors.SetActive(false);
-            }
+        //    if (TorqueControl < -0.5f)
+        //    {
+        //        m_LeftInjectors.SetActive(true);
+        //        m_RightInjectors.SetActive(false);
+        //    }
 
-            if (TorqueControl > 0.5f)
-            {
-                m_LeftInjectors.SetActive(false);
-                m_RightInjectors.SetActive(true);
-            }
-        }
+        //    if (TorqueControl > 0.5f)
+        //    {
+        //        m_LeftInjectors.SetActive(false);
+        //        m_RightInjectors.SetActive(true);
+        //    }
+        //}
 
         #endregion
 
@@ -193,7 +194,7 @@ namespace SpaceShooter
         //Использование снарядов.
         public bool DrawAmmo(int count)
         {
-            
+
             return true;
         }
 
@@ -201,27 +202,31 @@ namespace SpaceShooter
         //Использование энергии для выстрела первичной турели.
         public bool DrawEnergy(int count)
         {
-            
+
             return true;
+        }
+
+        [SerializeField] private Turret[] m_Turrets;
+
+        //TODO: Заменить временный метод-заглушку. Используется турелями и AIController.
+        //Производит выстрел с турелей заданного типа.
+        public void Fire(TurretMode mode)
+        {
+            //for (int i = 0; i < m_Turrets.Length; i++)
+            //{
+            //    if (m_Turrets[i].Mode == mode)
+            //    {
+            //        m_Turrets[i].Fire();
+            //    }
+            //}
+            return;
         }
 
         /*
         #region Offensive
 
-        [SerializeField] private Turret[] m_Turrets;
-
-        //Производит выстрел с турелей заданного типа.
-        public void Fire(TurretMode mode)
-        {
-            for (int i = 0; i < m_Turrets.Length; i++)
-            {
-                if (m_Turrets[i].Mode == mode)
-                {
-                    m_Turrets[i].Fire();
-                }
-            }
-        }
-
+        
+        
         [SerializeField] private int m_MaxEnergy;
         public int MaxEnergy => m_MaxEnergy;
 
