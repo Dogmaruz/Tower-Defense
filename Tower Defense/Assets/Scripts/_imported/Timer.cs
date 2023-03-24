@@ -1,8 +1,8 @@
-
+п»ї
 namespace SpaceShooter
 {
     /// <summary>
-    /// Класс таймера.
+    /// РљР»Р°СЃСЃ С‚Р°Р№РјРµСЂР°.
     /// </summary>
     public class Timer
     {

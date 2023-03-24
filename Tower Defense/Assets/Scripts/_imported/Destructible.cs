@@ -1,49 +1,49 @@
-using System.Collections.Generic;
+п»їusing System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace SpaceShooter
 {
     /// <summary>
-    /// Уничтожаемый объект на сцене. То что может иметь хитпоинты.
+    /// РЈРЅРёС‡С‚РѕР¶Р°РµРјС‹Р№ РѕР±СЉРµРєС‚ РЅР° СЃС†РµРЅРµ. РўРѕ С‡С‚Рѕ РјРѕР¶РµС‚ РёРјРµС‚СЊ С…РёС‚РїРѕРёРЅС‚С‹.
     /// </summary>
     public class Destructible : Entity
     {
         #region Properties
 
         /// <summary>
-        /// Объект игнорирует повреждения.
+        /// РћР±СЉРµРєС‚ РёРіРЅРѕСЂРёСЂСѓРµС‚ РїРѕРІСЂРµР¶РґРµРЅРёСЏ.
         /// </summary>
         [SerializeField] private bool m_Indestructibe;
         public bool IsIndestructibe { get => m_Indestructibe; set => m_Indestructibe = value; }
 
         /// <summary>
-        /// Стартовое колличество хитпоинтов.
+        /// РЎС‚Р°СЂС‚РѕРІРѕРµ РєРѕР»Р»РёС‡РµСЃС‚РІРѕ С…РёС‚РїРѕРёРЅС‚РѕРІ.
         /// </summary>
         [SerializeField] private int m_HitPoints;
 
         public int HitPoints => m_HitPoints;
 
         /// <summary>
-        /// Текущие хитпоинты.
+        /// РўРµРєСѓС‰РёРµ С…РёС‚РїРѕРёРЅС‚С‹.
         /// </summary>
         private int m_CurrentHitPoint;
         public int CurrentHitPoint => m_CurrentHitPoint;
 
 
         /// <summary>
-        /// События уничтожения объекта.
+        /// РЎРѕР±С‹С‚РёСЏ СѓРЅРёС‡С‚РѕР¶РµРЅРёСЏ РѕР±СЉРµРєС‚Р°.
         /// </summary>
         [SerializeField] private UnityEvent m_EventOnDeath;
         public UnityEvent EventOnDeath => m_EventOnDeath;
 
         /// <summary>
-        /// Событие обновления UI HP.
+        /// РЎРѕР±С‹С‚РёРµ РѕР±РЅРѕРІР»РµРЅРёСЏ UI HP.
         /// </summary>
         [SerializeField] private UnityEvent<int> m_EventOnUpdateHP;
         public UnityEvent<int> EventOnUpdateHP => m_EventOnUpdateHP;
 
-        //Ссылка на эффекты после уничтожения.
+        //РЎСЃС‹Р»РєР° РЅР° СЌС„С„РµРєС‚С‹ РїРѕСЃР»Рµ СѓРЅРёС‡С‚РѕР¶РµРЅРёСЏ.
         [SerializeField] private GameObject m_ImpactEffect;
 
         #endregion
@@ -62,9 +62,9 @@ namespace SpaceShooter
         #region Public API
 
         /// <summary>
-        /// Применение урона к объекту.
+        /// РџСЂРёРјРµРЅРµРЅРёРµ СѓСЂРѕРЅР° Рє РѕР±СЉРµРєС‚Сѓ.
         /// </summary>
-        /// <param name="damage">Урон наносимый объекту</param>
+        /// <param name="damage">РЈСЂРѕРЅ РЅР°РЅРѕСЃРёРјС‹Р№ РѕР±СЉРµРєС‚Сѓ</param>
         public void ApplyDamage(int damage)
         {
             if (m_Indestructibe) return;
@@ -79,11 +79,11 @@ namespace SpaceShooter
         #endregion
 
         /// <summary>
-        /// Переопределяет событие уничтожения объекта, когда хитпоинты ниже или равны нулю.
+        /// РџРµСЂРµРѕРїСЂРµРґРµР»СЏРµС‚ СЃРѕР±С‹С‚РёРµ СѓРЅРёС‡С‚РѕР¶РµРЅРёСЏ РѕР±СЉРµРєС‚Р°, РєРѕРіРґР° С…РёС‚РїРѕРёРЅС‚С‹ РЅРёР¶Рµ РёР»Рё СЂР°РІРЅС‹ РЅСѓР»СЋ.
         /// </summary>
         protected virtual void OnDeath()
         {
-            Instantiate(m_ImpactEffect, transform.position, Quaternion.identity);
+            //Instantiate(m_ImpactEffect, transform.position, Quaternion.identity);
 
             Destroy(gameObject);
 
@@ -93,13 +93,13 @@ namespace SpaceShooter
         #region Teams
 
         /// <summary>
-        /// Статическое поле всех объектов типа Destructible.
+        /// РЎС‚Р°С‚РёС‡РµСЃРєРѕРµ РїРѕР»Рµ РІСЃРµС… РѕР±СЉРµРєС‚РѕРІ С‚РёРїР° Destructible.
         /// </summary>
         private static HashSet<Destructible> m_AllDestructibles;
 
         public static IReadOnlyCollection<Destructible> AllDestructible => m_AllDestructibles;
 
-        //Добавляет в коллекцию обект при создании.
+        //Р”РѕР±Р°РІР»СЏРµС‚ РІ РєРѕР»Р»РµРєС†РёСЋ РѕР±РµРєС‚ РїСЂРё СЃРѕР·РґР°РЅРёРё.
         protected virtual void OnEnable()
         {
             if (m_AllDestructibles == null)
@@ -110,7 +110,7 @@ namespace SpaceShooter
             m_AllDestructibles.Add(this);
         }
 
-        //Убирает из коллекции объект при уничтожении.
+        //РЈР±РёСЂР°РµС‚ РёР· РєРѕР»Р»РµРєС†РёРё РѕР±СЉРµРєС‚ РїСЂРё СѓРЅРёС‡С‚РѕР¶РµРЅРёРё.
         protected virtual void OnDestroy()
         {
             m_AllDestructibles?.Remove(this);
@@ -125,11 +125,11 @@ namespace SpaceShooter
 
         #region Score
 
-        //Задает значение очков за попадание.
+        //Р—Р°РґР°РµС‚ Р·РЅР°С‡РµРЅРёРµ РѕС‡РєРѕРІ Р·Р° РїРѕРїР°РґР°РЅРёРµ.
         [SerializeField] private int m_ScoreValue;
         public int ScoreValue => m_ScoreValue;
 
-        //Задает значение очков за уничтожение.
+        //Р—Р°РґР°РµС‚ Р·РЅР°С‡РµРЅРёРµ РѕС‡РєРѕРІ Р·Р° СѓРЅРёС‡С‚РѕР¶РµРЅРёРµ.
         [SerializeField] private int m_KillValue;
         public int KillValue => m_KillValue;
 

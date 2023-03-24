@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 using UnityEngine;
 
 namespace SpaceShooter
@@ -13,31 +13,31 @@ namespace SpaceShooter
 
         [SerializeField] private AIBehaviour m_AIBehaviour;
 
-        private AIPointPatrol m_PatrolPoint; //Точка патрулирования.
+        private AIPointPatrol m_PatrolPoint; //РўРѕС‡РєР° РїР°С‚СЂСѓР»РёСЂРѕРІР°РЅРёСЏ.
 
-        [SerializeField] private AIPointPatrol[] m_PatrolPoints; //Массив точекк патрулирования.
+        [SerializeField] private AIPointPatrol[] m_PatrolPoints; //РњР°СЃСЃРёРІ С‚РѕС‡РµРєРє РїР°С‚СЂСѓР»РёСЂРѕРІР°РЅРёСЏ.
         public AIPointPatrol[] PatrolPoints { get => m_PatrolPoints; set => m_PatrolPoints = value; }
 
-        [SerializeField] private float m_AttackRadius; //Радиус обнаружения для атаки.
+        [SerializeField] private float m_AttackRadius; //Р Р°РґРёСѓСЃ РѕР±РЅР°СЂСѓР¶РµРЅРёСЏ РґР»СЏ Р°С‚Р°РєРё.
 
         [Range(0f, 1f)]
-        [SerializeField] private float m_NavigationLinear; //Линейная скорость.
+        [SerializeField] private float m_NavigationLinear; //Р›РёРЅРµР№РЅР°СЏ СЃРєРѕСЂРѕСЃС‚СЊ.
 
         [Range(0f, 1f)]
-        [SerializeField] private float m_NavigationAngular; //Скорость врашения.
+        [SerializeField] private float m_NavigationAngular; //РЎРєРѕСЂРѕСЃС‚СЊ РІСЂР°С€РµРЅРёСЏ.
 
-        [SerializeField] private float m_RandomSelectMovePointTime; //Величина таймера выбора точки в зоне патрулировая.
+        [SerializeField] private float m_RandomSelectMovePointTime; //Р’РµР»РёС‡РёРЅР° С‚Р°Р№РјРµСЂР° РІС‹Р±РѕСЂР° С‚РѕС‡РєРё РІ Р·РѕРЅРµ РїР°С‚СЂСѓР»РёСЂРѕРІР°СЏ.
 
-        [SerializeField] private float m_AtionAvadeCollisionTime;//Величина таймера проверки коллизии столкновения.
+        [SerializeField] private float m_AtionAvadeCollisionTime;//Р’РµР»РёС‡РёРЅР° С‚Р°Р№РјРµСЂР° РїСЂРѕРІРµСЂРєРё РєРѕР»Р»РёР·РёРё СЃС‚РѕР»РєРЅРѕРІРµРЅРёСЏ.
 
-        [SerializeField] private float m_FindNewTargetTime;//Величина таймера поиска цели.
+        [SerializeField] private float m_FindNewTargetTime;//Р’РµР»РёС‡РёРЅР° С‚Р°Р№РјРµСЂР° РїРѕРёСЃРєР° С†РµР»Рё.
 
-        [SerializeField] private float m_ShootDelay; //Величина таймера стрельбы.
+        [SerializeField] private float m_ShootDelay; //Р’РµР»РёС‡РёРЅР° С‚Р°Р№РјРµСЂР° СЃС‚СЂРµР»СЊР±С‹.
 
-        [SerializeField] private float m_EvadeRayLenght; //Радиус для CircleCast
+        [SerializeField] private float m_EvadeRayLenght; //Р Р°РґРёСѓСЃ РґР»СЏ CircleCast
 
 
-        private SpaceShip m_SpaceShip; //Ссылка на корабль игрока.
+        private SpaceShip m_SpaceShip; //РЎСЃС‹Р»РєР° РЅР° РєРѕСЂР°Р±Р»СЊ РёРіСЂРѕРєР°.
 
         private Vector3 m_MovePosition;
 
@@ -51,9 +51,9 @@ namespace SpaceShooter
 
         private Timer m_FindNewTargetTimer;
 
-        private float m_previousSpeed; //Предыдущая скорость.
+        private float m_previousSpeed; //РџСЂРµРґС‹РґСѓС‰Р°СЏ СЃРєРѕСЂРѕСЃС‚СЊ.
 
-        private int m_currentPatrolPoint; //Текущая точка патрулирования.
+        private int m_currentPatrolPoint; //РўРµРєСѓС‰Р°СЏ С‚РѕС‡РєР° РїР°С‚СЂСѓР»РёСЂРѕРІР°РЅРёСЏ.
 
         private void Start()
         {
@@ -98,7 +98,7 @@ namespace SpaceShooter
             ActionEvadeCollision();
         }
 
-        //Нахождение позиции движения.
+        //РќР°С…РѕР¶РґРµРЅРёРµ РїРѕР·РёС†РёРё РґРІРёР¶РµРЅРёСЏ.
         private void ActionFindNewMovePosition()
         {
             if (m_AIBehaviour == AIBehaviour.Patrol)
@@ -109,7 +109,7 @@ namespace SpaceShooter
                     return;
                 }
 
-                //Если есть цель, то расчет движения упреждения корабля.
+                //Р•СЃР»Рё РµСЃС‚СЊ С†РµР»СЊ, С‚Рѕ СЂР°СЃС‡РµС‚ РґРІРёР¶РµРЅРёСЏ СѓРїСЂРµР¶РґРµРЅРёСЏ РєРѕСЂР°Р±Р»СЏ.
                 if (m_SelectedTarget)
                 {
                     if (m_SelectedTarget.transform.root.GetComponent<SpaceShip>())
@@ -123,7 +123,7 @@ namespace SpaceShooter
                 }
                 else
                 {
-                    //иначе зачет движения без цели, до следуещей точке патрулирования.
+                    //РёРЅР°С‡Рµ Р·Р°С‡РµС‚ РґРІРёР¶РµРЅРёСЏ Р±РµР· С†РµР»Рё, РґРѕ СЃР»РµРґСѓРµС‰РµР№ С‚РѕС‡РєРµ РїР°С‚СЂСѓР»РёСЂРѕРІР°РЅРёСЏ.
                     float dist = Vector3.Distance(transform.position, m_PatrolPoint.transform.position);
 
                     if (dist <= 1)
@@ -137,7 +137,7 @@ namespace SpaceShooter
                         SetPatrolBehaviour(m_PatrolPoints[m_currentPatrolPoint]);
                     }
 
-                    //Задает точку в радиусе зоны патрулирования.
+                    //Р—Р°РґР°РµС‚ С‚РѕС‡РєСѓ РІ СЂР°РґРёСѓСЃРµ Р·РѕРЅС‹ РїР°С‚СЂСѓР»РёСЂРѕРІР°РЅРёСЏ.
                     if (m_PatrolPoint)
                     {
                         bool isInsidePatrolZone = (m_PatrolPoint.transform.position - transform.position).sqrMagnitude < m_PatrolPoint.Radius * m_PatrolPoint.Radius;
@@ -162,7 +162,7 @@ namespace SpaceShooter
             }
         }
 
-        //Проверка на коллизию столкновения.
+        //РџСЂРѕРІРµСЂРєР° РЅР° РєРѕР»Р»РёР·РёСЋ СЃС‚РѕР»РєРЅРѕРІРµРЅРёСЏ.
         private void ActionEvadeCollision()
         {
             if (m_AtionAvadeCollisionTimer.IsFinisher)
@@ -194,7 +194,7 @@ namespace SpaceShooter
             }
         }
 
-        //Задает ввижение объекту AI.
+        //Р—Р°РґР°РµС‚ РІРІРёР¶РµРЅРёРµ РѕР±СЉРµРєС‚Сѓ AI.
         private void ActionControlShip()
         {
             m_SpaceShip.ThrustControl = m_NavigationLinear;
@@ -204,7 +204,7 @@ namespace SpaceShooter
 
         private const float MAX_ANGLE = 45.0f;
 
-        //Задает поворот AI в сторону позиции корабля игрока.
+        //Р—Р°РґР°РµС‚ РїРѕРІРѕСЂРѕС‚ AI РІ СЃС‚РѕСЂРѕРЅСѓ РїРѕР·РёС†РёРё РєРѕСЂР°Р±Р»СЏ РёРіСЂРѕРєР°.
         private static float ComputeAliginTorqueNormalised(Vector3 targetPosition, Transform ship)
         {
             Vector2 localTargetPosition = ship.InverseTransformPoint(targetPosition);
@@ -216,19 +216,18 @@ namespace SpaceShooter
             return -angle;
         }
 
-        //Поиск цели для атаки.
+        //РџРѕРёСЃРє С†РµР»Рё РґР»СЏ Р°С‚Р°РєРё.
         private void ActionFindNewAttackTarget()
         {
             if (m_FindNewTargetTimer.IsFinisher)
             {
-
                 m_SelectedTarget = FindNearestDestructibleTarget();
 
                 m_FindNewTargetTimer.Start(m_FindNewTargetTime);
             }
         }
 
-        //Атака если найдена цель.
+        //РђС‚Р°РєР° РµСЃР»Рё РЅР°Р№РґРµРЅР° С†РµР»СЊ.
         private void ActionFire()
         {
             if (m_SelectedTarget)
@@ -242,7 +241,7 @@ namespace SpaceShooter
             }
         }
 
-        //Поиск цели если не раные TeamId или не является TeamIdNeutral.
+        //РџРѕРёСЃРє С†РµР»Рё РµСЃР»Рё РЅРµ СЂР°РЅС‹Рµ TeamId РёР»Рё РЅРµ СЏРІР»СЏРµС‚СЃСЏ TeamIdNeutral.
         private Destructible FindNearestDestructibleTarget()
         {
             float minDist = float.MaxValue;
@@ -276,7 +275,7 @@ namespace SpaceShooter
 
         #region Timers
 
-        //Инициализация таймеров.
+        //РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ С‚Р°Р№РјРµСЂРѕРІ.
         private void InitTimers()
         {
             m_RandomizeDirectionTimer = new Timer(m_RandomSelectMovePointTime);
@@ -285,7 +284,7 @@ namespace SpaceShooter
             m_FindNewTargetTimer = new Timer(m_FindNewTargetTime);
         }
 
-        //Обновление таймеров.
+        //РћР±РЅРѕРІР»РµРЅРёРµ С‚Р°Р№РјРµСЂРѕРІ.
         private void UpdateTimers()
         {
             m_RandomizeDirectionTimer.RemoveTime(Time.deltaTime);
@@ -294,7 +293,7 @@ namespace SpaceShooter
             m_FindNewTargetTimer.RemoveTime(Time.deltaTime);
         }
 
-        //Установка точки патрулирования.
+        //РЈСЃС‚Р°РЅРѕРІРєР° С‚РѕС‡РєРё РїР°С‚СЂСѓР»РёСЂРѕРІР°РЅРёСЏ.
         public void SetPatrolBehaviour(AIPointPatrol point)
         {
             m_AIBehaviour = AIBehaviour.Patrol;

@@ -1,4 +1,4 @@
-using UnityEngine;
+п»їusing UnityEngine;
 
 namespace SpaceShooter
 {
@@ -10,7 +10,7 @@ namespace SpaceShooter
         private static readonly Color GizmoColor = new Color(1, 0, 0, 0.3f);
 
         /// <summary>
-        /// Отрисовывает границы зоны патрулирования.
+        /// РћС‚СЂРёСЃРѕРІС‹РІР°РµС‚ РіСЂР°РЅРёС†С‹ Р·РѕРЅС‹ РїР°С‚СЂСѓР»РёСЂРѕРІР°РЅРёСЏ.
         /// </summary>
         private void OnDrawGizmos()
         {

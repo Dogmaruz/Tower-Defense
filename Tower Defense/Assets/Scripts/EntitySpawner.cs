@@ -1,4 +1,4 @@
-using UnityEngine;
+Ôªøusing UnityEngine;
 
 namespace SpaceShooter
 {
@@ -25,7 +25,7 @@ namespace SpaceShooter
                 SpawnEntities();
             }
 
-            m_Timer = m_RespawnTime;
+            //m_Timer = m_RespawnTime;
         }
 
         private void Update()
@@ -43,7 +43,7 @@ namespace SpaceShooter
             }
         }
 
-        //—Ô‡‚Ì Ó·˙ÂÍÚÓ‚.
+        //–°–ø–∞–≤–Ω –æ–±—ä–µ–∫—Ç–æ–≤.
         private void SpawnEntities()
         {
             for (int i = 0; i < m_NumSpawns; i++)

@@ -1,11 +1,12 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace SpaceShooter
 {
     public enum TurretMode
     {
         Primary,
-        Secondary
+        Secondary,
+        Auto
     }
 
     [CreateAssetMenu(fileName = "TurretProperties", menuName = "Turret/TurretProperties")]

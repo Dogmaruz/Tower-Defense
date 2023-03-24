@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 namespace SpaceShooter
 {
@@ -7,7 +7,7 @@ namespace SpaceShooter
         [SerializeField] private TurretMode m_Mode;
         public TurretMode Mode => m_Mode;
 
-        [SerializeField] private TurretProperties m_TurretProperties; //Ñâîéñòâà òóðåëè.
+        [SerializeField] private TurretProperties m_TurretProperties; //Ð¡Ð²Ð¾Ð¹ÑÑ‚Ð²Ð° Ñ‚ÑƒÑ€ÐµÐ»Ð¸.
         [SerializeField] private float m_VolumeSFX = 1f;
         [SerializeField] private AudioSource m_AudioSource;
 
@@ -25,7 +25,13 @@ namespace SpaceShooter
         private void Update()
         {
             if (m_RefireTimer > 0)
+            {
                 m_RefireTimer -= Time.deltaTime;
+            }
+            else if (m_Mode == TurretMode.Auto)
+            {
+                Fire();
+            }
         }
 
         //Public API
@@ -36,19 +42,27 @@ namespace SpaceShooter
 
             if (m_RefireTimer > 0) return;
 
-            if (m_Ship.DrawEnergy(m_TurretProperties.EnergyUsage) == false) return;
+            if (m_Ship)
+            {
+                if (m_Ship.DrawEnergy(m_TurretProperties.EnergyUsage) == false) return;
 
-            if (m_Ship.DrawAmmo(m_TurretProperties.AmoUsage) == false) return;
+                if (m_Ship.DrawAmmo(m_TurretProperties.AmoUsage) == false) return;
+
+            }
 
             Projectile projectile = Instantiate(m_TurretProperties.ProjectilePrefab).GetComponent<Projectile>();
 
             projectile.transform.position = transform.position;
             projectile.transform.up = transform.up;
 
-            projectile.SetParentShooter(m_Ship);
+            if (m_Ship)
+            {
+                projectile.SetParentShooter(m_Ship);
+            }
 
             m_RefireTimer = m_TurretProperties.RateOfFire;
 
+            if (m_AudioSource)
             {
                 m_AudioSource.PlayOneShot(m_TurretProperties.LaunchSFX, m_VolumeSFX);
             }

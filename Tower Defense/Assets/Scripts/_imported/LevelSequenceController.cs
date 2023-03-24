@@ -1,4 +1,4 @@
-using UnityEngine;
+п»їusing UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace SpaceShooter
@@ -6,28 +6,28 @@ namespace SpaceShooter
     public class LevelSequenceController : SingletonBase<LevelSequenceController>
     {
         public static string MainMenuSceneNickName = "Main_Menu";
-        public Episode CurrentEpisode { get; private set; } //Текущий эпизод.
+        public Episode CurrentEpisode { get; private set; } //РўРµРєСѓС‰РёР№ СЌРїРёР·РѕРґ.
 
-        public int CurrentLevel { get; private set; } //Текущий уровень.
+        public int CurrentLevel { get; private set; } //РўРµРєСѓС‰РёР№ СѓСЂРѕРІРµРЅСЊ.
 
         public bool LastLevelResult { get; private set; }
 
-        public PlayerStatistics LevelStatistics { get; private set; } //Статистика уровня.
-        public EpisodeStatistics EpisodeStatistics { get; set; } //Статистика эпизода.
+        public PlayerStatistics LevelStatistics { get; private set; } //РЎС‚Р°С‚РёСЃС‚РёРєР° СѓСЂРѕРІРЅСЏ.
+        public EpisodeStatistics EpisodeStatistics { get; set; } //РЎС‚Р°С‚РёСЃС‚РёРєР° СЌРїРёР·РѕРґР°.
 
         public static SpaceShip PlayerShip { get; set; }
 
         private int m_BonusIndex = 2;
 
-        public int EpisodeCount { get; private set; } = 1; //Колличество пройденных эпизодов.
+        public int EpisodeCount { get; private set; } = 1; //РљРѕР»Р»РёС‡РµСЃС‚РІРѕ РїСЂРѕР№РґРµРЅРЅС‹С… СЌРїРёР·РѕРґРѕРІ.
 
-        //Старт эпизода.
+        //РЎС‚Р°СЂС‚ СЌРїРёР·РѕРґР°.
         public void StartEpisode(Episode episode)
         {
             CurrentEpisode = episode;
             CurrentLevel = 0;
 
-            //сбрасываем статы перед началом эпизода.
+            //СЃР±СЂР°СЃС‹РІР°РµРј СЃС‚Р°С‚С‹ РїРµСЂРµРґ РЅР°С‡Р°Р»РѕРј СЌРїРёР·РѕРґР°.
             LevelStatistics = new PlayerStatistics();
             LevelStatistics.Reset();
 
@@ -38,13 +38,13 @@ namespace SpaceShooter
             SceneManager.LoadScene(CurrentEpisode.Levels[CurrentLevel]);
         }
         
-        //Рестарт уровня.
+        //Р РµСЃС‚Р°СЂС‚ СѓСЂРѕРІРЅСЏ.
         public void RestartLevel()
         {
             SceneManager.LoadScene(CurrentEpisode.Levels[CurrentLevel]);
         }
 
-        //Завершение прохождения уровня.
+        //Р—Р°РІРµСЂС€РµРЅРёРµ РїСЂРѕС…РѕР¶РґРµРЅРёСЏ СѓСЂРѕРІРЅСЏ.
         public void FinishCurrentLevel(bool success)
         {
             LastLevelResult = success;
@@ -59,7 +59,7 @@ namespace SpaceShooter
             ResultPanelController.Instance.ShowResults(LevelStatistics, success);
         }
 
-        //Переход на другой  уровень если он есть, а иначе завершение эпизода и выход в главное меню.
+        //РџРµСЂРµС…РѕРґ РЅР° РґСЂСѓРіРѕР№  СѓСЂРѕРІРµРЅСЊ РµСЃР»Рё РѕРЅ РµСЃС‚СЊ, Р° РёРЅР°С‡Рµ Р·Р°РІРµСЂС€РµРЅРёРµ СЌРїРёР·РѕРґР° Рё РІС‹С…РѕРґ РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ.
         public void AdvanceLevel()
         {
             CurrentLevel++;
@@ -82,7 +82,7 @@ namespace SpaceShooter
                 LevelStatistics.Reset();
             }
         }
-        //Подсчет статистики уровня.
+        //РџРѕРґСЃС‡РµС‚ СЃС‚Р°С‚РёСЃС‚РёРєРё СѓСЂРѕРІРЅСЏ.
         public void CalculateLevelStatistics()
         {
             LevelStatistics.NumKills = Player.Instance.NumKills;

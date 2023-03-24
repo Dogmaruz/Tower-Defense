@@ -1,14 +1,14 @@
-using UnityEngine;
+п»їusing UnityEngine;
 
 namespace SpaceShooter
 {
     /// <summary>
-    /// Базовый класс всех интерактивных игровых объектов на сцене.
+    /// Р‘Р°Р·РѕРІС‹Р№ РєР»Р°СЃСЃ РІСЃРµС… РёРЅС‚РµСЂР°РєС‚РёРІРЅС‹С… РёРіСЂРѕРІС‹С… РѕР±СЉРµРєС‚РѕРІ РЅР° СЃС†РµРЅРµ.
     /// </summary>
     public abstract class Entity : MonoBehaviour
     {
         /// <summary>
-        /// Название оъекта для пользователя.
+        /// РќР°Р·РІР°РЅРёРµ РѕСЉРµРєС‚Р° РґР»СЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ.
         /// </summary>
         [SerializeField] private string m_Nickname;
         public string Nickname => m_Nickname;

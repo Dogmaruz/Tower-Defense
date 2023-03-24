@@ -1,4 +1,4 @@
-using UnityEngine;
+п»їusing UnityEngine;
 using UnityEngine.Events;
 
 namespace SpaceShooter
@@ -10,16 +10,16 @@ namespace SpaceShooter
 
     public class LevelController : SingletonBase<LevelController>
     {
-        [SerializeField] private int m_ReferenceTime; //Время для выполнения условий.
+        [SerializeField] private int m_ReferenceTime; //Р’СЂРµРјСЏ РґР»СЏ РІС‹РїРѕР»РЅРµРЅРёСЏ СѓСЃР»РѕРІРёР№.
         public int ReferenceTime => m_ReferenceTime;
 
         [SerializeField] private UnityEvent m_EventLevelCompleted;
 
-        private ILevelCondition[] m_Conditions; //Массив всех уровней.
+        private ILevelCondition[] m_Conditions; //РњР°СЃСЃРёРІ РІСЃРµС… СѓСЂРѕРІРЅРµР№.
 
         private bool m_IsLevelCompleted;
 
-        private float m_LevelTime; //Время затраченное на прохождение уровня.
+        private float m_LevelTime; //Р’СЂРµРјСЏ Р·Р°С‚СЂР°С‡РµРЅРЅРѕРµ РЅР° РїСЂРѕС…РѕР¶РґРµРЅРёРµ СѓСЂРѕРІРЅСЏ.
         public float LevelTime => m_LevelTime;
 
         void Start()
@@ -37,7 +37,7 @@ namespace SpaceShooter
             }
         }
 
-        //Проверка на завершение уровней.
+        //РџСЂРѕРІРµСЂРєР° РЅР° Р·Р°РІРµСЂС€РµРЅРёРµ СѓСЂРѕРІРЅРµР№.
         private void CheckLevelConditions()
         {
             if (m_Conditions == null || m_Conditions.Length == 0) return;

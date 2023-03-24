@@ -1,4 +1,4 @@
-using UnityEngine;
+п»їusing UnityEngine;
 using UnityEngine.Events;
 
 namespace SpaceShooter
@@ -7,7 +7,7 @@ namespace SpaceShooter
     public class SpaceShip : Destructible
     {
         /// <summary>
-        /// Масса для автоматической установки у ригида.
+        /// РњР°СЃСЃР° РґР»СЏ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРѕР№ СѓСЃС‚Р°РЅРѕРІРєРё Сѓ СЂРёРіРёРґР°.
         /// </summary>
         [Header("Space Ship")]
         [Space(6)]
@@ -15,23 +15,23 @@ namespace SpaceShooter
         [SerializeField] private float m_Mass;
 
         /// <summary>
-        /// Толкающая вперед сила.
+        /// РўРѕР»РєР°СЋС‰Р°СЏ РІРїРµСЂРµРґ СЃРёР»Р°.
         /// </summary>
         [SerializeField] private float m_Thrust;
 
         /// <summary>
-        /// Вращающая сила.
+        /// Р’СЂР°С‰Р°СЋС‰Р°СЏ СЃРёР»Р°.
         /// </summary>
         [SerializeField] private float m_Mobility;
 
         /// <summary>
-        /// Максимальная линейная скорость.
+        /// РњР°РєСЃРёРјР°Р»СЊРЅР°СЏ Р»РёРЅРµР№РЅР°СЏ СЃРєРѕСЂРѕСЃС‚СЊ.
         /// </summary>
         [SerializeField] private float m_MaxLinearVelosity;
         public float MaxLinearVelosity { get => m_MaxLinearVelosity; set => m_MaxLinearVelosity = value; }
 
         /// <summary>
-        /// Максимальная вращательная скорость. В градусах/сек.
+        /// РњР°РєСЃРёРјР°Р»СЊРЅР°СЏ РІСЂР°С‰Р°С‚РµР»СЊРЅР°СЏ СЃРєРѕСЂРѕСЃС‚СЊ. Р’ РіСЂР°РґСѓСЃР°С…/СЃРµРє.
         /// </summary>
         [SerializeField] private float m_MaxAngularVelosity;
         public float MaxAngularVelosity { get => m_MaxAngularVelosity; set => m_MaxAngularVelosity = value; }
@@ -40,45 +40,45 @@ namespace SpaceShooter
         public Sprite PreviewImage => m_PreviewImage;
 
         /// <summary>
-        /// Отображение ворсунок корабля
+        /// РћС‚РѕР±СЂР°Р¶РµРЅРёРµ РІРѕСЂСЃСѓРЅРѕРє РєРѕСЂР°Р±Р»СЏ
         /// </summary>
 
         //[Header("Ship Injectors")]
         //[Space(6)]
 
-        //[SerializeField] private GameObject m_BackInjectors; //Ссылка на задние форсунки.
+        //[SerializeField] private GameObject m_BackInjectors; //РЎСЃС‹Р»РєР° РЅР° Р·Р°РґРЅРёРµ С„РѕСЂСЃСѓРЅРєРё.
 
-        //[SerializeField] private GameObject m_ForwardInjectors; //Ссылка на передние форсунки.
+        //[SerializeField] private GameObject m_ForwardInjectors; //РЎСЃС‹Р»РєР° РЅР° РїРµСЂРµРґРЅРёРµ С„РѕСЂСЃСѓРЅРєРё.
 
-        //[SerializeField] private GameObject m_LeftInjectors; //Ссылка на левые форсунки.
+        //[SerializeField] private GameObject m_LeftInjectors; //РЎСЃС‹Р»РєР° РЅР° Р»РµРІС‹Рµ С„РѕСЂСЃСѓРЅРєРё.
 
-        //[SerializeField] private GameObject m_RightInjectors; //Ссылка на правые форсунки.
+        //[SerializeField] private GameObject m_RightInjectors; //РЎСЃС‹Р»РєР° РЅР° РїСЂР°РІС‹Рµ С„РѕСЂСЃСѓРЅРєРё.
 
         /// <summary>
-        /// Сохраненная ссылка на ригид.
+        /// РЎРѕС…СЂР°РЅРµРЅРЅР°СЏ СЃСЃС‹Р»РєР° РЅР° СЂРёРіРёРґ.
         /// </summary>
         private Rigidbody2D m_Rigidbody;
 
         #region Public API
 
         /// <summary>
-        /// Управление линейной тягой. -1.0 до +1.0
+        /// РЈРїСЂР°РІР»РµРЅРёРµ Р»РёРЅРµР№РЅРѕР№ С‚СЏРіРѕР№. -1.0 РґРѕ +1.0
         /// </summary>
         public float ThrustControl { get; set; }
 
         /// <summary>
-        /// Управление вращательной тягой тягой. -1.0 до +1.0
+        /// РЈРїСЂР°РІР»РµРЅРёРµ РІСЂР°С‰Р°С‚РµР»СЊРЅРѕР№ С‚СЏРіРѕР№ С‚СЏРіРѕР№. -1.0 РґРѕ +1.0
         /// </summary>
         public float TorqueControl { get; set; }
 
         /// <summary>
-        /// Управление огнем.
+        /// РЈРїСЂР°РІР»РµРЅРёРµ РѕРіРЅРµРј.
         /// </summary>
         public bool FireControl { get; set; }
 
-        private float m_previousMaxLenearVelosity; //Запоминаем линейную скорость.
+        private float m_previousMaxLenearVelosity; //Р—Р°РїРѕРјРёРЅР°РµРј Р»РёРЅРµР№РЅСѓСЋ СЃРєРѕСЂРѕСЃС‚СЊ.
 
-        private float m_ratioAcceleration = 2f; //Коэффициент ускорения.
+        private float m_ratioAcceleration = 2f; //РљРѕСЌС„С„РёС†РёРµРЅС‚ СѓСЃРєРѕСЂРµРЅРёСЏ.
 
         #endregion
 
@@ -132,8 +132,8 @@ namespace SpaceShooter
         }
 
         /// <summary>
-        /// TODO: возможно этот скрипт нужно заменить на выполнение другого действия эффектов передвижения.
-        /// Проигрывает эффекты форсунок корабля.
+        /// TODO: РІРѕР·РјРѕР¶РЅРѕ СЌС‚РѕС‚ СЃРєСЂРёРїС‚ РЅСѓР¶РЅРѕ Р·Р°РјРµРЅРёС‚СЊ РЅР° РІС‹РїРѕР»РЅРµРЅРёРµ РґСЂСѓРіРѕРіРѕ РґРµР№СЃС‚РІРёСЏ СЌС„С„РµРєС‚РѕРІ РїРµСЂРµРґРІРёР¶РµРЅРёСЏ.
+        /// РџСЂРѕРёРіСЂС‹РІР°РµС‚ СЌС„С„РµРєС‚С‹ С„РѕСЂСЃСѓРЅРѕРє РєРѕСЂР°Р±Р»СЏ.
         /// </summary>
         //private void PlayShipEffectInjectors()
         //{
@@ -177,7 +177,7 @@ namespace SpaceShooter
         #endregion
 
         /// <summary>
-        /// Метод добавления сил кораблю для движения и вращения.
+        /// РњРµС‚РѕРґ РґРѕР±Р°РІР»РµРЅРёСЏ СЃРёР» РєРѕСЂР°Р±Р»СЋ РґР»СЏ РґРІРёР¶РµРЅРёСЏ Рё РІСЂР°С‰РµРЅРёСЏ.
         /// </summary>
         private void UpdateRigidbody()
         {
@@ -190,16 +190,16 @@ namespace SpaceShooter
             m_Rigidbody.AddTorque(-m_Rigidbody.angularVelocity * m_Mobility / m_MaxAngularVelosity * Time.fixedDeltaTime, ForceMode2D.Force);
         }
 
-        //TODO: Заменить временный метод-заглушку. Используется турелями.
-        //Использование снарядов.
+        //TODO: Р—Р°РјРµРЅРёС‚СЊ РІСЂРµРјРµРЅРЅС‹Р№ РјРµС‚РѕРґ-Р·Р°РіР»СѓС€РєСѓ. РСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ С‚СѓСЂРµР»СЏРјРё.
+        //РСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ СЃРЅР°СЂСЏРґРѕРІ.
         public bool DrawAmmo(int count)
         {
 
             return true;
         }
 
-        //TODO: Заменить временный метод-заглушку. Используется турелями.
-        //Использование энергии для выстрела первичной турели.
+        //TODO: Р—Р°РјРµРЅРёС‚СЊ РІСЂРµРјРµРЅРЅС‹Р№ РјРµС‚РѕРґ-Р·Р°РіР»СѓС€РєСѓ. РСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ С‚СѓСЂРµР»СЏРјРё.
+        //РСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ СЌРЅРµСЂРіРёРё РґР»СЏ РІС‹СЃС‚СЂРµР»Р° РїРµСЂРІРёС‡РЅРѕР№ С‚СѓСЂРµР»Рё.
         public bool DrawEnergy(int count)
         {
 
@@ -208,8 +208,8 @@ namespace SpaceShooter
 
         [SerializeField] private Turret[] m_Turrets;
 
-        //TODO: Заменить временный метод-заглушку. Используется турелями и AIController.
-        //Производит выстрел с турелей заданного типа.
+        //TODO: Р—Р°РјРµРЅРёС‚СЊ РІСЂРµРјРµРЅРЅС‹Р№ РјРµС‚РѕРґ-Р·Р°РіР»СѓС€РєСѓ. РСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ С‚СѓСЂРµР»СЏРјРё Рё AIController.
+        //РџСЂРѕРёР·РІРѕРґРёС‚ РІС‹СЃС‚СЂРµР» СЃ С‚СѓСЂРµР»РµР№ Р·Р°РґР°РЅРЅРѕРіРѕ С‚РёРїР°.
         public void Fire(TurretMode mode)
         {
             //for (int i = 0; i < m_Turrets.Length; i++)
@@ -247,9 +247,9 @@ namespace SpaceShooter
         [SerializeField] private GameObject m_ShieldParticle;
         public GameObject ShieldParticle => m_ShieldParticle;
 
-        private float m_PrimaryEnergy; //Первичная турель.
+        private float m_PrimaryEnergy; //РџРµСЂРІРёС‡РЅР°СЏ С‚СѓСЂРµР»СЊ.
 
-        private int m_SecondaryAmmo; //Вторичная турель.
+        private int m_SecondaryAmmo; //Р’С‚РѕСЂРёС‡РЅР°СЏ С‚СѓСЂРµР»СЊ.
         public int SecondaryAmmo => m_SecondaryAmmo;
 
         private float m_Accelration;
@@ -271,7 +271,7 @@ namespace SpaceShooter
             m_SecondaryAmmo = Mathf.Clamp(m_SecondaryAmmo + ammo, 0, m_MaxAmmo);
         }
 
-        //Первоначальная инициализация.
+        //РџРµСЂРІРѕРЅР°С‡Р°Р»СЊРЅР°СЏ РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ.
         private void InitOffensive()
         {
             m_PrimaryEnergy = m_MaxEnergy;
@@ -281,7 +281,7 @@ namespace SpaceShooter
 
             m_EventOnUpdateShield?.Invoke(m_Shiled);
         }
-        //Регенерация энергии.
+        //Р РµРіРµРЅРµСЂР°С†РёСЏ СЌРЅРµСЂРіРёРё.
         private void UpdateEnergyRegeneration()
         {
             m_PrimaryEnergy += m_EnergyRegenerationPerSecond * Time.deltaTime;
@@ -290,7 +290,7 @@ namespace SpaceShooter
             EventOnUpdateEnergy?.Invoke(m_PrimaryEnergy);
         }
 
-        //Регенерация ускорения.
+        //Р РµРіРµРЅРµСЂР°С†РёСЏ СѓСЃРєРѕСЂРµРЅРёСЏ.
         private void UpdateAcselerationRegeneration()
         {
             m_Accelration += m_AccelerationRegenerationPerSecond * Time.deltaTime;
@@ -299,7 +299,7 @@ namespace SpaceShooter
             EventOnUpdateAcceleration?.Invoke(m_Accelration);
         }
 
-        //Регенерация щита.
+        //Р РµРіРµРЅРµСЂР°С†РёСЏ С‰РёС‚Р°.
         private void UpdateShieldRegeneration()
         {
             m_Shiled += m_ShieldRegenerationPerSecond * Time.deltaTime;
@@ -312,7 +312,7 @@ namespace SpaceShooter
 
         
 
-        //Использование ускорения.
+        //РСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ СѓСЃРєРѕСЂРµРЅРёСЏ.
         public bool DrawAcceleration(float count)
         {
             m_Accelration -= count * Time.deltaTime;
@@ -326,7 +326,7 @@ namespace SpaceShooter
                 return false;
         }
 
-        //Использование щита.
+        //РСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ С‰РёС‚Р°.
         public bool DrawShield(float count)
         {
             m_Shiled -= count * Time.deltaTime;
@@ -345,7 +345,7 @@ namespace SpaceShooter
 
         #endregion
 
-        //Назначение типа снарядов.
+        //РќР°Р·РЅР°С‡РµРЅРёРµ С‚РёРїР° СЃРЅР°СЂСЏРґРѕРІ.
         public void AssingWeapon(TurretProperties props)
         {
             for (int i = 0; i < m_Turrets.Length; i++)
@@ -357,7 +357,7 @@ namespace SpaceShooter
         }
         */
 
-        //Задает значение ускорения.
+        //Р—Р°РґР°РµС‚ Р·РЅР°С‡РµРЅРёРµ СѓСЃРєРѕСЂРµРЅРёСЏ.
         public void ShipAcseleration(bool isActive)
         {
             if (isActive)

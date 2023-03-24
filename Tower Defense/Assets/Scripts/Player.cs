@@ -1,20 +1,20 @@
-using UnityEngine;
+п»їusing UnityEngine;
 using UnityEngine.UI;
 
 namespace SpaceShooter
 {
     public class Player : SingletonBase<Player>
     {
-        [SerializeField] private int m_MaxLives; //Максимальное колличество жизней.
+        [SerializeField] private int m_MaxLives; //РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»Р»РёС‡РµСЃС‚РІРѕ Р¶РёР·РЅРµР№.
         private int m_NumLives;
-        [SerializeField] private SpaceShip m_Ship; //Ссылка на корабль игрока.
-        [SerializeField] private GameObject m_PlayerShipPrefab; //Префабе корабля игрока.
+        [SerializeField] private SpaceShip m_Ship; //РЎСЃС‹Р»РєР° РЅР° РєРѕСЂР°Р±Р»СЊ РёРіСЂРѕРєР°.
+        [SerializeField] private GameObject m_PlayerShipPrefab; //РџСЂРµС„Р°Р±Рµ РєРѕСЂР°Р±Р»СЏ РёРіСЂРѕРєР°.
 
-        public SpaceShip ActiveShip => m_Ship; //Ссылка на корабль игрока.
+        public SpaceShip ActiveShip => m_Ship; //РЎСЃС‹Р»РєР° РЅР° РєРѕСЂР°Р±Р»СЊ РёРіСЂРѕРєР°.
 
         //[SerializeField] private CameraController m_CameraController;
         //[SerializeField] private MovementController m_MovementController;
-        //[SerializeField] private LivesUI m_LivesUI; //Ссылка на UI отображения колличества жизней.
+        //[SerializeField] private LivesUI m_LivesUI; //РЎСЃС‹Р»РєР° РЅР° UI РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РєРѕР»Р»РёС‡РµСЃС‚РІР° Р¶РёР·РЅРµР№.
 
         protected override void Awake()
         {
@@ -33,16 +33,16 @@ namespace SpaceShooter
         }
 
         //[SerializeField] private Text m_TextGameOver;
-        //[SerializeField] private UIEnergyProgress m_UIEnergyProgress; //UI уровня энергии.
-        //[SerializeField] private UIAccelerationProgress m_UIAccelerationProgress; //UI уровня ускорения.
-        //[SerializeField] private UIShieldProgress m_UIShieldProgress;//UI уровня щита.
+        //[SerializeField] private UIEnergyProgress m_UIEnergyProgress; //UI СѓСЂРѕРІРЅСЏ СЌРЅРµСЂРіРёРё.
+        //[SerializeField] private UIAccelerationProgress m_UIAccelerationProgress; //UI СѓСЂРѕРІРЅСЏ СѓСЃРєРѕСЂРµРЅРёСЏ.
+        //[SerializeField] private UIShieldProgress m_UIShieldProgress;//UI СѓСЂРѕРІРЅСЏ С‰РёС‚Р°.
 
         private void Start()
         {
             Respawn();
         }
 
-        //Вызывается при уничтожении корабля игрока.
+        //Р’С‹Р·С‹РІР°РµС‚СЃСЏ РїСЂРё СѓРЅРёС‡С‚РѕР¶РµРЅРёРё РєРѕСЂР°Р±Р»СЏ РёРіСЂРѕРєР°.
         private void OnShipDeath()
         {
             m_NumLives--;
@@ -63,7 +63,7 @@ namespace SpaceShooter
 
      
         /// <summary>
-        /// Перерождает кораль игрока.
+        /// РџРµСЂРµСЂРѕР¶РґР°РµС‚ РєРѕСЂР°Р»СЊ РёРіСЂРѕРєР°.
         /// </summary>
         private void Respawn()
         {
@@ -89,16 +89,16 @@ namespace SpaceShooter
 
         #region Score
 
-        public int Score { get; private set; } //Счет.
-        public int NumKills { get; private set; } //Колличество уничтоженных объектов.
+        public int Score { get; private set; } //РЎС‡РµС‚.
+        public int NumKills { get; private set; } //РљРѕР»Р»РёС‡РµСЃС‚РІРѕ СѓРЅРёС‡С‚РѕР¶РµРЅРЅС‹С… РѕР±СЉРµРєС‚РѕРІ.
 
-        //Добавляет колличество уничтоженных объектов.
+        //Р”РѕР±Р°РІР»СЏРµС‚ РєРѕР»Р»РёС‡РµСЃС‚РІРѕ СѓРЅРёС‡С‚РѕР¶РµРЅРЅС‹С… РѕР±СЉРµРєС‚РѕРІ.
         public void AddKill()
         {
             NumKills++;
         }
 
-        //Увеличивает счет.
+        //РЈРІРµР»РёС‡РёРІР°РµС‚ СЃС‡РµС‚.
         public void AddScore(int num)
         {
             Score += num;

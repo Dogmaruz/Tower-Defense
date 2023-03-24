@@ -1,15 +1,15 @@
-using UnityEngine;
+п»їusing UnityEngine;
 using UnityEngine.Events;
 
 namespace SpaceShooter
 {
     public class Projectile : Entity
     {
-        [SerializeField] private float m_Velocity; //Скорость.
+        [SerializeField] private float m_Velocity; //РЎРєРѕСЂРѕСЃС‚СЊ.
 
-        [SerializeField] private float m_LifeTime; //Время жизни.
+        [SerializeField] private float m_LifeTime; //Р’СЂРµРјСЏ Р¶РёР·РЅРё.
 
-        [SerializeField] private int m_Damage; //Величина урона.
+        [SerializeField] private int m_Damage; //Р’РµР»РёС‡РёРЅР° СѓСЂРѕРЅР°.
 
         [SerializeField] private ImpactEffect m_ImpactEffectPrefab;
 
@@ -27,7 +27,7 @@ namespace SpaceShooter
 
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, stepLenght);
 
-            //Проверка на столкновение пули с объектом.
+            //РџСЂРѕРІРµСЂРєР° РЅР° СЃС‚РѕР»РєРЅРѕРІРµРЅРёРµ РїСѓР»Рё СЃ РѕР±СЉРµРєС‚РѕРј.
             if (hit)
             {
                 Destructible destructible = hit.collider.transform.root.GetComponent<Destructible>();
@@ -65,10 +65,10 @@ namespace SpaceShooter
             transform.position += new Vector3(step.x, step.y, 0);
         }
 
-        //Уничтожение с вызовом эфекта после попадания.
+        //РЈРЅРёС‡С‚РѕР¶РµРЅРёРµ СЃ РІС‹Р·РѕРІРѕРј СЌС„РµРєС‚Р° РїРѕСЃР»Рµ РїРѕРїР°РґР°РЅРёСЏ.
         private void OnProjectileLifeEnd(Collider2D collider, Vector2 pos)
         {
-            Instantiate(m_ImpactEffectPrefab, transform.position, Quaternion.identity);
+            //Instantiate(m_ImpactEffectPrefab, transform.position, Quaternion.identity);
 
             m_EventOnDeath?.Invoke();
 
@@ -78,18 +78,21 @@ namespace SpaceShooter
         private Destructible m_ParentDestructible;
         public Destructible ParentDestructible { get => m_ParentDestructible; set => m_ParentDestructible = value; }
 
-        //Задает родителя в классе Turret при выстреле.
+        //Р—Р°РґР°РµС‚ СЂРѕРґРёС‚РµР»СЏ РІ РєР»Р°СЃСЃРµ Turret РїСЂРё РІС‹СЃС‚СЂРµР»Рµ.
         public void SetParentShooter(Destructible parentDestructible)
         {
             m_ParentDestructible = parentDestructible;
 
-            if (m_ParentDestructible == Player.Instance.ActiveShip)
-                m_IsPlayer = true;
-            else
-                m_IsPlayer = false;
+            if (Player.Instance != null)
+            {
+                if (m_ParentDestructible == Player.Instance.ActiveShip)
+                    m_IsPlayer = true;
+                else
+                    m_IsPlayer = false;
+            }
         }
 
-        //Добавляет очки и колличество уничтоженных объектов.
+        //Р”РѕР±Р°РІР»СЏРµС‚ РѕС‡РєРё Рё РєРѕР»Р»РёС‡РµСЃС‚РІРѕ СѓРЅРёС‡С‚РѕР¶РµРЅРЅС‹С… РѕР±СЉРµРєС‚РѕРІ.
         public void AddingPoints(Destructible destructible)
         {
             if (m_IsPlayer)
