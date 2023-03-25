@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 7738204835287880057}
   - component: {fileID: 7738204835287880059}
   - component: {fileID: 7738204835287880056}
+  - component: {fileID: 7196555155250954123}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -121,7 +122,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 0966982b9c8e06b4ba6750ef9b9489eb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -153,6 +154,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7196555155250954123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7738204835287880062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c905eb1d75510614fad4a0193d74d38a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7738204835554944642
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,7 +277,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AIBehaviour: 1
-  m_PatrolPoints: []
   m_AttackRadius: 0
   m_NavigationLinear: 1
   m_NavigationAngular: 1
