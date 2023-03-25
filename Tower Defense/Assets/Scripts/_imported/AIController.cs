@@ -15,8 +15,8 @@ namespace SpaceShooter
 
         private AIPointPatrol m_PatrolPoint; //Точка патрулирования.
 
-        [SerializeField] private AIPointPatrol[] m_PatrolPoints; //Массив точекк патрулирования.
-        public AIPointPatrol[] PatrolPoints { get => m_PatrolPoints; set => m_PatrolPoints = value; }
+        //[SerializeField] private AIPointPatrol[] m_PatrolPoints; //Массив точекк патрулирования.
+        //public AIPointPatrol[] PatrolPoints { get => m_PatrolPoints; set => m_PatrolPoints = value; }
 
         [SerializeField] private float m_AttackRadius; //Радиус обнаружения для атаки.
 
@@ -65,7 +65,7 @@ namespace SpaceShooter
 
             m_currentPatrolPoint = 0;
 
-            m_PatrolPoint = m_PatrolPoints[m_currentPatrolPoint];
+            //m_PatrolPoint = m_PatrolPoints[m_currentPatrolPoint];
 
             InitTimers();
         }
@@ -103,39 +103,41 @@ namespace SpaceShooter
         {
             if (m_AIBehaviour == AIBehaviour.Patrol)
             {
-                if (Physics2D.CircleCast(transform.position, m_EvadeRayLenght, transform.up, 0.1f))
-                {
-                    m_SelectedTarget = null;
-                    return;
-                }
+                //if (Physics2D.CircleCast(transform.position, m_EvadeRayLenght, transform.up, 0.1f))
+                //{
+                //    m_SelectedTarget = null;
+                //    return;
+                //}
 
                 //Если есть цель, то расчет движения упреждения корабля.
                 if (m_SelectedTarget)
                 {
-                    if (m_SelectedTarget.transform.root.GetComponent<SpaceShip>())
-                    {
-                        float flightTimeBullet = Vector3.Distance(m_SelectedTarget.transform.position, transform.position) / GetComponent<SpaceShip>().Speed;
+                    //if (m_SelectedTarget.transform.root.GetComponent<SpaceShip>())
+                    //{
+                    //    float flightTimeBullet = Vector3.Distance(m_SelectedTarget.transform.position, transform.position) / GetComponent<SpaceShip>().Speed;
 
-                        float lead = m_SelectedTarget.transform.root.GetComponent<SpaceShip>().Speed * flightTimeBullet / 4;
+                    //    float lead = m_SelectedTarget.transform.root.GetComponent<SpaceShip>().Speed * flightTimeBullet / 4;
 
-                        m_MovePosition = m_SelectedTarget.transform.position + m_SelectedTarget.transform.up * lead * m_SelectedTarget.transform.root.GetComponent<SpaceShip>().ThrustControl;
-                    }
+                    //    m_MovePosition = m_SelectedTarget.transform.position + m_SelectedTarget.transform.up * lead * m_SelectedTarget.transform.root.GetComponent<SpaceShip>().ThrustControl;
+                    //}
+
+                    m_MovePosition = m_SelectedTarget.transform.position;
                 }
                 else
                 {
-                    //иначе зачет движения без цели, до следуещей точке патрулирования.
-                    float dist = Vector3.Distance(transform.position, m_PatrolPoint.transform.position);
+                    ////иначе расчет движения без цели, до следуещей точке патрулирования.
+                    //float dist = Vector3.Distance(transform.position, m_PatrolPoint.transform.position);
 
-                    if (dist <= 1)
-                    {
-                        m_currentPatrolPoint++;
+                    //if (dist <= 1)
+                    //{
+                    //    m_currentPatrolPoint++;
 
 
-                        if (m_currentPatrolPoint >= m_PatrolPoints.Length)
-                            m_currentPatrolPoint = 0;
+                    //    if (m_currentPatrolPoint >= m_PatrolPoints.Length)
+                    //        m_currentPatrolPoint = 0;
 
-                        SetPatrolBehaviour(m_PatrolPoints[m_currentPatrolPoint]);
-                    }
+                    //    SetPatrolBehaviour(m_PatrolPoints[m_currentPatrolPoint]);
+                    //}
 
                     //Задает точку в радиусе зоны патрулирования.
                     if (m_PatrolPoint)
@@ -144,14 +146,7 @@ namespace SpaceShooter
 
                         if (isInsidePatrolZone)
                         {
-                            if (m_RandomizeDirectionTimer.IsFinisher)
-                            {
-                                Vector2 newPoint = UnityEngine.Random.onUnitSphere * m_PatrolPoint.Radius + m_PatrolPoint.transform.position;
-
-                                m_MovePosition = newPoint;
-
-                                m_RandomizeDirectionTimer.Start(m_RandomSelectMovePointTime);
-                            }
+                            GetNewPoint();
                         }
                         else
                         {
@@ -162,10 +157,22 @@ namespace SpaceShooter
             }
         }
 
+        protected virtual void GetNewPoint()
+        {
+            if (m_RandomizeDirectionTimer.IsFinished)
+            {
+                Vector2 newPoint = UnityEngine.Random.onUnitSphere * m_PatrolPoint.Radius + m_PatrolPoint.transform.position;
+
+                m_MovePosition = newPoint;
+
+                m_RandomizeDirectionTimer.Start(m_RandomSelectMovePointTime);
+            }
+        }
+
         //Проверка на коллизию столкновения.
         private void ActionEvadeCollision()
         {
-            if (m_AtionAvadeCollisionTimer.IsFinisher)
+            if (m_AtionAvadeCollisionTimer.IsFinished)
             {
                 var hit = Physics2D.CircleCast(transform.position, m_EvadeRayLenght, transform.up, 0.1f);
 
@@ -219,7 +226,7 @@ namespace SpaceShooter
         //Поиск цели для атаки.
         private void ActionFindNewAttackTarget()
         {
-            if (m_FindNewTargetTimer.IsFinisher)
+            if (m_FindNewTargetTimer.IsFinished)
             {
                 m_SelectedTarget = FindNearestDestructibleTarget();
 
@@ -232,7 +239,7 @@ namespace SpaceShooter
         {
             if (m_SelectedTarget)
             {
-                if (m_FireTimer.IsFinisher)
+                if (m_FireTimer.IsFinished)
                 {
                     m_SpaceShip.Fire(TurretMode.Primary);
 
@@ -298,7 +305,7 @@ namespace SpaceShooter
         {
             m_AIBehaviour = AIBehaviour.Patrol;
             m_PatrolPoint = point;
-            m_PatrolPoints[0] = m_PatrolPoint;
+            //m_PatrolPoints[0] = m_PatrolPoint;
         }
 
         #endregion

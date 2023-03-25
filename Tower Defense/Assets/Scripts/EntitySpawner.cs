@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using TowerDefense;
+using UnityEngine;
 
 namespace SpaceShooter
 {
     public partial class EntitySpawner : MonoBehaviour
     {
-        [SerializeField] private AIPointPatrol m_moveTarget;
+        [SerializeField] private Path m_Path;
 
         [SerializeField] private Entity[] m_EntityPrefabs;
 
@@ -54,9 +55,9 @@ namespace SpaceShooter
 
                 //newEntity.GetComponent<AIController>().PatrolPoints[0] = GetComponentInChildren<AIPointPatrol>();
 
-                if (newEntity.TryGetComponent<AIController>(out var ai))
+                if (newEntity.TryGetComponent<TD_PatrolController>(out var ai))
                 {
-                    ai.SetPatrolBehaviour(m_moveTarget);
+                    ai.SetPath(m_Path);
                 }
 
                 newEntity.transform.position = m_Area.GetRandomInsideZone();

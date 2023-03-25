@@ -1,6 +1,5 @@
-using SpaceShooter;
+п»їusing SpaceShooter;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace TowerDefense
 {
@@ -53,7 +52,7 @@ namespace TowerDefense
         }
 
         /// <summary>
-        /// Отрисовывает границы зоны патрулирования.
+        /// РћС‚СЂРёСЃРѕРІС‹РІР°РµС‚ РіСЂР°РЅРёС†С‹ Р·РѕРЅС‹ РїР°С‚СЂСѓР»РёСЂРѕРІР°РЅРёСЏ.
         /// </summary>
         private void OnDrawGizmos()
         {
