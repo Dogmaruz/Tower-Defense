@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using TowerDefense;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -114,6 +116,13 @@ namespace SpaceShooter
         protected virtual void OnDestroy()
         {
             m_AllDestructibles?.Remove(this);
+        }
+
+        protected void Use(EnemyAsset asset)
+        {
+            m_HitPoints = asset.HitPoints;
+
+            m_ScoreValue = asset.ScoreValue;
         }
 
         public const int TeamIdNeutral = 0;

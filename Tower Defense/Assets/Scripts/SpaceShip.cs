@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TowerDefense;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace SpaceShooter
@@ -368,6 +369,12 @@ namespace SpaceShooter
             {
                 MaxLinearVelosity = m_previousMaxLenearVelosity;
             }
+        }
+
+        new public void Use(EnemyAsset asset)
+        {
+            m_MaxLinearVelosity = asset.moveSpeed;
+            base.Use(asset);
         }
     }
 }
