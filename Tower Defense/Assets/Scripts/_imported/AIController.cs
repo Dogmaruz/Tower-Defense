@@ -53,17 +53,17 @@ namespace SpaceShooter
 
         private float m_previousSpeed; //Предыдущая скорость.
 
-        private int m_currentPatrolPoint; //Текущая точка патрулирования.
+        //private int m_currentPatrolPoint; //Текущая точка патрулирования.
 
         private void Start()
         {
             m_SpaceShip = GetComponent<SpaceShip>();
 
-            m_MovePosition = new Vector3(0, 0, 0);
+            m_MovePosition = transform.position;
 
             m_previousSpeed = m_NavigationLinear;
 
-            m_currentPatrolPoint = 0;
+            //m_currentPatrolPoint = 0;
 
             //m_PatrolPoint = m_PatrolPoints[m_currentPatrolPoint];
 
