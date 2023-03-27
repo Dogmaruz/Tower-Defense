@@ -22,6 +22,6 @@ namespace TowerDefense
 
         public int ScoreValue = 1;
 
-        public float Radius = 0.22f;
+        public float ColliderRadius = 0.22f;
     }
 }

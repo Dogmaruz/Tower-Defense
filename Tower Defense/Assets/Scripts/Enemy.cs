@@ -23,7 +23,7 @@ namespace TowerDefense
 
             var collider = GetComponentInChildren<CircleCollider2D>();
 
-            collider.radius = asset.Radius;
+            collider.radius = asset.ColliderRadius;
 
             collider.bounds.center.Set(0, 0, 0);
         }

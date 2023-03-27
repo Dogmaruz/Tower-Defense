@@ -15,6 +15,8 @@ namespace SpaceShooter
 
         [SerializeField] private float m_RespawnTime;
 
+        [SerializeField] private float m_SpawnDalay;
+
         private float m_Timer;
 
         private void Start()
@@ -23,6 +25,8 @@ namespace SpaceShooter
             {
                 SpawnEntities();
             }
+
+            m_Timer = m_SpawnDalay;
         }
 
         private void Update()
