@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace SpaceShooter
@@ -61,7 +62,7 @@ namespace SpaceShooter
             }
         }
 
-     
+
         /// <summary>
         /// Перерождает кораль игрока.
         /// </summary>
@@ -79,7 +80,11 @@ namespace SpaceShooter
 
                 //m_UIShieldProgress.UpdateShip(m_Ship);
 
-                m_Ship.EventOnDeath?.AddListener(OnShipDeath);
+                if (m_Ship)
+                {
+                    m_Ship.EventOnDeath?.AddListener(OnShipDeath);
+                }
+
 
                 //m_CameraController.SetTarget(m_Ship.transform);
 
@@ -102,6 +107,16 @@ namespace SpaceShooter
         public void AddScore(int num)
         {
             Score += num;
+        }
+
+        public void TakeDamage(int damage)
+        {
+            m_NumLives -= damage;
+
+            if (m_NumLives <= 0)
+            {
+                LevelSequenceController.Instance.FinishCurrentLevel(false);
+            }
         }
 
         #endregion

@@ -8,6 +8,9 @@ namespace TowerDefense
     [RequireComponent(typeof(TD_PatrolController))]
     public class Enemy : MonoBehaviour
     {
+        [SerializeField] private int m_Damage = 1;
+
+        [SerializeField] private int m_Gold = 1;
         public void Use(EnemyAsset asset)
         {
 
@@ -26,6 +29,21 @@ namespace TowerDefense
             collider.radius = asset.ColliderRadius;
 
             collider.bounds.center.Set(0, 0, 0);
+
+            m_Damage = asset.Damage;
+
+            m_Gold = asset.Gold;
+
+        }
+
+        public void GivePlayerGold()
+        {
+            (Player.Instance as TD_Player).ChangeGold(m_Gold);
+        }
+
+        public void DamagePlayer() 
+        {
+            Player.Instance.TakeDamage(m_Damage);
         }
     }
 

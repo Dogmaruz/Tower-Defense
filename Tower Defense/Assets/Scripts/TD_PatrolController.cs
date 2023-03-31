@@ -1,5 +1,6 @@
 ﻿using SpaceShooter;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace TowerDefense
 {
@@ -7,6 +8,8 @@ namespace TowerDefense
     {
         private Path m_path;
         private int m_pathIndex;
+        [SerializeField] private UnityEvent m_OnEndPath;
+
         public void SetPath(Path newPath)
         {
             m_path = newPath;
@@ -25,6 +28,8 @@ namespace TowerDefense
                 SetPatrolBehaviour(m_path[m_pathIndex]);
             } else
             {
+                m_OnEndPath?.Invoke();
+
                 Destroy(gameObject);
             }
         }
