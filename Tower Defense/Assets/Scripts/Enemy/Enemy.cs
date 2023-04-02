@@ -38,12 +38,12 @@ namespace TowerDefense
 
         public void GivePlayerGold()
         {
-            (Player.Instance as TD_Player).ChangeGold(m_Gold);
+            TD_Player.Instance.ChangeGold(m_Gold);
         }
 
         public void DamagePlayer() 
         {
-            Player.Instance.TakeDamage(m_Damage);
+            TD_Player.Instance.ReduceLife(m_Damage);
         }
     }
 

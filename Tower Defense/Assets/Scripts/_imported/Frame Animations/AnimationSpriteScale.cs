@@ -1,4 +1,4 @@
-using UnityEngine;
+п»їusing UnityEngine;
 
 namespace SpaceShooter
 {
@@ -16,7 +16,7 @@ namespace SpaceShooter
             m_InitialSize = m_Renderer.GetComponent<RectTransform>().localScale;
         }
 
-        //Подготовка анимации.
+        //РџРѕРґРіРѕС‚РѕРІРєР° Р°РЅРёРјР°С†РёРё.
         public override void PrepareAnimation()
         {
             var x = m_CurveX.Evaluate(0) * m_InitialSize.x;
@@ -25,7 +25,7 @@ namespace SpaceShooter
             m_Renderer.GetComponent<Transform>().localScale = new Vector2(x, y);
         }
 
-        //Анимация кадра.
+        //РђРЅРёРјР°С†РёСЏ РєР°РґСЂР°.
         protected override void AnimateFrame()
         {
             var x = m_CurveX.Evaluate(NormalizeAnimationTime) * m_InitialSize.x;

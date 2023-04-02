@@ -7,7 +7,7 @@ namespace SpaceShooter
     public class Player : SingletonBase<Player>
     {
         [SerializeField] private int m_MaxLives; //Максимальное колличество жизней.
-        private int m_NumLives;
+        protected int m_NumLives;
         [SerializeField] private SpaceShip m_Ship; //Ссылка на корабль игрока.
         [SerializeField] private GameObject m_PlayerShipPrefab; //Префабе корабля игрока.
 
@@ -109,7 +109,7 @@ namespace SpaceShooter
             Score += num;
         }
 
-        public void TakeDamage(int damage)
+        protected void TakeDamage(int damage)
         {
             m_NumLives -= damage;
 

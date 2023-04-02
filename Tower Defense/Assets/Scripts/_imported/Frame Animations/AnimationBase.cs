@@ -1,20 +1,20 @@
-using UnityEngine;
+п»їusing UnityEngine;
 using UnityEngine.Events;
 
 namespace SpaceShooter
 {
     /// <summary>
-    /// Базовый класс анимации.
+    /// Р‘Р°Р·РѕРІС‹Р№ РєР»Р°СЃСЃ Р°РЅРёРјР°С†РёРё.
     /// </summary>
     public abstract class AnimationBase : MonoBehaviour
     {
-        [SerializeField] protected float m_AnimationTime; // Полное время анимации.
+        [SerializeField] protected float m_AnimationTime; // РџРѕР»РЅРѕРµ РІСЂРµРјСЏ Р°РЅРёРјР°С†РёРё.
 
-        [SerializeField] protected float m_AnimationScale; // Скелинг времени анимации.
-        public float AnimationTime => m_AnimationTime / m_AnimationScale; // Полное время анимации с учетом скецлинга.
+        [SerializeField] protected float m_AnimationScale; // РЎРєРµР»РёРЅРі РІСЂРµРјРµРЅРё Р°РЅРёРјР°С†РёРё.
+        public float AnimationTime => m_AnimationTime / m_AnimationScale; // РџРѕР»РЅРѕРµ РІСЂРµРјСЏ Р°РЅРёРјР°С†РёРё СЃ СѓС‡РµС‚РѕРј СЃРєРµС†Р»РёРЅРіР°.
 
 
-        [SerializeField] private bool m_Looping; // Флаг повторяющейся анимации.
+        [SerializeField] private bool m_Looping; // Р¤Р»Р°Рі РїРѕРІС‚РѕСЂСЏСЋС‰РµР№СЃСЏ Р°РЅРёРјР°С†РёРё.
 
         [SerializeField] private bool m_Reverse;
 
@@ -33,7 +33,7 @@ namespace SpaceShooter
             m_AnimationScale = scale;
         }
 
-        // Нормализованное время анимации от 0 до 1
+        // РќРѕСЂРјР°Р»РёР·РѕРІР°РЅРЅРѕРµ РІСЂРµРјСЏ Р°РЅРёРјР°С†РёРё РѕС‚ 0 РґРѕ 1
         public float NormalizeAnimationTime
         {
             get
@@ -72,7 +72,7 @@ namespace SpaceShooter
 
         #region Public API
 
-        // Метод запуска анимации.
+        // РњРµС‚РѕРґ Р·Р°РїСѓСЃРєР° Р°РЅРёРјР°С†РёРё.
         public void StartAnimation(bool prepare = true)
         {
             if (m_IsAnimationPlaying)
@@ -88,7 +88,7 @@ namespace SpaceShooter
             m_EventStart?.Invoke();
         }
 
-        // Метод приостановки анимации.
+        // РњРµС‚РѕРґ РїСЂРёРѕСЃС‚Р°РЅРѕРІРєРё Р°РЅРёРјР°С†РёРё.
         public void StopAnimation()
         {
             if (!m_IsAnimationPlaying)
@@ -103,14 +103,14 @@ namespace SpaceShooter
 
         #endregion
 
-        // Анимируе текущий фрейм анимации.
+        // РђРЅРёРјРёСЂСѓРµ С‚РµРєСѓС‰РёР№ С„СЂРµР№Рј Р°РЅРёРјР°С†РёРё.
         protected abstract void AnimateFrame();
 
         protected abstract void OnAnimationStart();
 
         protected abstract void OnAnimationEnd();
 
-        // Подготовка начального состояния анимации.
+        // РџРѕРґРіРѕС‚РѕРІРєР° РЅР°С‡Р°Р»СЊРЅРѕРіРѕ СЃРѕСЃС‚РѕСЏРЅРёСЏ Р°РЅРёРјР°С†РёРё.
         public abstract void PrepareAnimation();
     }
 }
