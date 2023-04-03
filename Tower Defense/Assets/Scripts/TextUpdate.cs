@@ -14,17 +14,17 @@ namespace TowerDefense
         public UpdateSource Source = UpdateSource.Gold;
 
         private Text m_text;
-        private void Awake()
+        private void Start()
         {
             m_text = GetComponent<Text>();
 
             switch (Source)
             {
                 case UpdateSource.Gold:
-                    TD_Player.OnGoldUpdate += UpdateText;
+                    TD_Player.GoldUpdateSubscrible(UpdateText);
                     break;
                 case UpdateSource.Life:
-                    TD_Player.OnLifeUpdate += UpdateText;
+                    TD_Player.LifeUpdateSubscrible(UpdateText);
                     break;
             }
 
@@ -33,6 +33,12 @@ namespace TowerDefense
         private void UpdateText(int money)
         {
             m_text.text = money.ToString();
+        }
+
+        private void OnDestroy()
+        {
+            TD_Player.GoldUpdateUnSubscrible(UpdateText);
+            TD_Player.LifeUpdateUnSubscrible(UpdateText);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using SpaceShooter;
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
 
 namespace TowerDefense
 {
@@ -14,16 +15,24 @@ namespace TowerDefense
             }
         }
 
-        public static event Action<int> OnGoldUpdate;
-        public static event Action<int> OnLifeUpdate;
+        private static event Action<int> OnGoldUpdate;
+
+        public static void GoldUpdateSubscrible(Action<int> action)
+        {
+            OnGoldUpdate += action;
+            action(Instance.m_gold);
+        }
+
+        private static event Action<int> OnLifeUpdate;
+
+        public static void LifeUpdateSubscrible(Action<int> action)
+        {
+            OnLifeUpdate += action;
+            action(Instance.m_NumLives);
+        }
 
         [SerializeField] private int m_gold = 0;
 
-        private void Start()
-        {
-            OnGoldUpdate(m_gold);
-            OnLifeUpdate(m_NumLives);
-        }
 
         //Добавляет золото игроку.
         public void ChangeGold(int change)
@@ -38,6 +47,30 @@ namespace TowerDefense
             TakeDamage(damage);
 
             OnLifeUpdate(m_NumLives);
+        }
+
+        [SerializeField] private Tower m_towerPrefabe;
+        public void TryBuild(TowerAsset towerAsset, Transform buildSite)
+        {
+            ChangeGold(-towerAsset.GoldCost);
+
+            var tower = Instantiate(m_towerPrefabe, buildSite.position, Quaternion.identity);
+
+            tower.GetComponentInChildren<SpriteRenderer>().sprite = towerAsset.ElementSprite;
+
+            Destroy(buildSite.gameObject);
+
+        }
+
+        public static void GoldUpdateUnSubscrible(Action<int> action)
+        {
+            OnGoldUpdate -= action;
+        }
+
+
+        public static void LifeUpdateUnSubscrible(Action<int> action)
+        {
+            OnLifeUpdate -= action;
         }
     }
 }

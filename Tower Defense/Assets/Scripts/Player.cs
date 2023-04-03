@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace SpaceShooter
@@ -115,7 +116,8 @@ namespace SpaceShooter
 
             if (m_NumLives <= 0)
             {
-                LevelSequenceController.Instance.FinishCurrentLevel(false);
+                //LevelSequenceController.Instance.FinishCurrentLevel(false);
+                SceneManager.LoadScene(0);
             }
         }
 
