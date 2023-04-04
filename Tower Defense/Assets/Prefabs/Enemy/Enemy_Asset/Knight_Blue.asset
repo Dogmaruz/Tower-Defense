@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Knight_Blue
   m_EditorClassIdentifier: 
   color: {r: 0.36320752, g: 0.58694535, b: 1, a: 1}
-  spriteScale: {x: 0.7, y: 0.7}
+  spriteScale: {x: 0.35, y: 0.35}
   controller: {fileID: 9100000, guid: 071f2c6d34ded6448badeeb4a1b4c39f, type: 2}
-  moveSpeed: 2
-  HitPoints: 1
+  moveSpeed: 0.5
+  HitPoints: 3
   ScoreValue: 1
-  ColliderRadius: 0.22
+  ColliderRadius: 0.11
   Damage: 1
   Gold: 1

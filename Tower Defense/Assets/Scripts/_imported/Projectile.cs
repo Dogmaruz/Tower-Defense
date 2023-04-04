@@ -6,6 +6,7 @@ namespace SpaceShooter
     public class Projectile : Entity
     {
         [SerializeField] private float m_Velocity; //Скорость.
+        public float Velocity => m_Velocity;
 
         [SerializeField] private float m_LifeTime; //Время жизни.
 
@@ -18,11 +19,16 @@ namespace SpaceShooter
         [SerializeField] private UnityEvent m_EventOnDeath;
         public UnityEvent EventOnDeath => m_EventOnDeath;
 
+        [SerializeField] private UnityEvent<Destructible> m_EventOnHit;
+        public UnityEvent<Destructible> EventOnHit => m_EventOnHit;
+
         private bool m_IsPlayer;
 
         private void Update()
         {
+
             float stepLenght = Time.deltaTime * m_Velocity;
+
             Vector2 step = transform.up * stepLenght;
 
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, stepLenght);
@@ -35,6 +41,8 @@ namespace SpaceShooter
                 if (destructible != null && destructible != m_ParentDestructible)
                 {
                     destructible.ApplyDamage(m_Damage);
+
+                    EventOnHit?.Invoke(destructible);
 
                     AddingPoints(destructible);
                 }
@@ -68,7 +76,10 @@ namespace SpaceShooter
         //Уничтожение с вызовом эфекта после попадания.
         private void OnProjectileLifeEnd(Collider2D collider, Vector2 pos)
         {
-            //Instantiate(m_ImpactEffectPrefab, transform.position, Quaternion.identity);
+            if (m_ImpactEffectPrefab)
+            {
+                Instantiate(m_ImpactEffectPrefab, transform.position, Quaternion.identity);
+            }
 
             m_EventOnDeath?.Invoke();
 

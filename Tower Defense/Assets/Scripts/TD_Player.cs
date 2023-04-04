@@ -58,6 +58,13 @@ namespace TowerDefense
 
             tower.GetComponentInChildren<SpriteRenderer>().sprite = towerAsset.ElementSprite;
 
+            tower.GetComponentInChildren<Turret>().AssignTurretProperties(towerAsset.TurretProperties);
+
+            if (towerAsset.EffectPrefab != null)
+            {
+                tower.IntatiateEffectPrefab(towerAsset.EffectPrefab);
+            }
+
             Destroy(buildSite.gameObject);
 
         }

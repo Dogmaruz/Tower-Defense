@@ -376,6 +376,11 @@ namespace SpaceShooter
             m_MaxLinearVelosity = asset.moveSpeed;
             base.Use(asset);
         }
+
+        public void SetSpeed(float ratio)
+        {
+            MaxLinearVelosity = m_previousMaxLenearVelosity * ratio;
+        }
     }
 }
 

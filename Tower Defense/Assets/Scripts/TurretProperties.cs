@@ -29,5 +29,8 @@ namespace SpaceShooter
 
         [SerializeField] private AudioClip m_LaunchSFX;
         public AudioClip LaunchSFX => m_LaunchSFX;
+
+        [SerializeField] private float m_volume;
+        public float Volume => m_volume;
     }
 }
