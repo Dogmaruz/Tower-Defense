@@ -123,6 +123,8 @@ namespace SpaceShooter
             m_HitPoints = asset.HitPoints;
 
             m_ScoreValue = asset.ScoreValue;
+
+            m_KillValue = asset.KillValue;
         }
 
         public const int TeamIdNeutral = 0;

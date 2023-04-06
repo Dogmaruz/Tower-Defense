@@ -1,7 +1,6 @@
 ﻿using SpaceShooter;
-using UnityEngine;
 using System;
-using Unity.VisualScripting;
+using UnityEngine;
 
 namespace TowerDefense
 {
@@ -31,6 +30,14 @@ namespace TowerDefense
             action(Instance.m_NumLives);
         }
 
+        private static event Action<int> OnScoreUpdate;
+
+        public static void ScoreUpdateSubscrible(Action<int> action)
+        {
+            OnScoreUpdate += action;
+            action(Instance.Score);
+        }
+
         [SerializeField] private int m_gold = 0;
 
 
@@ -42,6 +49,14 @@ namespace TowerDefense
             OnGoldUpdate(m_gold);
         }
 
+        public void UpdateScore(int value)
+        {
+            AddScore(value);
+
+            OnScoreUpdate(Score);
+        }
+
+        //Добавляем урон игроку и обновляем жизни.
         public void ReduceLife(int damage)
         {
             TakeDamage(damage);
@@ -78,6 +93,11 @@ namespace TowerDefense
         public static void LifeUpdateUnSubscrible(Action<int> action)
         {
             OnLifeUpdate -= action;
+        }
+
+        public static void ScoreUpdateUnSubscrible(Action<int> action)
+        {
+            OnScoreUpdate -= action;
         }
     }
 }

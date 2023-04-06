@@ -22,7 +22,7 @@ namespace SpaceShooter
         private float m_LevelTime; //Время затраченное на прохождение уровня.
         public float LevelTime => m_LevelTime;
 
-        void Start()
+        protected void Start()
         {
             m_Conditions = GetComponentsInChildren<ILevelCondition>();
         }

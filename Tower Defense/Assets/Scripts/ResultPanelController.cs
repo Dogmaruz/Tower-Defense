@@ -1,17 +1,17 @@
-п»їusing UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace SpaceShooter
 {
     public class ResultPanelController : SingletonBase<ResultPanelController>
     {
-        [SerializeField] private Text m_Kills;
-        [SerializeField] private Text m_Score;
-        [SerializeField] private Text m_Time;
+        //[SerializeField] private Text m_Kills;
+        //[SerializeField] private Text m_Score;
+        //[SerializeField] private Text m_Time;
 
         [SerializeField] private Text m_Result;
         [SerializeField] private Text m_ButtonNextText;
-        [SerializeField] private AnimationBase m_Target;
+        [SerializeField] private AnimationBase m_AnimationSpriteScale;
 
         private bool m_Success;
 
@@ -19,10 +19,10 @@ namespace SpaceShooter
         {
             gameObject.SetActive(false);
 
-            m_Target.OnEventEnd.AddListener(StopTime);
+            m_AnimationSpriteScale.OnEventEnd.AddListener(StopTime);
         }
 
-        public void ShowResults(PlayerStatistics levelResults, bool success)
+        public void ShowResults(bool success)
         {
             gameObject.SetActive(true);
 
@@ -30,15 +30,16 @@ namespace SpaceShooter
 
             m_Result.text = success ? "Level Completed" : "You Lose";
 
-            m_Kills.text = "Kills : " + levelResults.NumKills.ToString();
+            //Старый вариант из Space Shooter.
+            //m_Kills.text = "Kills : " + levelResults.NumKills.ToString();
 
-            m_Score.text = "Score : " + levelResults.Score.ToString();
+            //m_Score.text = "Score : " + levelResults.Score.ToString();
 
-            m_Time.text = "Time : " + levelResults.Time.ToString();
+            //m_Time.text = "Time : " + levelResults.Time.ToString();
 
             m_ButtonNextText.text = success ? "Next" : "Restart";
 
-            m_Target.StartAnimation(true);
+            m_AnimationSpriteScale.StartAnimation(true);
         }
 
         public void OnButtonNextAction()

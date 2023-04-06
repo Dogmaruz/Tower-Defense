@@ -3,6 +3,7 @@
     public enum SpawnMode
     {
         Start,
-        Loop
+        Loop,
+        Waves
     }
 }

@@ -211,7 +211,7 @@ MonoBehaviour:
       m_Calls: []
   m_ImpactEffect: {fileID: 0}
   m_TeamId: 0
-  m_ScoreValue: 1
+  m_ScoreValue: 0
   m_KillValue: 0
   m_Mass: 1
   m_Thrust: 1000
@@ -278,6 +278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Damage: 1
+  m_Gold: 1
 --- !u!1 &9092272121850412141
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,7 +289,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5827616816199877767}
   - component: {fileID: 1568178092753218271}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

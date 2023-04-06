@@ -1,15 +1,18 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 namespace SpaceShooter
 {
     public class Player : SingletonBase<Player>
     {
         [SerializeField] private int m_MaxLives; //Максимальное колличество жизней.
+
         protected int m_NumLives;
+
+        public event Action OnPlayerDead;
+
         [SerializeField] private SpaceShip m_Ship; //Ссылка на корабль игрока.
+
         [SerializeField] private GameObject m_PlayerShipPrefab; //Префабе корабля игрока.
 
         public SpaceShip ActiveShip => m_Ship; //Ссылка на корабль игрока.
@@ -109,15 +112,18 @@ namespace SpaceShooter
         {
             Score += num;
         }
-
+        //Наносит урон игроку и если жизни меньше или раны нулю перезапуск уровня.
         protected void TakeDamage(int damage)
         {
             m_NumLives -= damage;
 
             if (m_NumLives <= 0)
             {
+                m_NumLives = 0;
+
+                OnPlayerDead?.Invoke();
+
                 //LevelSequenceController.Instance.FinishCurrentLevel(false);
-                SceneManager.LoadScene(0);
             }
         }
 

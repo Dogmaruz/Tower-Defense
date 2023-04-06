@@ -8,7 +8,8 @@ namespace TowerDefense
         public enum UpdateSource
         {
             Gold,
-            Life
+            Life,
+            Score
         }
 
         public UpdateSource Source = UpdateSource.Gold;
@@ -26,19 +27,24 @@ namespace TowerDefense
                 case UpdateSource.Life:
                     TD_Player.LifeUpdateSubscrible(UpdateText);
                     break;
+                case UpdateSource.Score:
+                    TD_Player.ScoreUpdateSubscrible(UpdateText);
+                    break;
             }
 
         }
 
-        private void UpdateText(int money)
+        private void UpdateText(int value)
         {
-            m_text.text = money.ToString();
+            m_text.text = value.ToString();
         }
 
         private void OnDestroy()
         {
             TD_Player.GoldUpdateUnSubscrible(UpdateText);
             TD_Player.LifeUpdateUnSubscrible(UpdateText);
+            TD_Player.ScoreUpdateUnSubscrible(UpdateText);
+
         }
     }
 }

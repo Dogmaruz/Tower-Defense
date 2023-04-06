@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using TowerDefense;
 using UnityEngine.Events;
 
 namespace SpaceShooter
@@ -106,16 +107,16 @@ namespace SpaceShooter
         //Добавляет очки и колличество уничтоженных объектов.
         public void AddingPoints(Destructible destructible)
         {
-            if (m_IsPlayer)
-            {
+            //if (m_IsPlayer)
+            //{
                 if (destructible.CurrentHitPoint <= 0)
                 {
                     Player.Instance.AddKill();
-                    Player.Instance.AddScore(destructible.KillValue);
+                    TD_Player.Instance.UpdateScore(destructible.KillValue);
                 }
                 else
-                    Player.Instance.AddScore(destructible.ScoreValue);
-            }
+                    TD_Player.Instance.UpdateScore(destructible.ScoreValue);
+            //}
         }
     }
 }

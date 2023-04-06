@@ -17,7 +17,8 @@ MonoBehaviour:
   controller: {fileID: 22100000, guid: e253dd741743c34469b92e4d97a8c54a, type: 2}
   moveSpeed: 0.5
   HitPoints: 6
-  ScoreValue: 2
+  ScoreValue: 1
+  KillValue: 2
   ColliderRadius: 0.11
   Damage: 1
   Gold: 2

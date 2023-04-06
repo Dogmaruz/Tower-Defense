@@ -1,5 +1,4 @@
-﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine.SceneManagement;
 
 namespace SpaceShooter
 {
@@ -54,9 +53,24 @@ namespace SpaceShooter
                 EpisodeStatistics.NumberOfAttempts++;
             }
 
-            CalculateLevelStatistics();
+            //CalculateLevelStatistics();
 
-            ResultPanelController.Instance.ShowResults(LevelStatistics, success);
+            //Старый вариант из Space Sooter.
+            //ResultPanelController.Instance.ShowResults(LevelStatistics, success);
+
+            //Новый вариант без LevelStatistics.
+            ResultPanelController.Instance.ShowResults(success);
+
+            //Временный код заглушка.
+            //if (success)
+            //{
+            //    AdvanceLevel();
+            //}
+            //else
+            //{
+            //    RestartLevel();
+            //}
+            //конец.
         }
 
         //Переход на другой  уровень если он есть, а иначе завершение эпизода и выход в главное меню.
