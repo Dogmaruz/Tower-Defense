@@ -55,6 +55,8 @@ namespace SpaceShooter
                     {
                         destructible.ApplyDamage(m_Damage);
 
+                        EventOnHit?.Invoke(destructible);
+
                         AddingPoints(destructible);
                     }
                 }

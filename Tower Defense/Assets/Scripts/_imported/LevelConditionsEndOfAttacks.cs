@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace TowerDefense
 {
-    public class EndOfAttacks : MonoBehaviour, ILevelCondition
+    public class LevelConditionsEndOfAttacks : MonoBehaviour, ILevelCondition
     {
         private bool m_Reached; //Есть ли завершение.
 

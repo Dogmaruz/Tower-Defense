@@ -6,12 +6,11 @@ namespace TowerDefense
 
     public class StartEpisode : MonoBehaviour
     {
-        [SerializeField] private LevelSequenceController m_levelSequenceController;
         [SerializeField] private Episode m_episode;
 
-        private void Awake()
+        private void Start()
         {
-            m_levelSequenceController.StartEpisode(m_episode);
+            LevelSequenceController.Instance.StartEpisode(m_episode);
         }
     }
 }

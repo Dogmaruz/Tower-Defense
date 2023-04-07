@@ -33,5 +33,10 @@ namespace TowerDefense
                 Destroy(gameObject);
             }
         }
+
+        public void SetNavigationLinear(float value)
+        {
+            m_NavigationLinear = value;
+        }
     }
 }

@@ -21,7 +21,7 @@ namespace SpaceShooter
         [SerializeField] private float m_AttackRadius; //Радиус обнаружения для атаки.
 
         [Range(0f, 1f)]
-        [SerializeField] private float m_NavigationLinear; //Линейная скорость.
+        [SerializeField] protected float m_NavigationLinear; //Линейная скорость.
 
         [Range(0f, 1f)]
         [SerializeField] private float m_NavigationAngular; //Скорость врашения.
@@ -52,6 +52,7 @@ namespace SpaceShooter
         private Timer m_FindNewTargetTimer;
 
         private float m_previousSpeed; //Предыдущая скорость.
+        public float PreviousSpeed => m_previousSpeed;
 
         //private int m_currentPatrolPoint; //Текущая точка патрулирования.
 
@@ -95,7 +96,7 @@ namespace SpaceShooter
 
             ActionFire();
 
-            ActionEvadeCollision();
+            //ActionEvadeCollision();
         }
 
         //Нахождение позиции движения.
@@ -197,7 +198,8 @@ namespace SpaceShooter
 
                     m_RandomizeDirectionTimer.Start(m_RandomSelectMovePointTime);
                 }
-                else m_NavigationLinear = m_previousSpeed;
+                else
+                    m_NavigationLinear = m_previousSpeed;
             }
         }
 

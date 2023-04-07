@@ -59,7 +59,7 @@ namespace SpaceShooter
             //ResultPanelController.Instance.ShowResults(LevelStatistics, success);
 
             //Новый вариант без LevelStatistics.
-            ResultPanelController.Instance.ShowResults(success);
+            LevelResultController.Instance.ShowResults(success);
 
             //Временный код заглушка.
             //if (success)

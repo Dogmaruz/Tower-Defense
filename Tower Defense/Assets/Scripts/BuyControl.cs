@@ -13,7 +13,7 @@ namespace TowerDefense
             m_rectTransform = GetComponent<RectTransform>();
         }
 
-        private void OnDestroy()
+        public void OnDestroy()
         {
             BuildSite.OnclickEvent -= MoveToBuildSite;
         }

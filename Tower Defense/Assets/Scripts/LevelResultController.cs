@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace SpaceShooter
 {
-    public class ResultPanelController : SingletonBase<ResultPanelController>
+    public class LevelResultController : SingletonBase<LevelResultController>
     {
         //[SerializeField] private Text m_Kills;
         //[SerializeField] private Text m_Score;
@@ -19,7 +19,7 @@ namespace SpaceShooter
         {
             gameObject.SetActive(false);
 
-            m_AnimationSpriteScale.OnEventEnd.AddListener(StopTime);
+            //m_AnimationSpriteScale.OnEventEnd.AddListener(StopTime);
         }
 
         public void ShowResults(bool success)
