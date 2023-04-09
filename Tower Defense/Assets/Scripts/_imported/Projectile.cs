@@ -23,7 +23,7 @@ namespace SpaceShooter
         [SerializeField] private UnityEvent<Destructible> m_EventOnHit;
         public UnityEvent<Destructible> EventOnHit => m_EventOnHit;
 
-        private bool m_IsPlayer;
+        //private bool m_IsPlayer;
 
         private void Update()
         {
@@ -97,13 +97,13 @@ namespace SpaceShooter
         {
             m_ParentDestructible = parentDestructible;
 
-            if (Player.Instance != null)
-            {
-                if (m_ParentDestructible == Player.Instance.ActiveShip)
-                    m_IsPlayer = true;
-                else
-                    m_IsPlayer = false;
-            }
+            //if (Player.Instance != null)
+            //{
+            //    if (m_ParentDestructible == Player.Instance.ActiveShip)
+            //        m_IsPlayer = true;
+            //    else
+            //        m_IsPlayer = false;
+            //}
         }
 
         //Добавляет очки и колличество уничтоженных объектов.

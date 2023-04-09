@@ -23,7 +23,7 @@ namespace TowerDefense
             {
                 StopLevelActivity();
 
-                
+                MapCompletion.Instance.SaveEpisodeResult(LevelScore);
             });
         }
 

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 901430253982755749}
   - component: {fileID: 653772112}
   m_Layer: 0
-  m_Name: ap_Level
+  m_Name: Map_Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_episode: {fileID: 11400000, guid: 9cddc738f5adc7544b58fca5f55806ad, type: 2}
+  m_text: {fileID: 5152233516450409428}
+  m_image: {fileID: 276183846441509065}
 --- !u!1 &4659094770075971323
 GameObject:
   m_ObjectHideFlags: 0
