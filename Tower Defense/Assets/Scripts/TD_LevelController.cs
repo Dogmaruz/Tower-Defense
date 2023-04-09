@@ -5,6 +5,9 @@ namespace TowerDefense
 {
     public class TD_LevelController : LevelController
     {
+
+        public int LevelScore = 1;
+
         private new void Start()
         {
             base.Start();
@@ -16,7 +19,12 @@ namespace TowerDefense
                 LevelResultController.Instance.ShowResults(false);
             };
 
-            m_EventLevelCompleted.AddListener(StopLevelActivity);
+            m_EventLevelCompleted.AddListener(() =>
+            {
+                StopLevelActivity();
+
+                
+            });
         }
 
         //Останавливает время на сцене.
