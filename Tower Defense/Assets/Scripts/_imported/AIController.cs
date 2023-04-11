@@ -40,6 +40,7 @@ namespace SpaceShooter
         private SpaceShip m_SpaceShip; //Ссылка на корабль игрока.
 
         private Vector3 m_MovePosition;
+        private Vector3 m_TargetPoint;
 
         private Destructible m_SelectedTarget;
 
@@ -151,7 +152,7 @@ namespace SpaceShooter
                         }
                         else
                         {
-                            m_MovePosition = m_PatrolPoint.transform.position;
+                            m_MovePosition = m_TargetPoint;
                         }
                     }
                 }
@@ -306,7 +307,13 @@ namespace SpaceShooter
         public void SetPatrolBehaviour(AIPointPatrol point)
         {
             m_AIBehaviour = AIBehaviour.Patrol;
+
             m_PatrolPoint = point;
+
+            Vector2 newPoint = UnityEngine.Random.onUnitSphere * m_PatrolPoint.Radius + m_PatrolPoint.transform.position;
+
+            m_TargetPoint = newPoint;
+
             //m_PatrolPoints[0] = m_PatrolPoint;
         }
 

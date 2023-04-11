@@ -79,7 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Mode: 0
   m_TurretProperties: {fileID: 11400000, guid: d4750e4167a824c49993036774176fe3, type: 2}
-  m_VolumeSFX: 1
+  m_VolumeSFX: 0.3
   m_AudioSource: {fileID: 7495466570477360289}
 --- !u!82 &7495466570477360289
 AudioSource:

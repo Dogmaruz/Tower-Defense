@@ -134,8 +134,11 @@ MonoBehaviour:
   m_Velocity: 6
   m_LifeTime: 2
   m_Damage: 3
-  m_ImpactEffectPrefab: {fileID: 0}
+  m_ImpactEffectPrefab: {fileID: 8655455855520810255, guid: 48f5e32819f8eb044bbd2e8989c2d8f4, type: 3}
   m_EventOnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  m_EventOnHit:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &7376583344827082086

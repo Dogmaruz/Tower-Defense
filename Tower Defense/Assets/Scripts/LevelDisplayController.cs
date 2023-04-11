@@ -18,6 +18,7 @@ namespace TowerDefense
 
             while (score != 0 && drawLevel < m_Levels.Length && MapCompletion.Instance.TryIndex(drawLevel, out var episode, out score))
             {
+
                 m_Levels[drawLevel].SetLevelData(episode, score);
 
                 m_Levels[drawLevel].SetImage(m_openSprite);

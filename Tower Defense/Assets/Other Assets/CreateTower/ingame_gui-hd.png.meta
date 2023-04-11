@@ -403,10 +403,157 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ingame_gui-hd_1
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 415
+        width: 322
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 27, y: 18, z: 22, w: 46}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 717b5a0a1e7b2a64eb603dc59f423fdc
+      internalID: 2049300917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_gui-hd_2
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 923
+        width: 293
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d37cd78073db0a419744f20020b2995
+      internalID: -1594621994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_gui-hd_3
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 818
+        width: 107
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba2f5a898ae0811408e1c5c29ecc925f
+      internalID: -720135306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_gui-hd_4
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 8
+        width: 276
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85f47c812cbe6064da2184205fe30bf2
+      internalID: 1162345766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_gui-hd_5
+      rect:
+        serializedVersion: 2
+        x: 1483
+        y: 102
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d4859c14c94e2746be395d9cf12a0f9
+      internalID: 808582338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_gui-hd_6
+      rect:
+        serializedVersion: 2
+        x: 1341
+        y: 18
+        width: 225
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d327f759a5d398468f65c22c26b06a4
+      internalID: -1717594129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_gui-hd_7
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 203
+        width: 231
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84b8f657a563d90468a804f80540d531
+      internalID: 1635174668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 96a391718210e0a4fb5cd08d33fd4582
     internalID: 0
     vertices: []
     indices: 
@@ -418,13 +565,20 @@ TextureImporter:
       8: 21300006
       0: 21300016
       3: 21300020
+      ingame_gui-hd_2: -1594621994
+      ingame_gui-hd_3: -720135306
       2: 21300010
       6: 21300012
+      ingame_gui-hd_1: -25104709
       9: 21300014
       5: 21300004
       4: 21300008
+      ingame_gui-hd_5: 808582338
+      ingame_gui-hd_7: 1635174668
       1: 21300002
       7: 21300018
+      ingame_gui-hd_4: 1162345766
+      ingame_gui-hd_6: 1266521838
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

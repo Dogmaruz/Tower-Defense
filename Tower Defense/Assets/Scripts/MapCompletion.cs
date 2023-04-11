@@ -9,12 +9,12 @@ namespace TowerDefense
     {
         [SerializeField] private EpisodeScore[] m_completionDate;
 
-        const string filename = "completion.dat";
+        public const string filename = "completion.dat";
 
         [Serializable]
         private class EpisodeScore
         {
-            public Episode episode;
+            public Episode m_episode;
 
             public int Score;
         }
@@ -24,6 +24,8 @@ namespace TowerDefense
             base.Awake();
 
             Saver<EpisodeScore[]>.TryLoad(filename, ref m_completionDate);
+
+            //Debug.Log(m_completionDate);
         }
 
         public void SaveEpisodeResult(int levelScore)
@@ -35,14 +37,14 @@ namespace TowerDefense
         {
             foreach (var episodeScore in m_completionDate)
             {
-                if (episodeScore.episode == currentEpisode)
+                if (episodeScore.m_episode == currentEpisode)
                 {
                     if (levelScore >= episodeScore.Score)
                     {
                         episodeScore.Score = levelScore;
-
-                        Saver<EpisodeScore[]>.Save(filename, m_completionDate);
                     }
+
+                    Saver<EpisodeScore[]>.Save(filename, m_completionDate);
                 }
             }
         }
@@ -51,7 +53,7 @@ namespace TowerDefense
         {
             if (id >= 0 && id < m_completionDate.Length)
             {
-                episode = m_completionDate[id].episode;
+                episode = m_completionDate[id].m_episode;
                 score = m_completionDate[id].Score;
                 return true;
             }

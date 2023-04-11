@@ -12,6 +12,10 @@ namespace SpaceShooter
         [SerializeField] private Text m_Result;
         [SerializeField] private Text m_ButtonNextText;
         [SerializeField] private AnimationBase m_AnimationSpriteScale;
+        [SerializeField] private Image m_menuImage;
+        [SerializeField] private Sprite m_loseSprite;
+        [SerializeField] private Sprite m_winSprite;
+        [SerializeField] private GameObject m_victoryPrefab;
 
         private bool m_Success;
 
@@ -26,9 +30,18 @@ namespace SpaceShooter
         {
             gameObject.SetActive(true);
 
+            if (success )
+            {
+                var victory = Instantiate(m_victoryPrefab, transform.position,Quaternion.identity);
+
+                Destroy(victory.gameObject, 16);
+            }
+
             m_Success = success;
 
-            m_Result.text = success ? "Level Completed" : "You Lose";
+            m_Result.text = success ? "Уровень пройден" : "Ты проиграл";
+
+            m_menuImage.sprite = success ? m_winSprite : m_loseSprite;
 
             //Старый вариант из Space Shooter.
             //m_Kills.text = "Kills : " + levelResults.NumKills.ToString();
@@ -37,7 +50,7 @@ namespace SpaceShooter
 
             //m_Time.text = "Time : " + levelResults.Time.ToString();
 
-            m_ButtonNextText.text = success ? "Next" : "Restart";
+            m_ButtonNextText.text = success ? "Продолжить" : "Начать заново";
 
             m_AnimationSpriteScale.StartAnimation(true);
         }

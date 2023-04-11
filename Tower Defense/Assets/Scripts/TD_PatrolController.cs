@@ -26,7 +26,8 @@ namespace TowerDefense
             if (m_path.Lenght > m_pathIndex)
             {
                 SetPatrolBehaviour(m_path[m_pathIndex]);
-            } else
+            }
+            else
             {
                 m_OnEndPath?.Invoke();
 
