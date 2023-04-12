@@ -865,13 +865,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DoNotDestroyOnLoad: 1
   m_completionDate:
-  - m_episode: {fileID: 11400000, guid: 9cddc738f5adc7544b58fca5f55806ad, type: 2}
+  - episode: {fileID: 11400000, guid: 9cddc738f5adc7544b58fca5f55806ad, type: 2}
     Score: 0
-  - m_episode: {fileID: 11400000, guid: c89ad83c1f35791418abf7e247effc45, type: 2}
+  - episode: {fileID: 11400000, guid: c89ad83c1f35791418abf7e247effc45, type: 2}
     Score: 0
-  - m_episode: {fileID: 11400000, guid: 2f9625db84b8a364ca2a9f67f1f1eb01, type: 2}
+  - episode: {fileID: 11400000, guid: 2f9625db84b8a364ca2a9f67f1f1eb01, type: 2}
     Score: 0
-  - m_episode: {fileID: 11400000, guid: ab6ccedf1088ff2479583d18ce28520b, type: 2}
+  - episode: {fileID: 11400000, guid: ab6ccedf1088ff2479583d18ce28520b, type: 2}
     Score: 0
 --- !u!4 &2061102987
 Transform:
