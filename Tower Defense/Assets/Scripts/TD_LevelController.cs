@@ -12,12 +12,12 @@ namespace TowerDefense
         {
             base.Start();
 
-            TD_Player.Instance.OnPlayerDead += (() =>
+            TD_Player.Instance.OnPlayerDead += () =>
             {
                 StopLevelActivity();
 
                 LevelResultController.Instance.ShowResults(false);
-            });
+            };
 
             m_EventLevelCompleted.AddListener(() =>
             {

@@ -16,7 +16,7 @@ namespace SpaceShooter
         {
             if (Instance != null)
             {
-                //Debug.Log("MonoSingleton: object of type already exists, instance will be destroyed = " + typeof(T).Name);
+                Debug.Log("MonoSingleton: object of type already exists, instance will be destroyed = " + typeof(T).Name);
 
                 Destroy(this.gameObject);
 

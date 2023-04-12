@@ -8,7 +8,12 @@ namespace TowerDefense
     public class Saver<T>
     {
         public T dataSaver;
-        
+
+        Saver(T data) 
+        {
+            dataSaver = data;
+        }
+
         public static void TryLoad(string filename, ref T data)
         {
             var path = FileHandler.Path(filename);
@@ -25,7 +30,7 @@ namespace TowerDefense
 
         public static void Save(string filename, T data)
         {
-            var wrapper = new Saver<T> { dataSaver = data };
+            var wrapper = new Saver<T>(data);
 
             var dataString = JsonUtility.ToJson(wrapper);
 
