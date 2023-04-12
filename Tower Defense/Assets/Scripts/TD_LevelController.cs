@@ -19,12 +19,25 @@ namespace TowerDefense
                 LevelResultController.Instance.ShowResults(false);
             };
 
+            m_ReferenceTime += Time.time;
+
             m_EventLevelCompleted.AddListener(() =>
             {
                 StopLevelActivity();
 
+                if (m_ReferenceTime < Time.time) LevelScore -= 1;
+
                 MapCompletion.SaveEpisodeResult(LevelScore);
             });
+
+            TD_Player.OnLifeUpdate += LifeScoreChange;
+
+            void LifeScoreChange(int _)
+            {
+                LevelScore -= 1;
+
+                TD_Player.OnLifeUpdate -= LifeScoreChange;
+            }
         }
 
         //Останавливает время на сцене.

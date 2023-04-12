@@ -4,7 +4,10 @@ using SpaceShooter;
 namespace TowerDefense
 {
     public class Path : MonoBehaviour
-    {
+    { 
+        [SerializeField] private CircleArea m_StartArea;
+        public CircleArea StartArea { get => m_StartArea; }
+
         [SerializeField] private AIPointPatrol[] m_Points;
 
         [SerializeField] private float m_Radius;

@@ -32,7 +32,7 @@ namespace TowerDefense
         {
             var wrapper = new Saver<T>(data);
 
-            var dataString = JsonUtility.ToJson(wrapper);
+            var dataString = JsonUtility.ToJson(wrapper, true);
 
             File.WriteAllText(FileHandler.Path(filename), dataString);
         }

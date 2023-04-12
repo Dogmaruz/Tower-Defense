@@ -538,7 +538,7 @@ TextureImporter:
         width: 231
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -546,6 +546,27 @@ TextureImporter:
       bones: []
       spriteID: 84b8f657a563d90468a804f80540d531
       internalID: 1635174668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_gui-hd_8
+      rect:
+        serializedVersion: 2
+        x: 1965
+        y: 752
+        width: 56
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dfa18ee21effc84286ece5d6db5414c
+      internalID: 1309175671
       vertices: []
       indices: 
       edges: []
@@ -567,6 +588,7 @@ TextureImporter:
       3: 21300020
       ingame_gui-hd_2: -1594621994
       ingame_gui-hd_3: -720135306
+      ingame_gui-hd_8: 1309175671
       2: 21300010
       6: 21300012
       ingame_gui-hd_1: -25104709

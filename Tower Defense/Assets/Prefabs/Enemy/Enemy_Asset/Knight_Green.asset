@@ -20,5 +20,5 @@ MonoBehaviour:
   ScoreValue: 1
   KillValue: 3
   ColliderRadius: 0.22
-  Damage: 2
+  Damage: 1
   Gold: 5

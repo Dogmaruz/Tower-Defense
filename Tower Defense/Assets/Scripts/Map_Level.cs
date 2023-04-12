@@ -8,9 +8,10 @@ namespace TowerDefense
     {
         private Episode m_episode;
 
-        [SerializeField] private Text m_text;
+        [SerializeField] private RectTransform m_ResultPanel;
 
-        [SerializeField] private SpriteRenderer m_image;
+        [SerializeField] private SpriteRenderer m_Image;
+        [SerializeField] private Image[] m_starsImages;
 
         public bool IsInteractive;
 
@@ -25,12 +26,15 @@ namespace TowerDefense
         {
             m_episode = episode;
 
-            m_text.text = $"{score}/3";
+            for (int i = 0; i < score; i++)
+            {
+                m_starsImages[i].color = new Color(255, 255, 255, 255);
+            }
         }
 
         public void SetImage(Sprite sprite)
         {
-            m_image.sprite = sprite;
+            m_Image.sprite = sprite;
         }
     }
 }
