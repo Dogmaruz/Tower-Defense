@@ -6,24 +6,24 @@ namespace TowerDefense
     public class TD_LevelController : LevelController
     {
 
-        public int LevelScore = 1;
+        private int LevelScore = 3;
 
         private new void Start()
         {
             base.Start();
 
-            TD_Player.Instance.OnPlayerDead += () =>
+            TD_Player.Instance.OnPlayerDead += (() =>
             {
                 StopLevelActivity();
 
                 LevelResultController.Instance.ShowResults(false);
-            };
+            });
 
             m_EventLevelCompleted.AddListener(() =>
             {
                 StopLevelActivity();
 
-                MapCompletion.Instance.SaveEpisodeResult(LevelScore);
+                MapCompletion.SaveEpisodeResult(LevelScore);
             });
         }
 
@@ -47,5 +47,6 @@ namespace TowerDefense
                 }
             }
         }
+
     }
 }

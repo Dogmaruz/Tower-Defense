@@ -10,7 +10,7 @@ namespace SpaceShooter
 
     public class LevelController : SingletonBase<LevelController>
     {
-        [SerializeField] private int m_ReferenceTime; //Время для выполнения условий.
+        [SerializeField] protected int m_ReferenceTime; //Время для выполнения условий.
         public int ReferenceTime => m_ReferenceTime;
 
         [SerializeField] protected UnityEvent m_EventLevelCompleted;

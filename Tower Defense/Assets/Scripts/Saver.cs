@@ -7,8 +7,7 @@ namespace TowerDefense
     [Serializable]
     public class Saver<T>
     {
-        public T Data;
-
+        public T dataSaver;
         
         public static void TryLoad(string filename, ref T data)
         {
@@ -20,20 +19,18 @@ namespace TowerDefense
 
                 var saver = JsonUtility.FromJson<Saver<T>>(dataString);
 
-                data = saver.Data;
+                data = saver.dataSaver;
             }
         }
 
         public static void Save(string filename, T data)
         {
-            var wrapper = new Saver<T> { Data = data };
+            var wrapper = new Saver<T> { dataSaver = data };
 
             var dataString = JsonUtility.ToJson(wrapper);
 
             File.WriteAllText(FileHandler.Path(filename), dataString);
         }
-
-        
     }
 
     public static class FileHandler
@@ -41,6 +38,7 @@ namespace TowerDefense
         public  static string Path(string fileName)
         {
             //Debug.Log($"{Application.persistentDataPath}/{fileName}");
+
             return $"{Application.persistentDataPath}/{fileName}";
         }
 

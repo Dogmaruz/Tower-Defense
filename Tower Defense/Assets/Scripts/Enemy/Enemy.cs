@@ -1,7 +1,8 @@
 ﻿using SpaceShooter;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
-using UnityEngine.UIElements;
+#endif
 
 namespace TowerDefense
 {
@@ -46,7 +47,7 @@ namespace TowerDefense
             TD_Player.Instance.ReduceLife(m_Damage);
         }
     }
-
+#if UNITY_EDITOR
     [CustomEditor(typeof(Enemy))]
     public class EnemyInspector : Editor
     {
@@ -60,4 +61,5 @@ namespace TowerDefense
             }
         }
     }
+#endif
 }

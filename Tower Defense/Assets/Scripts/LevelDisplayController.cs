@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using SpaceShooter;
+using UnityEngine;
 
 namespace TowerDefense
 {
@@ -16,8 +17,9 @@ namespace TowerDefense
 
             var score = 1;
 
-            while (score != 0 && drawLevel < m_Levels.Length && MapCompletion.Instance.TryIndex(drawLevel, out var episode, out score))
+            while (score != 0 && drawLevel < m_Levels.Length && MapCompletion.Instance.TryIndex(drawLevel, out Episode episode, out score))
             {
+                Debug.Log($"{episode} : {score}");
 
                 m_Levels[drawLevel].SetLevelData(episode, score);
 
