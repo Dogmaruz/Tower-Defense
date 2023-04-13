@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace SpaceShooter
 {
@@ -13,5 +14,15 @@ namespace SpaceShooter
 
         [SerializeField] private Sprite m_PreviewImage;
         public Sprite PreviewImage => m_PreviewImage;
+        
+        public string Id;
+
+        private void OnValidate()
+        {
+            if(string.IsNullOrEmpty(Id))
+            {
+                Id = Guid.NewGuid().ToString();
+            }
+        }
     }
 }

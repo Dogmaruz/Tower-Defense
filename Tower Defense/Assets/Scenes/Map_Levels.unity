@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311915, g: 0.3807396, b: 0.35872662, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -865,14 +865,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DoNotDestroyOnLoad: 1
   m_completionDate:
-  - episode: {fileID: 11400000, guid: 9cddc738f5adc7544b58fca5f55806ad, type: 2}
-    Score: 0
-  - episode: {fileID: 11400000, guid: c89ad83c1f35791418abf7e247effc45, type: 2}
-    Score: 0
-  - episode: {fileID: 11400000, guid: 2f9625db84b8a364ca2a9f67f1f1eb01, type: 2}
-    Score: 0
-  - episode: {fileID: 11400000, guid: ab6ccedf1088ff2479583d18ce28520b, type: 2}
-    Score: 0
+  - Score: 3
+    Id: 59060e60-fd43-43cc-92be-3dc4c0cafc4c
+  - Score: 2
+    Id: ed6c6346-4731-41a5-b19c-c83496d16303
+  - Score: 0
+    Id: c31022aa-9931-47b4-ad0e-f3935cb70284
+  - Score: 0
+    Id: bb799b5a-006e-4db6-b103-d5473e9a1cda
+  m_episodes:
+  - {fileID: 11400000, guid: 9cddc738f5adc7544b58fca5f55806ad, type: 2}
+  - {fileID: 11400000, guid: c89ad83c1f35791418abf7e247effc45, type: 2}
+  - {fileID: 11400000, guid: 2f9625db84b8a364ca2a9f67f1f1eb01, type: 2}
+  - {fileID: 11400000, guid: ab6ccedf1088ff2479583d18ce28520b, type: 2}
 --- !u!4 &2061102987
 Transform:
   m_ObjectHideFlags: 0
