@@ -32,15 +32,26 @@ namespace TowerDefense
 
         private void OnValidate()
         {
-            foreach (var episode in m_episodes)
+            //foreach (var episode in m_episodes)
+            //{
+            //    if(episode == null)
+            //        continue;
+
+            //    if(!m_completionDate.Exists(c => c.Id.Equals(episode.Id)))
+            //    {
+            //        var newEpisodeScore = new EpisodeScore{ Id = episode.Id };
+            //        m_completionDate.Add(newEpisodeScore);
+            //    }
+            //}
+
+            for (int i = 0; i < m_episodes.Count; i++)
             {
-                if(episode == null)
+                if (m_episodes[i] == null)
                     continue;
-                
-                if(!m_completionDate.Exists(c => c.Id.Equals(episode.Id)))
+
+                if (!m_episodes[i].Id.Equals(m_completionDate[i].Id))
                 {
-                    var newEpisodeScore = new EpisodeScore{ Id = episode.Id };
-                    m_completionDate.Add(newEpisodeScore);
+                    m_completionDate[i].Id = m_episodes[i].Id;
                 }
             }
         }

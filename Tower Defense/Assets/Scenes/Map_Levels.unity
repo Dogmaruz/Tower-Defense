@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311915, g: 0.3807396, b: 0.35872662, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -865,14 +865,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DoNotDestroyOnLoad: 1
   m_completionDate:
-  - Score: 3
-    Id: 59060e60-fd43-43cc-92be-3dc4c0cafc4c
-  - Score: 2
-    Id: ed6c6346-4731-41a5-b19c-c83496d16303
   - Score: 0
-    Id: c31022aa-9931-47b4-ad0e-f3935cb70284
+    Id: da653b0c-aaef-45d6-a5ae-b6e3eedd2932
   - Score: 0
-    Id: bb799b5a-006e-4db6-b103-d5473e9a1cda
+    Id: 822a9771-431d-4c1d-a8de-3945c2675f48
+  - Score: 0
+    Id: d8e3c478-8621-4f71-ac9d-a62dd02be3d3
+  - Score: 0
+    Id: 6f906582-467d-47a9-a5ce-d6db2e770567
   m_episodes:
   - {fileID: 11400000, guid: 9cddc738f5adc7544b58fca5f55806ad, type: 2}
   - {fileID: 11400000, guid: c89ad83c1f35791418abf7e247effc45, type: 2}
