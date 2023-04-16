@@ -1,5 +1,6 @@
 ﻿using SpaceShooter;
 using UnityEngine;
+using System;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -12,6 +13,14 @@ namespace TowerDefense
         [SerializeField] private int m_Damage = 1;
 
         [SerializeField] private int m_Gold = 1;
+
+        public event Action OnDead;
+
+        private void OnDestroy()
+        {
+            OnDead?.Invoke();
+        }
+
         public void Use(EnemyAsset asset)
         {
 

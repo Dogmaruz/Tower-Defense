@@ -51,6 +51,7 @@ namespace TowerDefense
             DisableAll<Spawner>();
             DisableAll<Projectile>();
             DisableAll<Tower>();
+            DisableAll<NextWaveGUI>();
 
             void DisableAll<T>() where T : MonoBehaviour
             {

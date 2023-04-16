@@ -7,31 +7,42 @@ namespace TowerDefense
     {
         private bool m_Reached; //≈сть ли завершение.
 
-        private bool IsSpawnwersEnded;
+        //private bool IsSpawnwersEnded;
+
+        private void Start()
+        {
+            FindObjectOfType<EnemyWaveManager>().OnAllWavesDead += () =>
+            {
+                m_Reached = true;
+            };
+        }
 
         public bool IsCompleted
         {
             get
             {
-                var enemis = FindObjectsOfType<Enemy>();
+                #region —тарый код завершени€ уровн€ по условию - всех врагов убили
+                //var enemis = FindObjectsOfType<Enemy>();
 
-                var enemySpawners = FindObjectsOfType<EnemySpawner>();
+                //var enemySpawners = FindObjectsOfType<EnemySpawner>();
 
-                foreach (var enemySpawner in enemySpawners)
-                {
-                    if (enemySpawner.IsCompleted) 
-                        IsSpawnwersEnded = true;
-                    else
-                    {
-                        IsSpawnwersEnded = false;
-                        break;
-                    }
-                }
+                //foreach (var enemySpawner in enemySpawners)
+                //{
+                //    if (enemySpawner.IsCompleted) 
+                //        IsSpawnwersEnded = true;
+                //    else
+                //    {
+                //        IsSpawnwersEnded = false;
+                //        break;
+                //    }
+                //}
 
-                if (enemis.Length == 0 && IsSpawnwersEnded)
-                {
-                    m_Reached = true;
-                }
+                //if (enemis.Length == 0 && IsSpawnwersEnded)
+                //{
+                //    m_Reached = true;
+                //}
+                #endregion
+
 
                 return m_Reached;
             }

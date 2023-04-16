@@ -1411,7 +1411,10 @@ MonoBehaviour:
   - squads:
     - asset: {fileID: 11400000, guid: 16bd25653ab541346bbadd0176287140, type: 2}
       count: 1
-  prepareTime: 5
+  - squads:
+    - asset: {fileID: 11400000, guid: a71d26f2d873ada4a864424bab07d32d, type: 2}
+      count: 2
+  m_PrepareTime: 15
   m_NextWave: {fileID: 1885572006}
 --- !u!1 &335979564
 GameObject:
@@ -2478,7 +2481,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &654794676
 Transform:
   m_ObjectHideFlags: 0
@@ -2539,7 +2542,7 @@ MonoBehaviour:
   - squads:
     - asset: {fileID: 11400000, guid: fdf7d3cc790dd6c4eb6557dc4e214c46, type: 2}
       count: 1
-  prepareTime: 2
+  m_PrepareTime: 2
   m_NextWave: {fileID: 335010022}
 --- !u!4 &668255376
 Transform:
@@ -2824,7 +2827,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &767835928
 Transform:
   m_ObjectHideFlags: 0
@@ -2852,7 +2855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff71db1ce909e2458bced4bdac3c789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_timeLimit: 10
+  m_timeLimit: 300
 --- !u!1 &825057286
 GameObject:
   m_ObjectHideFlags: 0
@@ -5021,6 +5024,7 @@ MonoBehaviour:
   - {fileID: 1940241684}
   - {fileID: 582962927}
   m_currentWave: {fileID: 668255375}
+  m_activeEnemyCount: 0
 --- !u!4 &1357997131
 Transform:
   m_ObjectHideFlags: 0
@@ -6446,7 +6450,7 @@ MonoBehaviour:
   - squads:
     - asset: {fileID: 11400000, guid: b1cbfec52c85a7d4daa50f99017c0bb7, type: 2}
       count: 1
-  prepareTime: 5
+  m_PrepareTime: 20
   m_NextWave: {fileID: 0}
 --- !u!1 &1895090844
 GameObject:
@@ -6594,7 +6598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DoNotDestroyOnLoad: 0
-  m_ReferenceTime: 11
+  m_ReferenceTime: 60
   m_EventLevelCompleted:
     m_PersistentCalls:
       m_Calls: []

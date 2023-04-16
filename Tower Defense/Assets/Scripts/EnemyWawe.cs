@@ -6,6 +6,8 @@ namespace TowerDefense
 {
     public class EnemyWawe : MonoBehaviour
     {
+        public static Action<float> OnWavePrepare;
+
         [Serializable]
         private class Squad
         {
@@ -21,9 +23,14 @@ namespace TowerDefense
 
         [SerializeField] private PathGroup[] groups;
 
-        [SerializeField] private float prepareTime = 10f;
+        [SerializeField] private float m_PrepareTime = 10f;
 
         [SerializeField] private EnemyWawe m_NextWave;
+
+        public float GetRemainingTime()
+        {
+            return m_PrepareTime - Time.time;
+        }
 
         private event Action OnWaveReady;
 
@@ -34,7 +41,7 @@ namespace TowerDefense
 
         private void Update()
         {
-            if (Time.time > prepareTime)
+            if (Time.time > m_PrepareTime)
             {
                 enabled = false;
 
@@ -43,7 +50,9 @@ namespace TowerDefense
         }
         public void Prepare(Action spawnEnemies)
         {
-            prepareTime += Time.time;
+            OnWavePrepare?.Invoke(m_PrepareTime);
+
+            m_PrepareTime += Time.time;
 
             enabled = true;
 
