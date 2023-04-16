@@ -864,15 +864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DoNotDestroyOnLoad: 1
-  m_completionDate:
-  - Score: 0
-    Id: da653b0c-aaef-45d6-a5ae-b6e3eedd2932
-  - Score: 0
-    Id: 822a9771-431d-4c1d-a8de-3945c2675f48
-  - Score: 0
-    Id: d8e3c478-8621-4f71-ac9d-a62dd02be3d3
-  - Score: 0
-    Id: 6f906582-467d-47a9-a5ce-d6db2e770567
+  m_completionDate: []
   m_episodes:
   - {fileID: 11400000, guid: 9cddc738f5adc7544b58fca5f55806ad, type: 2}
   - {fileID: 11400000, guid: c89ad83c1f35791418abf7e247effc45, type: 2}

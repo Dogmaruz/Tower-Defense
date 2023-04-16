@@ -49,6 +49,12 @@ namespace TowerDefense
                 if (m_episodes[i] == null)
                     continue;
 
+                if (m_completionDate.Count <= i)
+                {
+                    var newEpisodeScore = new EpisodeScore();
+                    m_completionDate.Add(newEpisodeScore);
+                }
+
                 if (!m_episodes[i].Id.Equals(m_completionDate[i].Id))
                 {
                     m_completionDate[i].Id = m_episodes[i].Id;
@@ -66,18 +72,19 @@ namespace TowerDefense
 
         private void SaveResult(Episode currentEpisode, int levelScore)
         {
-            var episodeId = "";
-            foreach (var episode in m_episodes)
-            {
-                if (episode.Id.Equals(currentEpisode.Id))
-                {
-                    episodeId = episode.Id;
-                }
-            }
+            //Думаю это лишнее, можно напрямую обратиться к currentEpisode.Id
+            //var episodeId = "";
+            //foreach (var episode in m_episodes)
+            //{
+            //    if (episode.Id.Equals(currentEpisode.Id))
+            //    {
+            //        episodeId = episode.Id;
+            //    }
+            //}
 
             foreach (var episodeScore in m_completionDate)
             {
-                if (episodeScore.Id.Equals(episodeId))
+                if (episodeScore.Id.Equals(currentEpisode.Id))
                 {
                     if (levelScore >= episodeScore.Score)
                     {
