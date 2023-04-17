@@ -4,7 +4,7 @@ namespace SpaceShooter
 {
     public class LevelSequenceController : SingletonBase<LevelSequenceController>
     {
-        public static string MainMenuSceneNickName = "Map_Levels";
+        public static string MapLevels_SceneNickName = "Map_Levels";
         public Episode CurrentEpisode { get; private set; } //Текущий эпизод.
 
         public int CurrentLevel { get; private set; } //Текущий уровень.
@@ -88,7 +88,7 @@ namespace SpaceShooter
             {
                 EpisodeCount++;
 
-                SceneManager.LoadScene(MainMenuSceneNickName);
+                SceneManager.LoadScene(MapLevels_SceneNickName);
             }
             else
             {

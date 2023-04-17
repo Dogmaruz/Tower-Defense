@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static TowerDefense.MapCompletion;
 
 namespace TowerDefense
 {
@@ -10,6 +11,9 @@ namespace TowerDefense
     {
         [SerializeField] private List<EpisodeScore> m_completionDate;
         [SerializeField] private List<Episode> m_episodes;
+
+        private int m_totalScore;
+        public int TotalScore => m_totalScore;
 
         public const string filename = "completion.dat";
 
@@ -28,22 +32,19 @@ namespace TowerDefense
             base.Awake();
 
             Saver<List<EpisodeScore>>.TryLoad(filename, ref m_completionDate);
+
+
+            for (int i = 0; i < m_completionDate.Count; i++)
+            {
+                m_totalScore += m_completionDate[i].Score;
+                m_episodes[i].Id = m_completionDate[i].Id;
+            }
+            
         }
 
         private void OnValidate()
         {
-            //foreach (var episode in m_episodes)
-            //{
-            //    if(episode == null)
-            //        continue;
-
-            //    if(!m_completionDate.Exists(c => c.Id.Equals(episode.Id)))
-            //    {
-            //        var newEpisodeScore = new EpisodeScore{ Id = episode.Id };
-            //        m_completionDate.Add(newEpisodeScore);
-            //    }
-            //}
-
+       
             for (int i = 0; i < m_episodes.Count; i++)
             {
                 if (m_episodes[i] == null)
@@ -60,6 +61,7 @@ namespace TowerDefense
                     m_completionDate[i].Id = m_episodes[i].Id;
                 }
             }
+
         }
 
         public static void SaveEpisodeResult(int levelScore)
@@ -72,16 +74,7 @@ namespace TowerDefense
 
         private void SaveResult(Episode currentEpisode, int levelScore)
         {
-            //Думаю это лишнее, можно напрямую обратиться к currentEpisode.Id
-            //var episodeId = "";
-            //foreach (var episode in m_episodes)
-            //{
-            //    if (episode.Id.Equals(currentEpisode.Id))
-            //    {
-            //        episodeId = episode.Id;
-            //    }
-            //}
-
+            
             foreach (var episodeScore in m_completionDate)
             {
                 if (episodeScore.Id.Equals(currentEpisode.Id))
@@ -93,24 +86,44 @@ namespace TowerDefense
                 }
             }
             Saver<List<EpisodeScore>>.Save(filename, m_completionDate);
+
+            m_totalScore = 0;
+
+            foreach (var episodeScore in m_completionDate)
+            {
+                m_totalScore += episodeScore.Score;
+            }
         }
 
-        public bool TryIndex(int id, out Episode episode, out int score)
+        //public bool TryIndex(int id, out Episode episode, out int score)
+        //{
+        //    if (id >= 0 && id < m_completionDate.Count)
+        //    {
+        //        episode = m_episodes[id];
+
+        //        score = m_completionDate[id].Score;
+
+        //        return true;
+        //    }
+
+        //    episode = null;
+
+        //    score = 0;
+
+        //    return false;
+        //}
+
+        public int GetEpisodeScore(Episode m_episode)
         {
-            if (id >= 0 && id < m_completionDate.Count)
+            foreach (var data in m_completionDate)
             {
-                episode = m_episodes[id];
-
-                score = m_completionDate[id].Score;
-
-                return true;
+                if (data.Id == m_episode.Id)
+                {
+                    return data.Score;
+                }
             }
 
-            episode = null;
-
-            score = 0;
-
-            return false;
+            return 0;
         }
     }
 }

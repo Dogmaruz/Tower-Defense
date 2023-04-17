@@ -11,32 +11,48 @@ namespace TowerDefense
 
         [SerializeField] private Map_Level[] m_Levels;
 
+        [SerializeField] private BranchLevel[] m_branchLevels;
+
         private void Start()
         {
-            var drawLevel = 0;
+            //var drawLevel = 0;
 
-            var score = 1;
+            //var score = 1;
 
-            while (score != 0 && drawLevel < m_Levels.Length && MapCompletion.Instance.TryIndex(drawLevel, out Episode episode, out score))
+            for (int i = 0; i < m_Levels.Length; i++)
             {
-                Debug.Log($"{episode} : {score}");
+                m_Levels[i].Initialise(m_openSprite, m_closedSprite, i, m_Levels);
 
-                m_Levels[drawLevel].SetLevelData(episode, score);
-
-                m_Levels[drawLevel].SetImage(m_openSprite);
-
-                m_Levels[drawLevel].IsInteractive = true;
-
-                drawLevel++;
+                //drawLevel++;
             }
 
-            for (int i = drawLevel; i < m_Levels.Length; i++)
+            //for (int i = drawLevel; i < m_Levels.Length; i++)
+            //{
+            //    //m_Levels[i].gameObject.SetActive(false);
+
+            //    Debug.Log("Ok");
+
+            //    m_Levels[i].SetImage(m_closedSprite);
+
+            //    m_Levels[i].IsInteractive = false;
+            //}
+
+            for (int i = 0; i < m_branchLevels.Length; i++)
             {
-                //m_Levels[i].gameObject.SetActive(false);
+                if (m_branchLevels[i].RootIsActive)
+                {
+                    //m_branchLevels[i].GetComponent<Map_Level>().SetImage(m_openSprite);
 
-                m_Levels[i].SetImage(m_closedSprite);
+                    //m_branchLevels[i].GetComponent<Map_Level>().IsInteractive = true;
 
-                m_Levels[i].IsInteractive = false;
+                    m_branchLevels[i].TryActivate(m_openSprite);
+                }
+                else
+                {
+                    m_branchLevels[i].GetComponent<Map_Level>().SetImage(m_closedSprite);
+
+                    m_branchLevels[i].GetComponent<Map_Level>().IsInteractive = false;
+                }
             }
         }
     }
