@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System;
 
 namespace TowerDefense
 {
@@ -14,13 +13,29 @@ namespace TowerDefense
 
         private void Start()
         {
+            
+            foreach (var slot in m_sales)
+            {
+                slot.Initialise();
+
+                slot.transform.Find("Button").GetComponent<Button>().onClick.AddListener(UpdateMoney);
+            }
+
+            UpdateMoney();
+        }
+
+        public void UpdateMoney()
+        {
+
             m_money = MapCompletion.Instance.TotalScore;
+
+            m_money -= Upgrades.GetTotalCost();
 
             m_textMoney.text = m_money.ToString();
 
             foreach (var slot in m_sales)
             {
-                slot.Initialise();
+                slot.CheckCost(m_money);
             }
         }
     }

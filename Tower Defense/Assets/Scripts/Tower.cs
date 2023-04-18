@@ -9,6 +9,8 @@ namespace TowerDefense
         [SerializeField] private float m_Radius;
 
         [SerializeField] Transform m_EffectSpawnPoint;
+
+        [SerializeField] private UpgradeAsset m_radiusUpgrade;
         public float Radius { get => m_Radius; set { m_Radius = value; } }
 
 
@@ -21,6 +23,10 @@ namespace TowerDefense
         private void Start()
         {
             m_Turrets = GetComponentsInChildren<Turret>();
+
+            var level = Upgrades.GetUpgradeLevel(m_radiusUpgrade);
+
+            m_Radius += level * 0.2f;
 
         }
 

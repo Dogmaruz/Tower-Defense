@@ -1,6 +1,7 @@
 ﻿using SpaceShooter;
 using UnityEngine;
 using System;
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -19,6 +20,8 @@ namespace TowerDefense
         private void OnDestroy()
         {
             OnDead?.Invoke();
+
+            OnDead = null;
         }
 
         public void Use(EnemyAsset asset)

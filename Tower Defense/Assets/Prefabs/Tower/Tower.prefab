@@ -245,8 +245,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7456d9c1697882443b6f55c5a6b5de56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Radius: 3.01
+  m_Radius: 2.5
   m_EffectSpawnPoint: {fileID: 2104638978757183581}
+  m_radiusUpgrade: {fileID: 11400000, guid: 33bd958770917d44e8fab4c825ece39d, type: 2}
   GizmoColor: {r: 0, g: 0, b: 0, a: 0.59607846}
 --- !u!1 &6716443496774564164
 GameObject:

@@ -306,6 +306,8 @@ namespace SpaceShooter
         //Установка точки патрулирования.
         public void SetPatrolBehaviour(AIPointPatrol point)
         {
+            if (point == null) return;
+
             m_AIBehaviour = AIBehaviour.Patrol;
 
             m_PatrolPoint = point;

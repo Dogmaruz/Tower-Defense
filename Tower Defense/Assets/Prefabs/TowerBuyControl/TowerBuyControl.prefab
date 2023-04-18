@@ -265,6 +265,7 @@ MonoBehaviour:
   m_text: {fileID: 5904655181278148935}
   m_button: {fileID: 5904655179838505363}
   buildSite: {fileID: 0}
+  m_towerUpgrade: {fileID: 11400000, guid: 64ebbc657f4ab7b4084cb06008b74fb5, type: 2}
 --- !u!1 &5904655181278148933
 GameObject:
   m_ObjectHideFlags: 0

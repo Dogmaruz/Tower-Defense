@@ -13,6 +13,8 @@ namespace TowerDefense
 
         [SerializeField] private Transform buildSite;
 
+        [SerializeField] private UpgradeAsset m_towerUpgrade;
+
         public void SetBuildSite(Transform value)
         {
             buildSite = value;
@@ -21,16 +23,31 @@ namespace TowerDefense
         private void Start()
         {
             TD_Player.GoldUpdateSubscrible(GoldStatusCheck);
+
             m_text.text = m_towerAsset.GoldCost.ToString();
+
             m_button.GetComponent<Image>().sprite = m_towerAsset.GUISprite;
+
+            var level = Upgrades.GetUpgradeLevel(m_towerUpgrade);
+
+            if (level >= m_towerAsset.Level)
+            {
+                gameObject.SetActive(true);
+            }
+            else
+            {
+                gameObject.SetActive(false);
+            }
+
+
         }
         private void GoldStatusCheck(int gold)
         {
             if (gold >= m_towerAsset.GoldCost != m_button.interactable)
             {
                 m_button.interactable = !m_button.interactable;
-                m_text.color = m_button.interactable ? Color.white : Color.red;
 
+                m_text.color = m_button.interactable ? Color.white : Color.red;
             }
         }
 

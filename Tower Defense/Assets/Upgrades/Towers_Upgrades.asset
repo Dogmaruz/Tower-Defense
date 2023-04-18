@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 540d28aa4538dd64899810a132bec874, type: 3}
-  m_Name: Episode_3_1
+  m_Script: {fileID: 11500000, guid: 1c9efa6a954eab444b85bac968b44b34, type: 3}
+  m_Name: Towers_Upgrades
   m_EditorClassIdentifier: 
-  m_EpisodeName: Episode_3
-  m_Levels:
-  - Level_3_1
-  m_PreviewImage: {fileID: 0}
-  Id: dce4e6b1-6677-46fc-a449-857851a9028f
+  Name: Tower Upgrade
+  sprite: {fileID: -1156132853, guid: 8355c2abfea252b4ea7698857d691cb6, type: 3}
+  Id: d3bf3609-ebac-4c13-a521-d1bb02900ab8
+  costByLevel: 0200000003000000

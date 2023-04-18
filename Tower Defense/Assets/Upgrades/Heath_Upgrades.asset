@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c9efa6a954eab444b85bac968b44b34, type: 3}
   m_Name: Heath_Upgrades
   m_EditorClassIdentifier: 
+  Name: Heath
   sprite: {fileID: -742541212, guid: 28dc43ec49a0ac44dba3b6e55ab66e56, type: 3}
-  costByLevel: 03000000
+  Id: 86156a42-4ec8-4428-8fea-6e5ff5a7fa46
+  costByLevel: 030000000400000005000000

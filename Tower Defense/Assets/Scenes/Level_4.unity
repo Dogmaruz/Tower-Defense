@@ -1223,6 +1223,7 @@ MonoBehaviour:
   m_MaxLives: 10
   m_Ship: {fileID: 0}
   m_PlayerShipPrefab: {fileID: 0}
+  m_heathUpgrade: {fileID: 11400000, guid: b03f18b3b71eb9e45b6eaf3d099e7ba0, type: 2}
   m_gold: 15
   m_towerPrefabe: {fileID: 6716443495805147261, guid: 39de0f1ae475f7347af92861874a062e, type: 3}
 --- !u!1 &375273241

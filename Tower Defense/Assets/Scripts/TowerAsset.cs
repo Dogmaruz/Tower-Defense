@@ -12,5 +12,6 @@ namespace TowerDefense
         public Sprite ElementSprite;
         public TurretProperties TurretProperties;
         public GameObject EffectPrefab;
+        public int Level;
     }
 }

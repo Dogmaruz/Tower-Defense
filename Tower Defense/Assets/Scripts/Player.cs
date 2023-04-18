@@ -5,7 +5,7 @@ namespace SpaceShooter
 {
     public class Player : SingletonBase<Player>
     {
-        [SerializeField] private int m_MaxLives; //Максимальное колличество жизней.
+        [SerializeField] protected int m_MaxLives; //Максимальное колличество жизней.
 
         protected int m_NumLives;
 
@@ -128,5 +128,10 @@ namespace SpaceShooter
         }
 
         #endregion
+
+        private void OnDestroy()
+        {
+            OnPlayerDead = null;
+        }
     }
 }

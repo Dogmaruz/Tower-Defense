@@ -53,6 +53,8 @@ namespace TowerDefense
                 {
                     for (int i = 0; i < count; i++)
                     {
+                        if (m_paths[pathIndex].StartArea == null) break;
+
                         var newEnemy = Instantiate(m_EnemyPrefabs, m_paths[pathIndex].StartArea.GetRandomInsideZone(), Quaternion.identity);
 
                         newEnemy.OnDead += RecordEnemyDead;
@@ -72,6 +74,11 @@ namespace TowerDefense
             }
 
             m_currentWave = m_currentWave.PrepareNext(SpawnEnemies);
+        }
+
+        private void OnDestroy()
+        {
+            OnAllWavesDead = null;
         }
     }
 }

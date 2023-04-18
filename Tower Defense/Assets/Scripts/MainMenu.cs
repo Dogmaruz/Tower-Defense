@@ -34,6 +34,8 @@ namespace TowerDefense
 
             FileHandler.Reset(MapCompletion.filename);
 
+            FileHandler.Reset(Upgrades.filename);
+
             Continue();
         }
 

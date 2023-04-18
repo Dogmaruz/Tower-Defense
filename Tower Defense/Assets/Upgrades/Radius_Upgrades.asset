@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 540d28aa4538dd64899810a132bec874, type: 3}
-  m_Name: Episode_3_1
+  m_Script: {fileID: 11500000, guid: 1c9efa6a954eab444b85bac968b44b34, type: 3}
+  m_Name: Radius_Upgrades
   m_EditorClassIdentifier: 
-  m_EpisodeName: Episode_3
-  m_Levels:
-  - Level_3_1
-  m_PreviewImage: {fileID: 0}
-  Id: dce4e6b1-6677-46fc-a449-857851a9028f
+  Name: Fire Radius
+  sprite: {fileID: -2018082709, guid: 28dc43ec49a0ac44dba3b6e55ab66e56, type: 3}
+  Id: a298ff78-dd5c-4b8c-8788-e35e8cbce4fe
+  costByLevel: 020000000300000004000000

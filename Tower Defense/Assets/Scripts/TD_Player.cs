@@ -14,7 +14,18 @@ namespace TowerDefense
             }
         }
 
+        [SerializeField] private UpgradeAsset m_heathUpgrade;
+
         private static event Action<int> OnGoldUpdate;
+
+        private new void Awake()
+        {
+            base.Awake();
+
+            var level = Upgrades.GetUpgradeLevel(m_heathUpgrade);
+
+            TD_Player.Instance.m_NumLives += level;
+        }
 
         public static void GoldUpdateSubscrible(Action<int> action)
         {
@@ -46,14 +57,14 @@ namespace TowerDefense
         {
             m_gold += change;
 
-            OnGoldUpdate(m_gold);
+            OnGoldUpdate?.Invoke(m_gold);
         }
 
         public void UpdateScore(int value)
         {
             AddScore(value);
 
-            OnScoreUpdate(Score);
+            OnScoreUpdate?.Invoke(Score);
         }
 
         //Добавляем урон игроку и обновляем жизни.
@@ -61,7 +72,7 @@ namespace TowerDefense
         {
             TakeDamage(damage);
 
-            OnLifeUpdate(m_NumLives);
+            OnLifeUpdate?.Invoke(m_NumLives);
         }
 
         [SerializeField] private Tower m_towerPrefabe;
