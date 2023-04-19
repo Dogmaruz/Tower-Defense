@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿using SpaceShooter;
+using UnityEngine;
 
 namespace TowerDefense
 {
     public class BuyControl : MonoBehaviour
     {
+        [SerializeField] private AnimationBase m_AnimationSpriteScale;
+
         private RectTransform m_rectTransform;
         private void Awake()
         {
@@ -34,6 +37,8 @@ namespace TowerDefense
             {
                 towerBuyControl.SetBuildSite(buildSite);
             }
+
+            m_AnimationSpriteScale.StartAnimation(true);
         }
     }
 }

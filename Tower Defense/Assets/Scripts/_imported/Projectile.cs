@@ -20,8 +20,8 @@ namespace SpaceShooter
         [SerializeField] private UnityEvent m_EventOnDeath;
         public UnityEvent EventOnDeath => m_EventOnDeath;
 
-        [SerializeField] private UnityEvent<Destructible> m_EventOnHit;
-        public UnityEvent<Destructible> EventOnHit => m_EventOnHit;
+        [SerializeField] private UnityEvent<Enemy> m_EventOnHit;
+        public UnityEvent<Enemy> EventOnHit => m_EventOnHit;
 
         //private bool m_IsPlayer;
 
@@ -37,29 +37,7 @@ namespace SpaceShooter
             //Проверка на столкновение пули с объектом.
             if (hit)
             {
-                Destructible destructible = hit.collider.transform.root.GetComponent<Destructible>();
-
-                if (destructible != null && destructible != m_ParentDestructible)
-                {
-                    destructible.ApplyDamage(m_Damage);
-
-                    EventOnHit?.Invoke(destructible);
-
-                    AddingPoints(destructible);
-                }
-                else
-                {
-                    destructible = hit.collider.GetComponentInParent<Destructible>();
-
-                    if (destructible != null && destructible != m_ParentDestructible)
-                    {
-                        destructible.ApplyDamage(m_Damage);
-
-                        EventOnHit?.Invoke(destructible);
-
-                        AddingPoints(destructible);
-                    }
-                }
+                OnHit(hit);
 
                 OnProjectileLifeEnd(hit.collider, hit.point);
             }
@@ -75,6 +53,64 @@ namespace SpaceShooter
 
             transform.position += new Vector3(step.x, step.y, 0);
         }
+
+
+        //Новый вариант под Tower Defense.
+        private void OnHit(RaycastHit2D hit)
+        {
+            Enemy enemy = hit.collider.transform.root.GetComponent<Enemy>();
+
+            if (enemy != null)
+            {
+                enemy.TakeDamage(m_Damage);
+
+                EventOnHit?.Invoke(enemy);
+            }
+            else
+            {
+                enemy = hit.collider.GetComponentInParent<Enemy>();
+
+                if (enemy != null)
+                {
+                    enemy.TakeDamage(m_Damage);
+
+                    EventOnHit?.Invoke(enemy);
+                }
+            }
+        }
+
+
+        //Старый код из Projectile.
+
+        //private RaycastHit2D OnHit(RaycastHit2D hit)
+        //{
+        //    Destructible destructible = hit.collider.transform.root.GetComponent<Destructible>();
+
+        //    if (destructible != null && destructible != m_ParentDestructible)
+        //    {
+        //        destructible.ApplyDamage(m_Damage);
+
+        //        EventOnHit?.Invoke(destructible);
+
+        //        AddingPoints(destructible);
+        //    }
+        //    else
+        //    {
+        //        destructible = hit.collider.GetComponentInParent<Destructible>();
+
+        //        if (destructible != null && destructible != m_ParentDestructible)
+        //        {
+        //            destructible.ApplyDamage(m_Damage);
+
+        //            EventOnHit?.Invoke(destructible);
+
+        //            AddingPoints(destructible);
+        //        }
+        //    }
+
+        //    return hit;
+        //}
+
 
         //Уничтожение с вызовом эфекта после попадания.
         private void OnProjectileLifeEnd(Collider2D collider, Vector2 pos)

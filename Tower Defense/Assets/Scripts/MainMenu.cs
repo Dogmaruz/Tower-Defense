@@ -1,3 +1,4 @@
+using SpaceShooter;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,11 +9,21 @@ namespace TowerDefense
     public class MainMenu : MonoBehaviour
     {
         [SerializeField] private Button m_continueButton;
+
         [SerializeField] private GameObject m_confirtionPanel;
+
         [SerializeField] private GameObject m_mainMenu;
+
+        [SerializeField] private AnimationBase[] m_AnimationSpriteScale;
+
         private void Start()
         {
             m_continueButton.interactable = FileHandler.HasFile(MapCompletion.filename);
+
+            foreach (var animation in m_AnimationSpriteScale)
+            {
+                animation.StartAnimation(true);
+            }
         }
         public void NewGame()
         {

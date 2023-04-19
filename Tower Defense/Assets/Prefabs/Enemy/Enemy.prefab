@@ -279,6 +279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Damage: 1
   m_Gold: 1
+  m_armor: 0
 --- !u!1 &9092272121850412141
 GameObject:
   m_ObjectHideFlags: 0

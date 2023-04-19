@@ -20,6 +20,8 @@ namespace TowerDefense
 
         public int HitPoints = 1;
 
+        public int Armor = 0;
+
         public int ScoreValue = 1;
 
         public int KillValue = 1;

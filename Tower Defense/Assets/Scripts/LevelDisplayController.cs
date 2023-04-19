@@ -30,8 +30,6 @@ namespace TowerDefense
             //{
             //    //m_Levels[i].gameObject.SetActive(false);
 
-            //    Debug.Log("Ok");
-
             //    m_Levels[i].SetImage(m_closedSprite);
 
             //    m_Levels[i].IsInteractive = false;

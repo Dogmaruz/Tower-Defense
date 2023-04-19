@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using SpaceShooter;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace TowerDefense
@@ -15,9 +16,14 @@ namespace TowerDefense
 
         [SerializeField] private UpgradeAsset m_towerUpgrade;
 
+        [SerializeField] private AnimationBase m_AnimationSpriteScale;
+        public AnimationBase AnimationSpriteScale { get => m_AnimationSpriteScale; set => m_AnimationSpriteScale = value; }
+
         public void SetBuildSite(Transform value)
         {
             buildSite = value;
+
+            m_AnimationSpriteScale.StartAnimation(true);
         }
 
         private void Start()

@@ -1819,6 +1819,7 @@ GameObject:
   - component: {fileID: 6539648861933279014}
   - component: {fileID: 6539648861933279013}
   - component: {fileID: 6539648861933279015}
+  - component: {fileID: 7645087776684444872}
   m_Layer: 5
   m_Name: BuyControl
   m_TagString: Untagged
@@ -1870,6 +1871,78 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6edf0e3f83f233459d806635b5eb9bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_AnimationSpriteScale: {fileID: 7645087776684444872}
+--- !u!114 &7645087776684444872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6539648861933279009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 356d90bb73faf73418d05c9f47a034bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AnimationTime: 0.3
+  m_AnimationScale: 2
+  m_Looping: 0
+  m_Reverse: 0
+  m_EventStart:
+    m_PersistentCalls:
+      m_Calls: []
+  m_EventEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Renderer: {fileID: 6539648861933279009}
+  m_CurveX:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_CurveY:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &6539648862184642460
 GameObject:
   m_ObjectHideFlags: 0
@@ -2396,6 +2469,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6539648861933279014}
     m_Modifications:
+    - target: {fileID: 4732148700153087670, guid: 15358a5f89aaa194db8284aec0e0adec, type: 3}
+      propertyPath: m_AnimationTime
+      value: 0.9
+      objectReference: {fileID: 0}
     - target: {fileID: 5904655180916158025, guid: 15358a5f89aaa194db8284aec0e0adec, type: 3}
       propertyPath: buildSite
       value: 
@@ -2404,6 +2481,10 @@ PrefabInstance:
       propertyPath: m_towerAsset
       value: 
       objectReference: {fileID: 11400000, guid: 1434d0824e96da64b9951797ba0511e6, type: 2}
+    - target: {fileID: 5904655180916158025, guid: 15358a5f89aaa194db8284aec0e0adec, type: 3}
+      propertyPath: StartDelayAnimation
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 5904655180916158070, guid: 15358a5f89aaa194db8284aec0e0adec, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2639,9 +2720,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6539648861933279014}
     m_Modifications:
+    - target: {fileID: 4732148700153087670, guid: 15358a5f89aaa194db8284aec0e0adec, type: 3}
+      propertyPath: m_AnimationTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5904655180916158025, guid: 15358a5f89aaa194db8284aec0e0adec, type: 3}
       propertyPath: buildSite
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5904655180916158025, guid: 15358a5f89aaa194db8284aec0e0adec, type: 3}
+      propertyPath: StartDelayAnimation
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5904655180916158070, guid: 15358a5f89aaa194db8284aec0e0adec, type: 3}
       propertyPath: m_Pivot.x
@@ -2745,6 +2834,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6539648861933279014}
     m_Modifications:
+    - target: {fileID: 4732148700153087670, guid: 15358a5f89aaa194db8284aec0e0adec, type: 3}
+      propertyPath: m_AnimationTime
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 5904655180916158025, guid: 15358a5f89aaa194db8284aec0e0adec, type: 3}
       propertyPath: buildSite
       value: 
@@ -2753,6 +2846,10 @@ PrefabInstance:
       propertyPath: m_towerAsset
       value: 
       objectReference: {fileID: 11400000, guid: cd455f4f84ac36e41aa0306fe05a4034, type: 2}
+    - target: {fileID: 5904655180916158025, guid: 15358a5f89aaa194db8284aec0e0adec, type: 3}
+      propertyPath: StartDelayAnimation
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5904655180916158070, guid: 15358a5f89aaa194db8284aec0e0adec, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

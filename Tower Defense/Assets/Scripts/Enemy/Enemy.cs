@@ -8,6 +8,7 @@ using UnityEditor;
 
 namespace TowerDefense
 {
+    [RequireComponent(typeof(Destructible))]
     [RequireComponent(typeof(TD_PatrolController))]
     public class Enemy : MonoBehaviour
     {
@@ -15,7 +16,16 @@ namespace TowerDefense
 
         [SerializeField] private int m_Gold = 1;
 
+        [SerializeField] private int m_armor = 0;
+
         public event Action OnDead;
+
+        private Destructible m_Destructible;
+
+        private void Awake()
+        {
+            m_Destructible = GetComponent<Destructible>();
+        }
 
         private void OnDestroy()
         {
@@ -45,6 +55,8 @@ namespace TowerDefense
 
             m_Damage = asset.Damage;
 
+            m_armor = asset.Armor;
+
             m_Gold = asset.Gold;
 
         }
@@ -57,6 +69,11 @@ namespace TowerDefense
         public void DamagePlayer() 
         {
             TD_Player.Instance.ReduceLife(m_Damage);
+        }
+
+        public void TakeDamage(int damage)
+        {
+            m_Destructible.ApplyDamage(Mathf.Max(1, damage - m_armor));
         }
     }
 #if UNITY_EDITOR
