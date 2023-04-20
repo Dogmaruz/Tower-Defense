@@ -127,6 +127,11 @@ namespace SpaceShooter
             m_KillValue = asset.KillValue;
         }
 
+        internal void ApplyDamage(object value)
+        {
+            throw new NotImplementedException();
+        }
+
         public const int TeamIdNeutral = 0;
 
         [SerializeField] private int m_TeamId;

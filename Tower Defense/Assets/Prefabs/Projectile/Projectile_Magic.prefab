@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2394982871627736644}
-  - component: {fileID: 2394982871627736699}
+  - component: {fileID: 8082899363199709651}
   - component: {fileID: 7376583344827082086}
   - component: {fileID: 213974738484837531}
   m_Layer: 0
@@ -35,7 +35,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2394982871627736699
+--- !u!114 &8082899363199709651
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2394982871627736698}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f632f89bf2f339e479aa2e7fbb8455df, type: 3}
+  m_Script: {fileID: 11500000, guid: e190a6c4ec26db6439df1b13ef641a99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Nickname: 
@@ -57,19 +57,8 @@ MonoBehaviour:
       m_Calls: []
   m_EventOnHit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 213974738484837531}
-        m_TargetAssemblyTypeName: SpeedReduction, Assembly-CSharp
-        m_MethodName: ReduseSpeed
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  m_DamageType: 1
 --- !u!114 &7376583344827082086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,6 +84,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c663b617d104ce74b852d3870422a03d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_speedRatio: 0.5
 --- !u!1001 &7506357629007693200
 PrefabInstance:
   m_ObjectHideFlags: 0

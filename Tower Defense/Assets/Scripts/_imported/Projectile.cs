@@ -2,6 +2,10 @@
 using TowerDefense;
 using UnityEngine.Events;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 namespace SpaceShooter
 {
     public class Projectile : Entity
@@ -11,7 +15,7 @@ namespace SpaceShooter
 
         [SerializeField] private float m_LifeTime; //Время жизни.
 
-        [SerializeField] private int m_Damage; //Величина урона.
+        [SerializeField] protected int m_Damage; //Величина урона.
 
         [SerializeField] private ImpactEffect m_ImpactEffectPrefab;
 
@@ -24,7 +28,24 @@ namespace SpaceShooter
         public UnityEvent<Enemy> EventOnHit => m_EventOnHit;
 
         //private bool m_IsPlayer;
+#if UNITY_EDITOR
+        //Метод для инспектора чтобы можно было передать параметры другому projectile.
+        public void SetFromOtherProjectile(Projectile projectile)
+        {
+            projectile.GetData(out m_Velocity, out m_LifeTime, out m_Damage, out m_ImpactEffectPrefab);
+        }
 
+        private void GetData(out float m_Velocity, out float m_LifeTime, out int m_Damage, out ImpactEffect m_ImpactEffectPrefab)
+        {
+            m_Velocity = this.m_Velocity;
+
+            m_LifeTime = this.m_LifeTime;
+
+            m_Damage = this.m_Damage;
+
+            m_ImpactEffectPrefab = this.m_ImpactEffectPrefab;
+        }
+#endif
         private void Update()
         {
 
@@ -35,6 +56,7 @@ namespace SpaceShooter
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, stepLenght);
 
             //Проверка на столкновение пули с объектом.
+
             if (hit)
             {
                 OnHit(hit);
@@ -54,62 +76,34 @@ namespace SpaceShooter
             transform.position += new Vector3(step.x, step.y, 0);
         }
 
+        //Старый код из Projectile.
 
-        //Новый вариант под Tower Defense.
-        private void OnHit(RaycastHit2D hit)
+        protected virtual void OnHit(RaycastHit2D hit)
         {
-            Enemy enemy = hit.collider.transform.root.GetComponent<Enemy>();
+            Destructible destructible = hit.collider.transform.root.GetComponent<Destructible>();
 
-            if (enemy != null)
+            if (destructible != null && destructible != m_ParentDestructible)
             {
-                enemy.TakeDamage(m_Damage);
+                destructible.ApplyDamage(m_Damage);
 
-                EventOnHit?.Invoke(enemy);
+                //EventOnHit?.Invoke(destructible);
+
+                AddingPoints(destructible);
             }
             else
             {
-                enemy = hit.collider.GetComponentInParent<Enemy>();
+                destructible = hit.collider.GetComponentInParent<Destructible>();
 
-                if (enemy != null)
+                if (destructible != null && destructible != m_ParentDestructible)
                 {
-                    enemy.TakeDamage(m_Damage);
+                    destructible.ApplyDamage(m_Damage);
 
-                    EventOnHit?.Invoke(enemy);
+                    //EventOnHit?.Invoke(destructible);
+
+                    AddingPoints(destructible);
                 }
             }
         }
-
-
-        //Старый код из Projectile.
-
-        //private RaycastHit2D OnHit(RaycastHit2D hit)
-        //{
-        //    Destructible destructible = hit.collider.transform.root.GetComponent<Destructible>();
-
-        //    if (destructible != null && destructible != m_ParentDestructible)
-        //    {
-        //        destructible.ApplyDamage(m_Damage);
-
-        //        EventOnHit?.Invoke(destructible);
-
-        //        AddingPoints(destructible);
-        //    }
-        //    else
-        //    {
-        //        destructible = hit.collider.GetComponentInParent<Destructible>();
-
-        //        if (destructible != null && destructible != m_ParentDestructible)
-        //        {
-        //            destructible.ApplyDamage(m_Damage);
-
-        //            EventOnHit?.Invoke(destructible);
-
-        //            AddingPoints(destructible);
-        //        }
-        //    }
-
-        //    return hit;
-        //}
 
 
         //Уничтожение с вызовом эфекта после попадания.
@@ -147,14 +141,38 @@ namespace SpaceShooter
         {
             //if (m_IsPlayer)
             //{
-                if (destructible.CurrentHitPoint <= 0)
-                {
-                    Player.Instance.AddKill();
-                    TD_Player.Instance.UpdateScore(destructible.KillValue);
-                }
-                else
-                    TD_Player.Instance.UpdateScore(destructible.ScoreValue);
+            if (destructible.CurrentHitPoint <= 0)
+            {
+                Player.Instance.AddKill();
+                TD_Player.Instance.UpdateScore(destructible.KillValue);
+            }
+            else
+                TD_Player.Instance.UpdateScore(destructible.ScoreValue);
             //}
         }
     }
 }
+#if UNITY_EDITOR
+namespace TowerDefense
+{
+    [CustomEditor(typeof(SpaceShooter.Projectile))]
+    public class ProjectileInspector : Editor
+    {
+        public override void OnInspectorGUI()
+        {
+            base.OnInspectorGUI();
+
+            if (GUILayout.Button("Create TD_Projectile"))
+            {
+                var target = this.target as SpaceShooter.Projectile;
+
+                var td_projectile = target.gameObject.AddComponent<TD_Projectile>();
+
+                td_projectile.SetFromOtherProjectile(target);
+
+                DestroyImmediate(target, true);
+            }
+        }
+    }
+}
+#endif

@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2394982871627736644}
-  - component: {fileID: 2394982871627736699}
+  - component: {fileID: 7378287986110396712}
   - component: {fileID: 7376583344827082086}
   m_Layer: 0
   m_Name: Projectile_Stone
@@ -118,7 +118,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2394982871627736699
+--- !u!114 &7378287986110396712
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,17 +127,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 2394982871627736698}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f632f89bf2f339e479aa2e7fbb8455df, type: 3}
+  m_Script: {fileID: 11500000, guid: e190a6c4ec26db6439df1b13ef641a99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Nickname: 
-  m_Velocity: 6
+  m_Velocity: 3
   m_LifeTime: 2
   m_Damage: 10
   m_ImpactEffectPrefab: {fileID: 4450789299220733024, guid: d867044d769e17044b0f519ca95198ac, type: 3}
   m_EventOnDeath:
     m_PersistentCalls:
       m_Calls: []
+  m_EventOnHit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DamageType: 2
 --- !u!114 &7376583344827082086
 MonoBehaviour:
   m_ObjectHideFlags: 0

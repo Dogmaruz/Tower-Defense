@@ -82,14 +82,7 @@ namespace TowerDefense
 
             var tower = Instantiate(m_towerPrefabe, buildSite.position, Quaternion.identity);
 
-            tower.GetComponentInChildren<SpriteRenderer>().sprite = towerAsset.ElementSprite;
-
-            tower.GetComponentInChildren<Turret>().AssignTurretProperties(towerAsset.TurretProperties);
-
-            if (towerAsset.EffectPrefab != null)
-            {
-                tower.IntatiateEffectPrefab(towerAsset.EffectPrefab);
-            }
+            tower.Use(towerAsset);
 
             Destroy(buildSite.gameObject);
 

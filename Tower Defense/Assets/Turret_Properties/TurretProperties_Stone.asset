@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TurretProperties_Stone
   m_EditorClassIdentifier: 
   m_Mode: 2
-  m_ProjectilePrefab: {fileID: 2394982871627736699, guid: 3794bd7b589c7ea45955b825d506b89d, type: 3}
+  m_ProjectilePrefab: {fileID: 7378287986110396712, guid: 3794bd7b589c7ea45955b825d506b89d, type: 3}
   m_RateOfFire: 1
   m_EnergyUsage: 0
   m_AmoUsage: 0

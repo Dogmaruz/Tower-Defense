@@ -1,4 +1,5 @@
 ﻿using SpaceShooter;
+using System;
 using UnityEngine;
 
 namespace TowerDefense
@@ -22,12 +23,29 @@ namespace TowerDefense
 
         private void Start()
         {
-            m_Turrets = GetComponentsInChildren<Turret>();
+            //m_Turrets = GetComponentsInChildren<Turret>();
 
             var level = Upgrades.GetUpgradeLevel(m_radiusUpgrade);
 
             m_Radius += level * 0.2f;
 
+        }
+
+        public void Use(TowerAsset towerAsset)
+        {
+            GetComponentInChildren<SpriteRenderer>().sprite = towerAsset.ElementSprite;
+
+            m_Turrets = GetComponentsInChildren<Turret>();
+
+            foreach (var turret in m_Turrets)
+            {
+                turret.AssignTurretProperties(towerAsset.TurretProperties);
+            }
+
+            if (towerAsset.EffectPrefab != null)
+            {
+                IntatiateEffectPrefab(towerAsset.EffectPrefab);
+            }
         }
 
         public void IntatiateEffectPrefab(GameObject prefab)
@@ -91,7 +109,8 @@ namespace TowerDefense
 
                         turret.Fire();
                     }
-                } else
+                }
+                else
                 {
                     m_Target = null;
                 }

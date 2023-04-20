@@ -1,13 +1,23 @@
 using SpaceShooter;
-using TowerDefense;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class SpeedReduction : MonoBehaviour
+namespace TowerDefense
 {
-    [SerializeField] private float m_speedRatio = 0.5f;
-
-    public void ReduseSpeed(Destructible destructible)
+    public class SpeedReduction : MonoBehaviour
     {
-        destructible.GetComponent<TD_PatrolController>().SetNavigationLinear(m_speedRatio);
+        [SerializeField] private float m_speedRatio = 0.5f;
+
+        private void Awake()
+        {
+            var td_projectile = GetComponent<TD_Projectile>();
+
+            td_projectile.EventOnHit.AddListener(ReduseSpeed);
+        }
+
+        public void ReduseSpeed(Enemy enemy)
+        {
+            enemy.GetComponent<TD_PatrolController>().SetNavigationLinear(m_speedRatio);
+        }
     }
 }

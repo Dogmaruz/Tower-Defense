@@ -22,6 +22,8 @@ namespace TowerDefense
 
         public int Armor = 0;
 
+        public Enemy.ArmorType ArmorType = Enemy.ArmorType.Base;
+
         public int ScoreValue = 1;
 
         public int KillValue = 1;
