@@ -16,7 +16,7 @@ namespace TowerDefense
             
             foreach (var slot in m_sales)
             {
-                slot.Initialise();
+                slot.Initialize();
 
                 slot.transform.Find("Button").GetComponent<Button>().onClick.AddListener(UpdateMoney);
             }

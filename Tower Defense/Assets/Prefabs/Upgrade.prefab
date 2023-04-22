@@ -195,7 +195,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.000015258789}
   m_SizeDelta: {x: 41.0818, y: 37.6584}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9150576965229544939
@@ -778,9 +778,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1095a23113dd414d9cee1ecbfd2bd15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_asset: {fileID: 11400000, guid: b03f18b3b71eb9e45b6eaf3d099e7ba0, type: 2}
-  m_upgradeIcon: {fileID: 9150576965229544938}
-  m_level: {fileID: 9150576965135925367}
-  m_costText: {fileID: 9150576965329218803}
+  m_Asset: {fileID: 11400000, guid: b03f18b3b71eb9e45b6eaf3d099e7ba0, type: 2}
+  m_UpgradeIcon: {fileID: 9150576965229544938}
+  m_Level: {fileID: 9150576965135925367}
+  m_CostText: {fileID: 9150576965329218803}
   m_name: {fileID: 301413354342272681}
-  m_buyButton: {fileID: 9150576966390383878}
+  m_BuyButton: {fileID: 9150576966390383878}

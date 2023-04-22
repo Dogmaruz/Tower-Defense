@@ -1,5 +1,3 @@
-using SpaceShooter;
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,40 +6,51 @@ namespace TowerDefense
     [RequireComponent(typeof(Map_Level))]
     public class BranchLevel : MonoBehaviour
     {
-        [SerializeField] private Map_Level m_rootLevel;
+        [SerializeField] private Map_Level m_RootLevel;
 
-        [SerializeField] private Text m_pointText;
+        [SerializeField] private Text m_PointText;
 
-        [SerializeField] private int m_needPoints = 3;
+        [SerializeField] private int m_NeedPoints = 3; //Ќеобходимое колличество звезд(очков)
 
-        private Map_Level m_mapLevel;
+        private Map_Level m_MapLevel;
 
-        public bool RootIsActive { get { return m_rootLevel.IsCompleted; } }
+        public bool RootIsActive 
+        { 
+            get 
+            { 
+                return m_RootLevel.IsCompleted; 
+            } 
+        }
 
         private void Start()
         {
-            m_pointText.text = m_needPoints.ToString();
+            m_PointText.text = m_NeedPoints.ToString();
 
-            m_mapLevel = GetComponent<Map_Level>();
+            m_MapLevel = GetComponent<Map_Level>();
         }
 
-        internal void TryActivate(Sprite openSprite)
+        /// <summary>
+        /// ѕопытка активации ответвленного уровн€.
+        /// јктиваци€ требует наличи€ колличества звезд(очков) и выполнени€ основного уровн€ в ветке.
+        /// </summary>
+        /// <param name="openSprite"> артинка открытого спрайта</param>
+        public void TryActivate(Sprite openSprite)
         {
-            if (m_needPoints <= MapCompletion.Instance.TotalScore)
+            if (m_NeedPoints <= MapCompletion.Instance.TotalScore)
             {
-                m_pointText.transform.parent.gameObject.SetActive(false);
+                m_PointText.transform.parent.gameObject.SetActive(false);
 
-                GetComponent<Map_Level>().SetImage(openSprite);
+                m_MapLevel.SetImage(openSprite);
 
-                GetComponent<Map_Level>().IsInteractive = true;
+                m_MapLevel.IsInteractive = true;
 
-                var score = MapCompletion.Instance.GetEpisodeScore(m_mapLevel.Episode);
+                var score = MapCompletion.Instance.GetEpisodeScore(m_MapLevel.Episode);
 
-                if (score > 0) m_mapLevel.IsCompleted = true;
+                if (score > 0) m_MapLevel.IsCompleted = true;
 
                 for (int i = 0; i < score; i++)
                 {
-                    m_mapLevel.StarsImages[i].color = new Color(255, 255, 255, 255);
+                    m_MapLevel.StarsImages[i].color = new Color(255, 255, 255, 255);
                 }
             }
         }

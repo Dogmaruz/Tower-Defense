@@ -24,6 +24,8 @@ namespace TowerDefense
                 enemy.TakeDamage(m_Damage, m_DamageType);
 
                 EventOnHit?.Invoke(enemy);
+
+                AddingPoints(enemy.GetComponent<Destructible>());
             }
             else
             {
@@ -34,6 +36,8 @@ namespace TowerDefense
                     enemy.TakeDamage(m_Damage, m_DamageType);
 
                     EventOnHit?.Invoke(enemy);
+
+                    AddingPoints(enemy.GetComponent<Destructible>());
                 }
             }
         }

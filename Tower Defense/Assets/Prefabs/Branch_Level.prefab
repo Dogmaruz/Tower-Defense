@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a23e9d6debc78d48989dca2c1dff6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_episode: {fileID: 0}
   m_ResultPanel: {fileID: 5004883460695092064}
   m_Image: {fileID: 276183846441509065}
   m_starsImages:
@@ -67,9 +68,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41b5110c63bc26f4c9feb8713ea65d5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_rootLevel: {fileID: 0}
-  m_pointText: {fileID: 1840802912202174732}
-  m_needPoints: 3
+  m_RootLevel: {fileID: 0}
+  m_PointText: {fileID: 1840802912202174732}
+  m_NeedPoints: 3
 --- !u!1 &4241096704847232250
 GameObject:
   m_ObjectHideFlags: 0

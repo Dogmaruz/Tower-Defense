@@ -7,13 +7,16 @@ namespace TowerDefense
     {
         [SerializeField] private AnimationBase m_AnimationSpriteScale;
 
-        private RectTransform m_rectTransform;
+        private RectTransform m_RectTransform;
+
+        #region Unity Events
         private void Awake()
         {
             BuildSite.OnclickEvent += MoveToBuildSite;
+
             gameObject.SetActive(false);
 
-            m_rectTransform = GetComponent<RectTransform>();
+            m_RectTransform = GetComponent<RectTransform>();
         }
 
         public void OnDestroy()
@@ -21,14 +24,23 @@ namespace TowerDefense
             BuildSite.OnclickEvent -= MoveToBuildSite;
         }
 
+        #endregion
+
+        /// <summary>
+        /// Перемещае позицию BuyControl в позицию BuildSide и воспроизводит анимацию появления.
+        /// </summary>
+        /// <param name="buildSite"></param>
         private void MoveToBuildSite(Transform buildSite)
         {
             if (buildSite)
             {
                 var position = Camera.main.WorldToScreenPoint(buildSite.position);
-                m_rectTransform.anchoredPosition = position;
+
+                m_RectTransform.anchoredPosition = position;
+
                 gameObject.SetActive(true);
-            } else
+            } 
+            else
             {
                 gameObject.SetActive(false);
             }

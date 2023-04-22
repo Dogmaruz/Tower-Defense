@@ -1,70 +1,68 @@
-﻿using System;
-using Unity.VisualScripting;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace TowerDefense
 {
     public class BuyUpgrade : MonoBehaviour
     {
-        [SerializeField] private UpgradeAsset m_asset;
+        [SerializeField] private UpgradeAsset m_Asset;
 
-        [SerializeField] private Image m_upgradeIcon;
+        [SerializeField] private Image m_UpgradeIcon;
 
-        [SerializeField] private Text m_level, m_costText, m_name;
+        [SerializeField] private Text m_Level, m_CostText, m_name;
 
-        [SerializeField] private Button m_buyButton;
+        [SerializeField] private Button m_BuyButton;
 
-        private int m_costNumber = 0;
-
-        public void Initialise()
+        private int m_CostNumber = 0;
+        /// <summary>
+        /// Инициализация слота покупки в зависимости от его уровня.
+        /// Активируется при достаточном уровне строительства.
+        /// </summary>
+        public void Initialize()
         {
-            m_upgradeIcon.sprite = m_asset.sprite;
+            m_UpgradeIcon.sprite = m_Asset.sprite;
 
-            var savedLevel = Upgrades.GetUpgradeLevel(m_asset);
+            var savedLevel = Upgrades.GetUpgradeLevel(m_Asset);
 
-
-
-            if (savedLevel >= m_asset.costByLevel.Length)
+            if (savedLevel >= m_Asset.costByLevel.Length)
             {
-                m_level.text = $"Lvl: {savedLevel + 1} (Max)";
+                m_Level.text = $"Lvl: {savedLevel + 1} (Max)";
 
-                m_name.text = m_asset.Name;
+                m_name.text = m_Asset.Name;
 
-                m_buyButton.interactable = false;
+                m_BuyButton.interactable = false;
 
-                m_buyButton.transform.Find("Star_Image").gameObject.SetActive(false);
+                m_BuyButton.transform.Find("Star_Image").gameObject.SetActive(false);
 
-                m_buyButton.transform.Find("Text").gameObject.GetComponent<Text>().text = "No Active";
+                m_BuyButton.transform.Find("Text").gameObject.GetComponent<Text>().text = "No Active";
 
-                m_costText.text = "";
+                m_CostText.text = "";
 
-                m_costNumber = int.MaxValue;
+                m_CostNumber = int.MaxValue;
 
             }
             else
             {
-                m_level.text = $"Lvl: {savedLevel + 1}";
+                m_Level.text = $"Lvl: {savedLevel + 1}";
 
-                m_costNumber = m_asset.costByLevel[savedLevel];
+                m_CostNumber = m_Asset.costByLevel[savedLevel];
 
-                m_costText.text = m_costNumber.ToString();
+                m_CostText.text = m_CostNumber.ToString();
 
-                m_name.text = m_asset.Name;
+                m_name.text = m_Asset.Name;
             }
-
         }
 
         public void Buy()
         {
-            Upgrades.BuyUpgrade(m_asset);
+            Upgrades.BuyUpgrade(m_Asset);
 
-            Initialise();
+            Initialize();
         }
 
         public void CheckCost(int money)
         {
-            m_buyButton.interactable = money >= m_costNumber;
+            m_BuyButton.interactable = money >= m_CostNumber;
         }
     }
 }

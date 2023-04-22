@@ -35,7 +35,7 @@ namespace TowerDefense
             m_Image.sprite = sprite;
         }
 
-        public void Initialise(Sprite openSprite, Sprite closedSprite, int index, Map_Level[] m_Levels)
+        public void Initialize(Sprite openSprite, Sprite closedSprite, int index, Map_Level[] m_Levels)
         {
             var score = MapCompletion.Instance.GetEpisodeScore(m_episode);
 

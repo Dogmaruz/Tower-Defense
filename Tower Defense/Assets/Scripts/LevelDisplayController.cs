@@ -1,5 +1,4 @@
-﻿using SpaceShooter;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace TowerDefense
 {
@@ -21,7 +20,7 @@ namespace TowerDefense
 
             for (int i = 0; i < m_Levels.Length; i++)
             {
-                m_Levels[i].Initialise(m_openSprite, m_closedSprite, i, m_Levels);
+                m_Levels[i].Initialize(m_openSprite, m_closedSprite, i, m_Levels);
 
                 //drawLevel++;
             }
