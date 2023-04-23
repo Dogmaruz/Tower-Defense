@@ -269,6 +269,7 @@ GameObject:
   m_Component:
   - component: {fileID: 40229930}
   - component: {fileID: 40229929}
+  - component: {fileID: 40229931}
   m_Layer: 0
   m_Name: Villager House Front
   m_TagString: Untagged
@@ -343,6 +344,18 @@ Transform:
   m_Father: {fileID: 1288866561}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &40229931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40229928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &84265034
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,6 +366,7 @@ GameObject:
   m_Component:
   - component: {fileID: 84265036}
   - component: {fileID: 84265035}
+  - component: {fileID: 84265037}
   m_Layer: 0
   m_Name: Bigtreesharpen (11)
   m_TagString: Untagged
@@ -427,6 +441,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &84265037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84265034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &97502598
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,6 +463,7 @@ GameObject:
   m_Component:
   - component: {fileID: 97502600}
   - component: {fileID: 97502599}
+  - component: {fileID: 97502601}
   m_Layer: 0
   m_Name: Bigtreesharpen (7)
   m_TagString: Untagged
@@ -511,6 +538,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &97502601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97502598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &111078087
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,6 +908,7 @@ GameObject:
   m_Component:
   - component: {fileID: 163126511}
   - component: {fileID: 163126510}
+  - component: {fileID: 163126512}
   m_Layer: 0
   m_Name: Tribal House Back
   m_TagString: Untagged
@@ -943,6 +983,18 @@ Transform:
   m_Father: {fileID: 1288866561}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &163126512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163126509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &169019790
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,6 +1096,7 @@ GameObject:
   m_Component:
   - component: {fileID: 238513854}
   - component: {fileID: 238513853}
+  - component: {fileID: 238513855}
   m_Layer: 0
   m_Name: Bigtreesharpen (13)
   m_TagString: Untagged
@@ -1118,6 +1171,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &238513855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238513852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &255135441
 GameObject:
   m_ObjectHideFlags: 0
@@ -1692,6 +1757,7 @@ GameObject:
   m_Component:
   - component: {fileID: 351357054}
   - component: {fileID: 351357053}
+  - component: {fileID: 351357055}
   m_Layer: 0
   m_Name: Castle
   m_TagString: Untagged
@@ -1766,6 +1832,18 @@ Transform:
   m_Father: {fileID: 1288866561}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &351357055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351357052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &359861406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1829,6 +1907,7 @@ GameObject:
   m_Component:
   - component: {fileID: 361651937}
   - component: {fileID: 361651936}
+  - component: {fileID: 361651938}
   m_Layer: 0
   m_Name: Bigtreesharpen (20)
   m_TagString: Untagged
@@ -1903,6 +1982,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &361651938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361651935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &375273241
 GameObject:
   m_ObjectHideFlags: 0
@@ -2061,6 +2152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 494554193}
   - component: {fileID: 494554192}
+  - component: {fileID: 494554194}
   m_Layer: 0
   m_Name: Bigtreesharpen (3)
   m_TagString: Untagged
@@ -2135,6 +2227,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &494554194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494554191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &558723070
 GameObject:
   m_ObjectHideFlags: 0
@@ -2145,6 +2249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 558723072}
   - component: {fileID: 558723071}
+  - component: {fileID: 558723073}
   m_Layer: 0
   m_Name: Bigtreesharpen (14)
   m_TagString: Untagged
@@ -2219,6 +2324,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &558723073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558723070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &582962925
 GameObject:
   m_ObjectHideFlags: 0
@@ -2284,6 +2401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 638063528}
   - component: {fileID: 638063527}
+  - component: {fileID: 638063529}
   m_Layer: 0
   m_Name: Bigtreesharpen (5)
   m_TagString: Untagged
@@ -2358,6 +2476,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &638063529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638063526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &639825696
 GameObject:
   m_ObjectHideFlags: 0
@@ -2368,6 +2498,7 @@ GameObject:
   m_Component:
   - component: {fileID: 639825698}
   - component: {fileID: 639825697}
+  - component: {fileID: 639825699}
   m_Layer: 0
   m_Name: Bigtreesharpen (29)
   m_TagString: Untagged
@@ -2442,6 +2573,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &639825699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639825696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &645524003
 GameObject:
   m_ObjectHideFlags: 0
@@ -2452,6 +2595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 645524005}
   - component: {fileID: 645524004}
+  - component: {fileID: 645524006}
   m_Layer: 0
   m_Name: Bigtreesharpen (31)
   m_TagString: Untagged
@@ -2526,6 +2670,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &645524006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645524003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &654794675
 GameObject:
   m_ObjectHideFlags: 0
@@ -2684,6 +2840,7 @@ GameObject:
   m_Component:
   - component: {fileID: 721284599}
   - component: {fileID: 721284598}
+  - component: {fileID: 721284600}
   m_Layer: 0
   m_Name: Bigtreesharpen (24)
   m_TagString: Untagged
@@ -2758,6 +2915,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &721284600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721284597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &722507947
 GameObject:
   m_ObjectHideFlags: 0
@@ -2768,6 +2937,7 @@ GameObject:
   m_Component:
   - component: {fileID: 722507949}
   - component: {fileID: 722507948}
+  - component: {fileID: 722507950}
   m_Layer: 0
   m_Name: Bigtreesharpen (17)
   m_TagString: Untagged
@@ -2842,6 +3012,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &722507950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722507947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &725107952
 GameObject:
   m_ObjectHideFlags: 0
@@ -2852,6 +3034,7 @@ GameObject:
   m_Component:
   - component: {fileID: 725107953}
   - component: {fileID: 725107954}
+  - component: {fileID: 725107955}
   m_Layer: 0
   m_Name: Tribal House Front (3)
   m_TagString: Untagged
@@ -2926,6 +3109,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &725107955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725107952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &767835927
 GameObject:
   m_ObjectHideFlags: 0
@@ -2981,6 +3176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 825057288}
   - component: {fileID: 825057287}
+  - component: {fileID: 825057289}
   m_Layer: 0
   m_Name: Bigtreesharpen (1)
   m_TagString: Untagged
@@ -3055,6 +3251,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &825057289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825057286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &827435882
 GameObject:
   m_ObjectHideFlags: 0
@@ -3461,6 +3669,7 @@ GameObject:
   m_Component:
   - component: {fileID: 927919879}
   - component: {fileID: 927919878}
+  - component: {fileID: 927919880}
   m_Layer: 0
   m_Name: Bigtreesharpen (18)
   m_TagString: Untagged
@@ -3535,6 +3744,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &927919880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927919877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &940817929
 GameObject:
   m_ObjectHideFlags: 0
@@ -3545,6 +3766,7 @@ GameObject:
   m_Component:
   - component: {fileID: 940817931}
   - component: {fileID: 940817930}
+  - component: {fileID: 940817932}
   m_Layer: 0
   m_Name: Bigtreesharpen (12)
   m_TagString: Untagged
@@ -3619,6 +3841,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &940817932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940817929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &957329063
 GameObject:
   m_ObjectHideFlags: 0
@@ -3629,6 +3863,7 @@ GameObject:
   m_Component:
   - component: {fileID: 957329065}
   - component: {fileID: 957329064}
+  - component: {fileID: 957329066}
   m_Layer: 0
   m_Name: Bigtreesharpen (25)
   m_TagString: Untagged
@@ -3703,6 +3938,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &957329066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957329063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -3797,6 +4044,7 @@ GameObject:
   m_Component:
   - component: {fileID: 970099069}
   - component: {fileID: 970099068}
+  - component: {fileID: 970099070}
   m_Layer: 0
   m_Name: Bigtreesharpen (19)
   m_TagString: Untagged
@@ -3871,6 +4119,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &970099070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970099067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1003993052
 GameObject:
   m_ObjectHideFlags: 0
@@ -3983,6 +4243,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1039078333}
   - component: {fileID: 1039078332}
+  - component: {fileID: 1039078334}
   m_Layer: 0
   m_Name: Bigtreesharpen (28)
   m_TagString: Untagged
@@ -4057,6 +4318,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1039078334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039078331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1085678289
 GameObject:
   m_ObjectHideFlags: 0
@@ -4067,6 +4340,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1085678291}
   - component: {fileID: 1085678290}
+  - component: {fileID: 1085678292}
   m_Layer: 0
   m_Name: Bigtreesharpen (26)
   m_TagString: Untagged
@@ -4141,6 +4415,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1085678292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085678289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1090429193
 GameObject:
   m_ObjectHideFlags: 0
@@ -4243,6 +4529,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1158444439}
   - component: {fileID: 1158444438}
+  - component: {fileID: 1158444440}
   m_Layer: 0
   m_Name: Bigtreesharpen
   m_TagString: Untagged
@@ -4317,6 +4604,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1158444440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158444437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1163732400
 GameObject:
   m_ObjectHideFlags: 0
@@ -4327,6 +4626,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1163732402}
   - component: {fileID: 1163732401}
+  - component: {fileID: 1163732403}
   m_Layer: 0
   m_Name: Bigtreesharpen (23)
   m_TagString: Untagged
@@ -4401,6 +4701,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1163732403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163732400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1191464961
 GameObject:
   m_ObjectHideFlags: 0
@@ -4549,6 +4861,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1276068786}
   - component: {fileID: 1276068785}
+  - component: {fileID: 1276068787}
   m_Layer: 0
   m_Name: Bigtreesharpen (16)
   m_TagString: Untagged
@@ -4623,6 +4936,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1276068787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276068784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1285326783
 GameObject:
   m_ObjectHideFlags: 0
@@ -4633,6 +4958,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1285326785}
   - component: {fileID: 1285326784}
+  - component: {fileID: 1285326786}
   m_Layer: 0
   m_Name: Bigtreesharpen (27)
   m_TagString: Untagged
@@ -4707,6 +5033,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1285326786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285326783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1288866560
 GameObject:
   m_ObjectHideFlags: 0
@@ -4838,6 +5176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1290898286}
   - component: {fileID: 1290898285}
+  - component: {fileID: 1290898287}
   m_Layer: 0
   m_Name: Bigtreesharpen (8)
   m_TagString: Untagged
@@ -4912,6 +5251,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1290898287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290898284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1299691989
 GameObject:
   m_ObjectHideFlags: 0
@@ -5012,6 +5363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1342006669}
   - component: {fileID: 1342006668}
+  - component: {fileID: 1342006670}
   m_Layer: 0
   m_Name: Bigtreesharpen (10)
   m_TagString: Untagged
@@ -5086,6 +5438,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1342006670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342006667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1344827189
 GameObject:
   m_ObjectHideFlags: 0
@@ -5186,6 +5550,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1356436342}
   - component: {fileID: 1356436341}
+  - component: {fileID: 1356436343}
   m_Layer: 0
   m_Name: Bigtreesharpen (21)
   m_TagString: Untagged
@@ -5260,6 +5625,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1356436343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356436340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1357997129
 GameObject:
   m_ObjectHideFlags: 0
@@ -5433,7 +5810,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -10
+  m_SortingOrder: -10000
   m_Sprite: {fileID: 21300000, guid: b4170b9f26ea69a4da7f039c0386c2dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5595,6 +5972,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1474219130}
   - component: {fileID: 1474219129}
+  - component: {fileID: 1474219131}
   m_Layer: 0
   m_Name: Bigtreesharpen (2)
   m_TagString: Untagged
@@ -5669,6 +6047,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1474219131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474219128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1494475997
 GameObject:
   m_ObjectHideFlags: 0
@@ -5927,6 +6317,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1615152503}
   - component: {fileID: 1615152502}
+  - component: {fileID: 1615152504}
   m_Layer: 0
   m_Name: Bigtreesharpen (6)
   m_TagString: Untagged
@@ -6001,6 +6392,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1615152504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615152501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1631289883
 GameObject:
   m_ObjectHideFlags: 0
@@ -6011,6 +6414,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1631289885}
   - component: {fileID: 1631289884}
+  - component: {fileID: 1631289886}
   m_Layer: 0
   m_Name: Bigtreesharpen (15)
   m_TagString: Untagged
@@ -6085,6 +6489,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1631289886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631289883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1646093910
 GameObject:
   m_ObjectHideFlags: 0
@@ -6197,6 +6613,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1715281734}
   - component: {fileID: 1715281733}
+  - component: {fileID: 1715281735}
   m_Layer: 0
   m_Name: Tribal House Back (1)
   m_TagString: Untagged
@@ -6271,6 +6688,18 @@ Transform:
   m_Father: {fileID: 1288866561}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1715281735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715281732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1724599488
 GameObject:
   m_ObjectHideFlags: 0
@@ -6326,6 +6755,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1726109410}
   - component: {fileID: 1726109409}
+  - component: {fileID: 1726109411}
   m_Layer: 0
   m_Name: Bigtreesharpen (4)
   m_TagString: Untagged
@@ -6400,6 +6830,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1726109411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726109408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1834362181
 GameObject:
   m_ObjectHideFlags: 0
@@ -6455,6 +6897,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1853938083}
   - component: {fileID: 1853938082}
+  - component: {fileID: 1853938084}
   m_Layer: 0
   m_Name: Bigtreesharpen (30)
   m_TagString: Untagged
@@ -6529,6 +6972,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1853938084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853938081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1874843772
 GameObject:
   m_ObjectHideFlags: 0
@@ -6951,6 +7406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1959742393}
   - component: {fileID: 1959742392}
+  - component: {fileID: 1959742394}
   m_Layer: 0
   m_Name: Bigtreesharpen (22)
   m_TagString: Untagged
@@ -7025,6 +7481,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1959742394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959742391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1985766761
 GameObject:
   m_ObjectHideFlags: 0
@@ -7126,6 +7594,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2047520840}
   - component: {fileID: 2047520839}
+  - component: {fileID: 2047520841}
   m_Layer: 0
   m_Name: Bigtreesharpen (9)
   m_TagString: Untagged
@@ -7200,6 +7669,18 @@ Transform:
   m_Father: {fileID: 121192812}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2047520841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047520838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2096972049
 GameObject:
   m_ObjectHideFlags: 0
@@ -7255,6 +7736,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2107220015}
   - component: {fileID: 2107220014}
+  - component: {fileID: 2107220016}
   m_Layer: 0
   m_Name: Tribal House Front (1)
   m_TagString: Untagged
@@ -7329,6 +7811,18 @@ Transform:
   m_Father: {fileID: 1288866561}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2107220016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107220013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2140233539
 GameObject:
   m_ObjectHideFlags: 0

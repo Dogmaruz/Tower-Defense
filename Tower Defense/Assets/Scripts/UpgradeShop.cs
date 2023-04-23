@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace TowerDefense
@@ -9,11 +10,10 @@ namespace TowerDefense
 
         [SerializeField] private Text m_textMoney;
 
-        [SerializeField] private BuyUpgrade[] m_sales;
+        [SerializeField] private List<BuyUpgrade> m_sales;
 
         private void Start()
         {
-            
             foreach (var slot in m_sales)
             {
                 slot.Initialize();
@@ -36,6 +36,19 @@ namespace TowerDefense
             foreach (var slot in m_sales)
             {
                 slot.CheckCost(m_money);
+            }
+        }
+
+        private void OnValidate()
+        {
+            if (m_sales.Count == 0)
+            {
+                var buyUpgrades = GetComponentsInChildren<BuyUpgrade>();
+
+                for (int i = 0; i < buyUpgrades.Length; i++)
+                {
+                    m_sales.Add(buyUpgrades[i]);
+                }
             }
         }
     }

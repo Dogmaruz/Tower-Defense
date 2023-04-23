@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c9efa6a954eab444b85bac968b44b34, type: 3}
-  m_Name: Towers_Upgrades
+  m_Name: Magic_Upgrades
   m_EditorClassIdentifier: 
-  Name: Tower Build
-  sprite: {fileID: -1156132853, guid: 8355c2abfea252b4ea7698857d691cb6, type: 3}
-  Id: d3bf3609-ebac-4c13-a521-d1bb02900ab8
-  costByLevel: 0200000003000000
+  Name: Magic Tower
+  sprite: {fileID: 2027457651, guid: 8355c2abfea252b4ea7698857d691cb6, type: 3}
+  Id: 4cb02a65-6106-4aef-8b81-dd8fe22f8204
+  costByLevel: 0100000002000000

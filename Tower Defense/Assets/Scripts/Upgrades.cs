@@ -26,13 +26,27 @@ namespace TowerDefense
 
         [SerializeField] private UpgradeSave[] m_save;
 
-        [SerializeField] private UpgradeAsset[] m_upgradeAssets;
+        [SerializeField] private UpgradeAsset[] m_UpgradeAssets;
 
         public const string filename = "upgrades.dat";
 
         private new void Awake()
         {
             base.Awake();
+
+            if (m_save.Length == 0)
+            {
+                m_save = new UpgradeSave[m_UpgradeAssets.Length];
+
+                for (int i = 0; i < m_save.Length; i++)
+                {
+                    m_save[i] = new UpgradeSave();
+
+                    m_save[i].asset = m_UpgradeAssets[i];
+
+                    m_save[i].Id = m_UpgradeAssets[i].Id;
+                }
+            }
 
             Saver<UpgradeSave[]>.TryLoad(filename, ref m_save);
 
@@ -41,7 +55,7 @@ namespace TowerDefense
                 save.UpdateId();
             }
 
-            foreach (var asset in m_upgradeAssets)
+            foreach (var asset in m_UpgradeAssets)
             {
                 foreach (var save in m_save)
                 {

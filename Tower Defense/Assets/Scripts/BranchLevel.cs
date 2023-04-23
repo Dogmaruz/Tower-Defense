@@ -1,4 +1,4 @@
-using UnityEngine;
+п»їusing UnityEngine;
 using UnityEngine.UI;
 
 namespace TowerDefense
@@ -10,7 +10,7 @@ namespace TowerDefense
 
         [SerializeField] private Text m_PointText;
 
-        [SerializeField] private int m_NeedPoints = 3; //Необходимое колличество звезд(очков)
+        [SerializeField] private int m_NeedPoints = 3; //РќРµРѕР±С…РѕРґРёРјРѕРµ РєРѕР»Р»РёС‡РµСЃС‚РІРѕ Р·РІРµР·Рґ(РѕС‡РєРѕРІ)
 
         private Map_Level m_MapLevel;
 
@@ -30,10 +30,10 @@ namespace TowerDefense
         }
 
         /// <summary>
-        /// Попытка активации ответвленного уровня.
-        /// Активация требует наличия колличества звезд(очков) и выполнения основного уровня в ветке.
+        /// РџРѕРїС‹С‚РєР° Р°РєС‚РёРІР°С†РёРё РѕС‚РІРµС‚РІР»РµРЅРЅРѕРіРѕ СѓСЂРѕРІРЅСЏ.
+        /// РђРєС‚РёРІР°С†РёСЏ С‚СЂРµР±СѓРµС‚ РЅР°Р»РёС‡РёСЏ РєРѕР»Р»РёС‡РµСЃС‚РІР° Р·РІРµР·Рґ(РѕС‡РєРѕРІ) Рё РІС‹РїРѕР»РЅРµРЅРёСЏ РѕСЃРЅРѕРІРЅРѕРіРѕ СѓСЂРѕРІРЅСЏ РІ РІРµС‚РєРµ.
         /// </summary>
-        /// <param name="openSprite">Картинка открытого спрайта</param>
+        /// <param name="openSprite">РљР°СЂС‚РёРЅРєР° РѕС‚РєСЂС‹С‚РѕРіРѕ СЃРїСЂР°Р№С‚Р°</param>
         public void TryActivate(Sprite openSprite)
         {
             if (m_NeedPoints <= MapCompletion.Instance.TotalScore)
