@@ -1743,6 +1743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50988fffd6b7c0b498a2c8e5ee44af2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_TowerAssets: []
 --- !u!1001 &901056177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1990,6 +1991,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6761520325145545277, guid: 9189152795709864894a152efe30f57c, type: 3}
+      propertyPath: m_TowerAssets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761520325145545277, guid: 9189152795709864894a152efe30f57c, type: 3}
+      propertyPath: m_TowerAssets.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: cd455f4f84ac36e41aa0306fe05a4034, type: 2}
     - target: {fileID: 6761520325583824954, guid: 9189152795709864894a152efe30f57c, type: 3}
       propertyPath: m_Name
       value: BuildSite (5)

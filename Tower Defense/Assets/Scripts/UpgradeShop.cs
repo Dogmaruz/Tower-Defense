@@ -10,7 +10,11 @@ namespace TowerDefense
 
         [SerializeField] private Text m_textMoney;
 
+        [SerializeField] private UpgradeAsset m_TowerUpgrades;
+
         [SerializeField] private List<BuyUpgrade> m_sales;
+
+        public List<BuyUpgrade> Sales { get => m_sales; }
 
         private void Start()
         {
@@ -18,32 +22,42 @@ namespace TowerDefense
             {
                 slot.Initialize();
 
-                slot.transform.Find("Button").GetComponent<Button>().onClick.AddListener(UpdateMoney);
+                slot.transform.Find("Button").GetComponent<Button>().onClick.AddListener(UpdateRestrictions);
             }
 
-            UpdateMoney();
+            UpdateRestrictions();
         }
 
-        public void UpdateMoney()
+
+        public void UpdateRestrictions()
         {
-
-            m_money = MapCompletion.Instance.TotalScore;
-
-            m_money -= Upgrades.GetTotalCost();
-
-            m_textMoney.text = m_money.ToString();
-
-            foreach (var slot in m_sales)
+            foreach (var sales in m_sales)
             {
-                slot.CheckCost(m_money);
+                if(sales.CheckLevel(m_TowerUpgrades))
+                {
+                    m_money = MapCompletion.Instance.TotalScore;
+
+                    m_money -= Upgrades.GetTotalCost();
+
+                    m_textMoney.text = m_money.ToString();
+
+                    foreach (var slot in m_sales)
+                    {
+                        slot.CheckCost(m_money);
+                    }
+                }
             }
+
         }
 
         private void OnValidate()
         {
-            if (m_sales.Count == 0)
+           
+            var buyUpgrades = GetComponentsInChildren<BuyUpgrade>();
+
+            if (m_sales.Count < buyUpgrades.Length || m_sales.Count > buyUpgrades.Length)
             {
-                var buyUpgrades = GetComponentsInChildren<BuyUpgrade>();
+                m_sales.Clear();
 
                 for (int i = 0; i < buyUpgrades.Length; i++)
                 {

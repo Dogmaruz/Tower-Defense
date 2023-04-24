@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf71858c29c21e409d48d3e6eaac216, type: 3}
+  m_Name: TurretProperties_Archer_Level_1
+  m_EditorClassIdentifier: 
+  m_Mode: 0
+  m_ProjectilePrefab: {fileID: -6337312592067889224, guid: 8c06ea11a0cd6484d81854c8916e3fe2, type: 3}
+  m_RateOfFire: 0.4
+  m_EnergyUsage: 0
+  m_AmoUsage: 0
+  m_LaunchSFX: {fileID: 8300000, guid: 1b6235b295a5455409e0cf97f4463ece, type: 3}
+  m_volume: 1

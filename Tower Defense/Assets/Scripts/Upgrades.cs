@@ -1,5 +1,6 @@
 ﻿using SpaceShooter;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace TowerDefense
@@ -26,9 +27,24 @@ namespace TowerDefense
 
         [SerializeField] private UpgradeSave[] m_save;
 
-        [SerializeField] private UpgradeAsset[] m_UpgradeAssets;
+        [SerializeField] private List<UpgradeAsset> m_UpgradeAssets;
+
+        [SerializeField] private UpgradeShop m_UpgradeShop;
 
         public const string filename = "upgrades.dat";
+
+        private void OnValidate()
+        {
+            if (m_UpgradeAssets.Count < m_UpgradeShop.Sales.Count || m_UpgradeAssets.Count > m_UpgradeShop.Sales.Count)
+            {
+                m_UpgradeAssets.Clear();
+
+                for (int i = 0; i < m_UpgradeShop.Sales.Count; i++)
+                {
+                    m_UpgradeAssets.Add(m_UpgradeShop.Sales[i].Asset);
+                }
+            }
+        }
 
         private new void Awake()
         {
@@ -36,7 +52,7 @@ namespace TowerDefense
 
             if (m_save.Length == 0)
             {
-                m_save = new UpgradeSave[m_UpgradeAssets.Length];
+                m_save = new UpgradeSave[m_UpgradeAssets.Count];
 
                 for (int i = 0; i < m_save.Length; i++)
                 {

@@ -15,4 +15,4 @@ MonoBehaviour:
   Name: Magic Tower
   sprite: {fileID: 2027457651, guid: 8355c2abfea252b4ea7698857d691cb6, type: 3}
   Id: 4cb02a65-6106-4aef-8b81-dd8fe22f8204
-  costByLevel: 0100000002000000
+  costByLevel: 01000000

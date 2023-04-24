@@ -19,6 +19,11 @@ namespace TowerDefense
         [SerializeField] private AnimationBase m_AnimationSpriteScale;
         public AnimationBase AnimationSpriteScale { get => m_AnimationSpriteScale; set => m_AnimationSpriteScale = value; }
 
+        public void SetTowerAsset(TowerAsset towerAsset)
+        {
+            m_towerAsset = towerAsset;
+        }
+
         public void SetBuildSite(Transform value)
         {
             buildSite = value;
@@ -36,7 +41,7 @@ namespace TowerDefense
 
             var level = Upgrades.GetUpgradeLevel(m_towerUpgrade);
 
-            if (level >= m_towerAsset.Level)
+            if (level >= m_towerAsset.BuildLevel)
             {
                 gameObject.SetActive(true);
             }

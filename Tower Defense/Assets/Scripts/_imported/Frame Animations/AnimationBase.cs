@@ -28,6 +28,11 @@ namespace SpaceShooter
 
         private bool m_IsAnimationPlaying = false;
 
+        public void SetAnimationTime(float time)
+        {
+            m_AnimationTime += time;
+        }
+
         public void SetAnimationScale(float scale)
         {
             m_AnimationScale = scale;

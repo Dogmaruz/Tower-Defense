@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace TowerDefense
@@ -6,6 +7,7 @@ namespace TowerDefense
     public class BuyUpgrade : MonoBehaviour
     {
         [SerializeField] private UpgradeAsset m_Asset;
+        public UpgradeAsset Asset { get => m_Asset; }
 
         [SerializeField] private Image m_UpgradeIcon;
 
@@ -13,7 +15,11 @@ namespace TowerDefense
 
         [SerializeField] private Button m_BuyButton;
 
+        [SerializeField] private int m_AccessLevel;
+
         private int m_CostNumber = 0;
+
+
         /// <summary>
         /// Инициализация слота покупки в зависимости от его уровня.
         /// Активируется при достаточном уровне строительства.
@@ -63,6 +69,11 @@ namespace TowerDefense
         public void CheckCost(int money)
         {
             m_BuyButton.interactable = money >= m_CostNumber;
+        }
+
+        public bool CheckLevel(UpgradeAsset m_TowerUpgrades)
+        {
+            return m_BuyButton.interactable = Upgrades.GetUpgradeLevel(m_TowerUpgrades) + 1 >= m_AccessLevel;
         }
     }
 }

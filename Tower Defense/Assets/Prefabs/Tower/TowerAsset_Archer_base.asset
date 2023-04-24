@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05ea6cdd0c7f5c3408a1487461556d2d, type: 3}
+  m_Name: TowerAsset_Archer_base
+  m_EditorClassIdentifier: 
+  GoldCost: 15
+  GUISprite: {fileID: -1898302449, guid: b14db8515da5bd444a10a40355c764cd, type: 3}
+  ElementSprite: {fileID: 21300000, guid: ea7f3aa1aa0964f268468a35c0ac4a90, type: 3}
+  TurretProperties: {fileID: 11400000, guid: d4750e4167a824c49993036774176fe3, type: 2}
+  EffectPrefab: {fileID: 0}
+  m_UpgradeAsset: {fileID: 11400000, guid: ca8dd2a567b6c1742bb68f9c831406ac, type: 2}
+  UpgradeLevel: 0
+  BuildLevel: 0
+  UpgadesTo:
+  - {fileID: 11400000, guid: 40fa1e2be4920904d9f7f34578338ac2, type: 2}

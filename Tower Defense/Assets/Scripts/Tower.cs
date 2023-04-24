@@ -46,6 +46,8 @@ namespace TowerDefense
             {
                 IntatiateEffectPrefab(towerAsset.EffectPrefab);
             }
+
+            GetComponentInChildren<BuildSite>().SetBuiddableTowers(towerAsset.UpgadesTo);
         }
 
         public void IntatiateEffectPrefab(GameObject prefab)

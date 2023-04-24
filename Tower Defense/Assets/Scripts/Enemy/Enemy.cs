@@ -94,11 +94,18 @@ namespace TowerDefense
         private void Awake()
         {
             m_Destructible = GetComponent<Destructible>();
+
+            m_Destructible.EventOnDeath.AddListener(Dead);
+        }
+
+        public void Dead()
+        {
+            OnDead?.Invoke();
         }
 
         private void OnDestroy()
         {
-            OnDead?.Invoke();
+            m_Destructible.EventOnDeath.RemoveListener(Dead);
 
             OnDead = null;
         }

@@ -2698,7 +2698,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &654794676
 Transform:
   m_ObjectHideFlags: 0
@@ -3137,7 +3137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &767835928
 Transform:
   m_ObjectHideFlags: 0
@@ -3165,7 +3165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff71db1ce909e2458bced4bdac3c789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_timeLimit: 300
+  m_timeLimit: 30
 --- !u!1 &825057286
 GameObject:
   m_ObjectHideFlags: 0
@@ -3397,6 +3397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50988fffd6b7c0b498a2c8e5ee44af2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_TowerAssets: []
 --- !u!1001 &901056177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7331,7 +7332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DoNotDestroyOnLoad: 0
-  m_ReferenceTime: 120
+  m_ReferenceTime: 300
   m_EventLevelCompleted:
     m_PersistentCalls:
       m_Calls: []
