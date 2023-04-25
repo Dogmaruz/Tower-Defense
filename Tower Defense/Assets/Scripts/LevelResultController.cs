@@ -1,3 +1,5 @@
+using System;
+using TowerDefense;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +18,8 @@ namespace SpaceShooter
         [SerializeField] private Sprite m_loseSprite;
         [SerializeField] private Sprite m_winSprite;
         [SerializeField] private GameObject m_victoryPrefab;
+
+        public event Action OnShowPanel;
 
         private bool m_Success;
 
@@ -53,6 +57,9 @@ namespace SpaceShooter
             m_ButtonNextText.text = success ? "Продолжить" : "Начать заново";
 
             m_AnimationSpriteScale.StartAnimation(true);
+
+            OnShowPanel?.Invoke();
+
         }
 
         public void OnButtonNextAction()

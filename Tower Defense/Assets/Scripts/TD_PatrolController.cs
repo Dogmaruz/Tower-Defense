@@ -8,9 +8,10 @@ namespace TowerDefense
     {
         private Path m_path;
         private int m_pathIndex;
+
         [SerializeField] private UnityEvent m_OnEndPath;
 
-        public void SetPath(Path newPath)
+               public void SetPath(Path newPath)
         {
             m_path = newPath;
 

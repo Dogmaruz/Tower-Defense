@@ -14,6 +14,7 @@ namespace TowerDefense
 
             TD_Player.Instance.OnPlayerDead += () =>
             {
+                
                 StopLevelActivity();
 
                 LevelResultController.Instance.ShowResults(false);
@@ -23,6 +24,7 @@ namespace TowerDefense
 
             m_EventLevelCompleted.AddListener(() =>
             {
+                
                 StopLevelActivity();
 
                 if (m_ReferenceTime < Time.time) LevelScore -= 1;
