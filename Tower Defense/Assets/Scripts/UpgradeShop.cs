@@ -33,7 +33,7 @@ namespace TowerDefense
         {
             foreach (var sales in m_sales)
             {
-                if(sales.CheckLevel(m_TowerUpgrades))
+                if (sales.CheckLevel(m_TowerUpgrades))
                 {
                     m_money = MapCompletion.Instance.TotalScore;
 
@@ -41,10 +41,7 @@ namespace TowerDefense
 
                     m_textMoney.text = m_money.ToString();
 
-                    foreach (var slot in m_sales)
-                    {
-                        slot.CheckCost(m_money);
-                    }
+                    sales.CheckCost(m_money);
                 }
             }
 
@@ -52,7 +49,7 @@ namespace TowerDefense
 
         private void OnValidate()
         {
-           
+
             var buyUpgrades = GetComponentsInChildren<BuyUpgrade>();
 
             if (m_sales.Count < buyUpgrades.Length || m_sales.Count > buyUpgrades.Length)

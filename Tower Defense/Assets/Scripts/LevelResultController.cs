@@ -78,9 +78,9 @@ namespace SpaceShooter
             }
         }
 
-        private void StopTime()
-        {
-            Time.timeScale = 0;
-        }
+        //private void StopTime()
+        //{
+        //    Time.timeScale = 0;
+        //}
     }
 }

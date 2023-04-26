@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8082899363199709651}
   - component: {fileID: 7376583344827082086}
   - component: {fileID: 213974738484837531}
+  - component: {fileID: -1355472293466822217}
   m_Layer: 0
   m_Name: Projectile_Magic
   m_TagString: Untagged
@@ -85,6 +86,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_speedRatio: 0.5
+--- !u!114 &-1355472293466822217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2394982871627736698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d8c0c308415517468ad0b9e1c727a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7506357629007693200
 PrefabInstance:
   m_ObjectHideFlags: 0

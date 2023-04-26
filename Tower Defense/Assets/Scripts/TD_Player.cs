@@ -14,6 +14,7 @@ namespace TowerDefense
             }
         }
 
+
         [SerializeField] private UpgradeAsset m_heathUpgrade;
 
         private static event Action<int> OnGoldUpdate;
@@ -49,7 +50,19 @@ namespace TowerDefense
             action(Instance.Score);
         }
 
+        private static event Action<int> OnMannaUpdate;
+
+        public static void MannaUpdateSubscrible(Action<int> action)
+        {
+            OnMannaUpdate += action;
+            action(Instance.Manna);
+        }
+
         [SerializeField] private int m_gold = 0;
+        public int Gold { get => m_gold;}
+
+        [SerializeField] private int m_Manna = 0;
+        public int Manna { get => m_Manna; }
 
 
         //Добавляет золото игроку.
@@ -58,6 +71,13 @@ namespace TowerDefense
             m_gold += change;
 
             OnGoldUpdate?.Invoke(m_gold);
+        }
+
+        public void ChangeManna(int change)
+        {
+            m_Manna += change;
+
+            OnMannaUpdate?.Invoke(m_Manna);
         }
 
         public void UpdateScore(int value)
@@ -102,6 +122,11 @@ namespace TowerDefense
         public static void ScoreUpdateUnSubscrible(Action<int> action)
         {
             OnScoreUpdate -= action;
+        }
+
+        public static void MannaUpdateUnSubscrible(Action<int> action)
+        {
+            OnMannaUpdate -= action;
         }
     }
 }

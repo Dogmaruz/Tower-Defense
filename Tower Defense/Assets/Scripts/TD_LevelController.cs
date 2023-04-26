@@ -8,13 +8,20 @@ namespace TowerDefense
 
         private int LevelScore = 3;
 
+        public static new TD_LevelController Instance
+        {
+            get
+            {
+                return LevelController.Instance as TD_LevelController;
+            }
+        }
+
         private new void Start()
         {
             base.Start();
 
             TD_Player.Instance.OnPlayerDead += () =>
             {
-                
                 StopLevelActivity();
 
                 LevelResultController.Instance.ShowResults(false);
@@ -24,7 +31,6 @@ namespace TowerDefense
 
             m_EventLevelCompleted.AddListener(() =>
             {
-                
                 StopLevelActivity();
 
                 if (m_ReferenceTime < Time.time) LevelScore -= 1;
@@ -43,7 +49,7 @@ namespace TowerDefense
         }
 
         //Останавливает время на сцене.
-        private void StopLevelActivity()
+        public void StopLevelActivity()
         {
             foreach (var destructible in Destructible.AllDestructible)
             {

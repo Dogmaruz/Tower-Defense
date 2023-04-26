@@ -11,7 +11,9 @@ namespace TowerDefense
 
         [SerializeField] private UnityEvent m_OnEndPath;
 
-               public void SetPath(Path newPath)
+        public UnityEvent OnEndPath { get => m_OnEndPath; set => m_OnEndPath = value; }
+
+        public void SetPath(Path newPath)
         {
             m_path = newPath;
 
@@ -33,6 +35,8 @@ namespace TowerDefense
                 m_OnEndPath?.Invoke();
 
                 Destroy(gameObject);
+
+
             }
         }
 

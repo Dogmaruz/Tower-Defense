@@ -73,7 +73,9 @@ namespace TowerDefense
 
         public bool CheckLevel(UpgradeAsset m_TowerUpgrades)
         {
-            return m_BuyButton.interactable = Upgrades.GetUpgradeLevel(m_TowerUpgrades) + 1 >= m_AccessLevel;
+            var result = m_BuyButton.interactable = Upgrades.GetUpgradeLevel(m_TowerUpgrades) + 1 >= m_AccessLevel;
+
+            return result;
         }
     }
 }

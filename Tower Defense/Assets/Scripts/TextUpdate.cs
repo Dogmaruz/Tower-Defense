@@ -9,7 +9,8 @@ namespace TowerDefense
         {
             Gold,
             Life,
-            Score
+            Score,
+            Manna
         }
 
         public UpdateSource Source = UpdateSource.Gold;
@@ -30,6 +31,9 @@ namespace TowerDefense
                 case UpdateSource.Score:
                     TD_Player.ScoreUpdateSubscrible(UpdateText);
                     break;
+                case UpdateSource.Manna:
+                    TD_Player.MannaUpdateSubscrible(UpdateText);
+                    break;
             }
 
         }
@@ -44,6 +48,7 @@ namespace TowerDefense
             TD_Player.GoldUpdateUnSubscrible(UpdateText);
             TD_Player.LifeUpdateUnSubscrible(UpdateText);
             TD_Player.ScoreUpdateUnSubscrible(UpdateText);
+            TD_Player.MannaUpdateUnSubscrible(UpdateText);
 
         }
     }

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c9efa6a954eab444b85bac968b44b34, type: 3}
+  m_Name: Time_Upgrades
+  m_EditorClassIdentifier: 
+  Name: Time
+  sprite: {fileID: -786123741, guid: 28dc43ec49a0ac44dba3b6e55ab66e56, type: 3}
+  Id: 43a5fdb4-7346-4a97-b4d4-b52aaedc5e43
+  costByLevel: 02000000

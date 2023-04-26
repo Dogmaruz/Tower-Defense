@@ -96,6 +96,8 @@ namespace TowerDefense
             m_Destructible = GetComponent<Destructible>();
 
             m_Destructible.EventOnDeath.AddListener(Dead);
+
+            GetComponent<TD_PatrolController>().OnEndPath.AddListener(Dead);
         }
 
         public void Dead()

@@ -23,7 +23,7 @@ namespace TowerDefense
 
         public void CallWave()
         {
-            m_Manager.ForceNextWave();
+            m_Manager.ForceNextWave(true);
         }
 
         private void Update()
