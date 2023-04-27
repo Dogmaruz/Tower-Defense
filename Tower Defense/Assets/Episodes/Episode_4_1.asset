@@ -15,5 +15,6 @@ MonoBehaviour:
   m_EpisodeName: Episode_4
   m_Levels:
   - Level_4_1
+  - End_Level
   m_PreviewImage: {fileID: 0}
   Id: 835b9dbb-7c09-46f9-adac-d19386fafb45

@@ -56,7 +56,7 @@ namespace TowerDefense
                 destructible.GetComponent<TD_PatrolController>().SetNavigationLinear(0);
             }
 
-            DisableAll<Spawner>();
+            DisableAll<EnemyWawe>();
             DisableAll<Projectile>();
             DisableAll<Tower>();
             DisableAll<NextWaveGUI>();

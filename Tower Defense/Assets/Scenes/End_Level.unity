@@ -2564,19 +2564,17 @@ MonoBehaviour:
   m_DoNotDestroyOnLoad: 1
   m_CompletionDate:
   - Score: 0
-    Id: 122a3bf2-f2db-428b-a5b8-1095113d6a0d
+    Id: cd3fa984-6e4a-42c3-931e-cea6e26d41c4
   - Score: 0
-    Id: 261abdf3-ce03-499e-b2ab-177ad683ed46
+    Id: fe968e1d-c157-4298-b69a-4dbc65b43434
   - Score: 0
     Id: f6cbd94d-517c-4315-860c-845299cc22f9
   - Score: 0
-    Id: 38e4351f-2c65-4473-bfa5-20082f56d260
+    Id: e6ccbecf-f492-4ee9-9744-c874b74e12ec
   - Score: 0
     Id: dce4e6b1-6677-46fc-a449-857851a9028f
   - Score: 0
-    Id: dc4d7b5a-6f8c-4cb6-8963-f42ae62b6df8
-  - Score: 0
-    Id: 835b9dbb-7c09-46f9-adac-d19386fafb45
+    Id: df67f072-2108-4027-9982-16524ef454c9
   - Score: 0
     Id: 835b9dbb-7c09-46f9-adac-d19386fafb45
   m_Episodes:
@@ -2586,7 +2584,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2f9625db84b8a364ca2a9f67f1f1eb01, type: 2}
   - {fileID: 11400000, guid: 1d9087dc56c65b94a915061d02366906, type: 2}
   - {fileID: 11400000, guid: ab6ccedf1088ff2479583d18ce28520b, type: 2}
-  - {fileID: 11400000, guid: 4d2bb0e4395acac4b8e2d6925ba57e0c, type: 2}
   - {fileID: 11400000, guid: 4d2bb0e4395acac4b8e2d6925ba57e0c, type: 2}
 --- !u!4 &2061102987
 Transform:

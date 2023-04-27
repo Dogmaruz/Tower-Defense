@@ -218,6 +218,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8614390862578080004, guid: ddf9cf1e93c9adc4a9beab24afe7eb1b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000030517578
+      objectReference: {fileID: 0}
+    - target: {fileID: 8614390862578080004, guid: ddf9cf1e93c9adc4a9beab24afe7eb1b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddf9cf1e93c9adc4a9beab24afe7eb1b, type: 3}
 --- !u!1 &19753308
@@ -557,7 +565,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &113576508
 Transform:
   m_ObjectHideFlags: 0
@@ -1214,6 +1222,7 @@ MonoBehaviour:
   m_PlayerShipPrefab: {fileID: 0}
   m_heathUpgrade: {fileID: 11400000, guid: b03f18b3b71eb9e45b6eaf3d099e7ba0, type: 2}
   m_gold: 15
+  m_Manna: 0
   m_towerPrefabe: {fileID: 6716443495805147261, guid: 39de0f1ae475f7347af92861874a062e, type: 3}
 --- !u!1 &375273241
 GameObject:
@@ -2102,7 +2111,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1169528432
 Transform:
   m_ObjectHideFlags: 0

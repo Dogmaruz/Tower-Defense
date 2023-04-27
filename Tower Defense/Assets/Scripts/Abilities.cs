@@ -196,7 +196,7 @@ namespace TowerDefense
                 m_TargetCircle.GetComponent<RectTransform>().sizeDelta = new Vector2(300, 300);
             }
 
-            Debug.Log($"Damage : {Instance.m_ExplosionAbility.Damage} : Radius : {Instance.m_ExplosionAbility.DamageRadius} : Cost : {Instance.m_ExplosionAbility.Cost}");
+            //Debug.Log($"Damage : {Instance.m_ExplosionAbility.Damage} : Radius : {Instance.m_ExplosionAbility.DamageRadius} : Cost : {Instance.m_ExplosionAbility.Cost}");
 
             Instance.m_ExplosionAbility.CostText.text = Instance.m_ExplosionAbility.Cost.ToString();
 
