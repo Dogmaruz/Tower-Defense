@@ -15,7 +15,7 @@ MonoBehaviour:
   color: {r: 0.93333334, g: 0.7773991, b: 0.19999996, a: 1}
   spriteScale: {x: 0.35, y: 0.35}
   controller: {fileID: 9100000, guid: 071f2c6d34ded6448badeeb4a1b4c39f, type: 2}
-  moveSpeed: 0.5
+  moveSpeed: 0.6
   HitPoints: 3
   Armor: 0
   ArmorType: 0

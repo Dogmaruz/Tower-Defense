@@ -21,9 +21,9 @@ namespace TowerDefense
 
         private Destructible m_Target;
 
-        private void Start()
+        private void Awake()
         {
-            //m_Turrets = GetComponentsInChildren<Turret>();
+            m_Turrets = GetComponentsInChildren<Turret>();
 
             var level = Upgrades.GetUpgradeLevel(m_radiusUpgrade);
 
@@ -35,7 +35,7 @@ namespace TowerDefense
         {
             GetComponentInChildren<SpriteRenderer>().sprite = towerAsset.ElementSprite;
 
-            m_Turrets = GetComponentsInChildren<Turret>();
+            //m_Turrets = GetComponentsInChildren<Turret>();
 
             foreach (var turret in m_Turrets)
             {
@@ -82,7 +82,6 @@ namespace TowerDefense
                             }
                         }
 
-                        //fromTo = m_Target.transform.position - turret.transform.position;
                         fromTo = m_nearestEnemy.transform.position - turret.transform.position;
 
                         //Мой вариант поворота балистики.
@@ -102,12 +101,8 @@ namespace TowerDefense
                             angle = -90 - (angle + 90);
                         }
 
-                        //turret.transform.eulerAngles = new Vector3(0f, 0f, Mathf.Clamp(angle, - 70f, 70f));
                         turret.transform.eulerAngles = new Vector3(0f, 0f, angle);
                         //конец.
-
-                        //turret.transform.up = fromTo.normalized;
-                        //turret.transform.up = Vector3.up;
 
                         turret.Fire();
                     }

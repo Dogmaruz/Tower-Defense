@@ -22,7 +22,6 @@ namespace TowerDefense
             if (--m_activeEnemyCount <= 0)
             {
                 ForceNextWave(false);
-
             }
         }
 
@@ -31,13 +30,13 @@ namespace TowerDefense
             m_currentWave.Prepare(SpawnEnemies);
         }
 
-        public void ForceNextWave(bool IsCoolNewWave)
+        public void ForceNextWave(bool IsCallNewWave)
         {
             if (m_currentWave)
             {
                 var result = (int)m_currentWave.GetRemainingTime();
 
-                if (IsCoolNewWave)
+                if (IsCallNewWave)
                 {
                     TD_Player.Instance.ChangeGold(result);
                 }
@@ -55,6 +54,8 @@ namespace TowerDefense
 
         private void SpawnEnemies()
         {
+            Sound.NextWave.Play();
+
             foreach ((EnemyAsset asset, int count, int pathIndex) in m_currentWave.EnumerateSquad())
             {
                 if (pathIndex < m_paths.Length)
