@@ -22,7 +22,7 @@ namespace TowerDefense
             } 
         }
 
-        private void Start()
+        private void Awake()
         {
             m_PointText.text = m_NeedPoints.ToString();
 

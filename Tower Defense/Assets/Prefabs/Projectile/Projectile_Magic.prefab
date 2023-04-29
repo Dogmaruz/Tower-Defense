@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7376583344827082086}
   - component: {fileID: 213974738484837531}
   - component: {fileID: -1355472293466822217}
+  - component: {fileID: -1304456435015229110}
   m_Layer: 0
   m_Name: Projectile_Magic
   m_TagString: Untagged
@@ -58,7 +59,19 @@ MonoBehaviour:
       m_Calls: []
   m_EventOnHit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -1304456435015229110}
+        m_TargetAssemblyTypeName: TowerDefense.SoundHook, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_DamageType: 1
 --- !u!114 &7376583344827082086
 MonoBehaviour:
@@ -98,6 +111,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d8c0c308415517468ad0b9e1c727a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1304456435015229110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2394982871627736698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11429f2662cff9b48950dc48fa56778c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_sound: 14
 --- !u!1001 &7506357629007693200
 PrefabInstance:
   m_ObjectHideFlags: 0

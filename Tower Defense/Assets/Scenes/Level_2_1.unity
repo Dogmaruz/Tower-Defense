@@ -366,6 +366,7 @@ GameObject:
   m_Component:
   - component: {fileID: 40229930}
   - component: {fileID: 40229929}
+  - component: {fileID: 40229931}
   m_Layer: 0
   m_Name: Villager House Front
   m_TagString: Untagged
@@ -440,6 +441,18 @@ Transform:
   m_Father: {fileID: 1090429194}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &40229931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40229928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &111078087
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,6 +711,7 @@ GameObject:
   m_Component:
   - component: {fileID: 163126511}
   - component: {fileID: 163126510}
+  - component: {fileID: 163126512}
   m_Layer: 0
   m_Name: Tribal House Back
   m_TagString: Untagged
@@ -772,6 +786,18 @@ Transform:
   m_Father: {fileID: 1090429194}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &163126512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163126509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &169019790
 GameObject:
   m_ObjectHideFlags: 0
@@ -3020,6 +3046,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1715281734}
   - component: {fileID: 1715281733}
+  - component: {fileID: 1715281735}
   m_Layer: 0
   m_Name: Tribal House Back (1)
   m_TagString: Untagged
@@ -3094,6 +3121,18 @@ Transform:
   m_Father: {fileID: 1090429194}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1715281735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715281732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a64567c2bc5c4798f12c0b9730136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1724599488
 GameObject:
   m_ObjectHideFlags: 0
@@ -3563,6 +3602,10 @@ PrefabInstance:
     - target: {fileID: 4477137611990568772, guid: acc0045bc8c67f34588af14e4d384a98, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477137611990568773, guid: acc0045bc8c67f34588af14e4d384a98, type: 3}
+      propertyPath: Loop
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acc0045bc8c67f34588af14e4d384a98, type: 3}

@@ -17,7 +17,6 @@ namespace SpaceShooter
         [SerializeField] private Image m_menuImage;
         [SerializeField] private Sprite m_loseSprite;
         [SerializeField] private Sprite m_winSprite;
-        [SerializeField] private GameObject m_victoryPrefab;
 
         public event Action OnShowPanel;
 
@@ -34,14 +33,20 @@ namespace SpaceShooter
         {
             gameObject.SetActive(true);
 
-            if (success )
-            {
-                var victory = Instantiate(m_victoryPrefab, transform.position,Quaternion.identity);
+            //if (success )
+            //{
+            //    var victory = Instantiate(m_victoryPrefab, transform.position,Quaternion.identity);
 
-                Destroy(victory.gameObject, 16);
-            }
+            //    Destroy(victory.gameObject, 16);
+            //}
 
             m_Success = success;
+
+            SoundPlayer.Instance.AudioSource.Stop();
+
+            Sound sound = success ? Sound.Victory : Sound.Loss;
+
+            sound.Play();
 
             m_Result.text = success ? "Уровень пройден" : "Ты проиграл";
 
@@ -64,6 +69,8 @@ namespace SpaceShooter
 
         public void OnButtonNextAction()
         {
+            SoundPlayer.Instance.AudioSource.Stop();
+
             gameObject.SetActive(false);
 
             Time.timeScale = 1;

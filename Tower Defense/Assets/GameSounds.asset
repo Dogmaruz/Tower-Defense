@@ -13,8 +13,20 @@ MonoBehaviour:
   m_Name: GameSounds
   m_EditorClassIdentifier: 
   m_Sounds:
-  - {fileID: 8300000, guid: 1b6235b295a5455409e0cf97f4463ece, type: 3}
+  - {fileID: 8300000, guid: 4ba593d1062011849886292a1e3ce7ff, type: 3}
   - {fileID: 8300000, guid: 55b26128febb94a468f7285f55430e63, type: 3}
   - {fileID: 8300000, guid: 1d8c4cd2f0ac46040af6f30b79add323, type: 3}
   - {fileID: 8300000, guid: d52cd51a294f92d4b842595db3009c08, type: 3}
   - {fileID: 8300000, guid: 3cc3d9c414d8dfc4ba687be8101b6a85, type: 3}
+  - {fileID: 8300000, guid: fbdfd63a80f443e4d86eff7ada535a46, type: 3}
+  - {fileID: 8300000, guid: 73f1828f8aff7dd4d86e82421337875c, type: 3}
+  - {fileID: 8300000, guid: a33ac14bf25c5bb4a9248f5b4b450ecd, type: 3}
+  - {fileID: 8300000, guid: a4871e4c160952c4a893ce725fb2440d, type: 3}
+  - {fileID: 8300000, guid: 6ac5fb1825b01b44499b669295f223ca, type: 3}
+  - {fileID: 8300000, guid: 8ca9c363337e82242aeb0d247762b61d, type: 3}
+  - {fileID: 8300000, guid: 7051c912ea8c0384e9f2eabb08ec05b5, type: 3}
+  - {fileID: 8300000, guid: 69c7aec225c42654eacc877b3590008c, type: 3}
+  - {fileID: 8300000, guid: bcce53ed821abf4469ce2d96f1f680c8, type: 3}
+  - {fileID: 8300000, guid: aed87abfc38853f4481acba374253bcb, type: 3}
+  - {fileID: 8300000, guid: 667e7f809a1fea1499882a734be2a321, type: 3}
+  - {fileID: 8300000, guid: b628f9a3334b8e544b11d0cbb1dc72b0, type: 3}

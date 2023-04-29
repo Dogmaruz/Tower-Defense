@@ -28,10 +28,8 @@ namespace SpaceShooter
         [SerializeField] private int m_AmoUsage;
         public int AmoUsage => m_AmoUsage;
 
-        [SerializeField] private AudioClip m_LaunchSFX;
-        public AudioClip LaunchSFX => m_LaunchSFX;
+        [SerializeField] private Sound m_ProjectileSound;
+        public Sound ProjectileSound => m_ProjectileSound;
 
-        [SerializeField] private float m_volume;
-        public float Volume => m_volume;
     }
 }

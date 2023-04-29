@@ -64,6 +64,8 @@ namespace TowerDefense
 
         public void Buy()
         {
+            Sound.TowerBuilding.Play();
+
             TD_Player.Instance.TryBuild(m_towerAsset, buildSite);
 
             BuildSite.HideControls();

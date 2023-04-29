@@ -1,5 +1,4 @@
 using SpaceShooter;
-using System;
 using UnityEngine;
 
 namespace TowerDefense
@@ -12,6 +11,7 @@ namespace TowerDefense
         [SerializeField] private AudioClip m_Background;
 
         private AudioSource m_AudioSource;
+        public AudioSource AudioSource { get => m_AudioSource; set => m_AudioSource = value; }
 
         private new void Awake()
         {
@@ -24,6 +24,7 @@ namespace TowerDefense
             Instance.m_AudioSource.volume = 0.2f;
 
             Instance.m_AudioSource.Play();
+
         }
         
         public void Play(Sound sound)

@@ -11,10 +11,6 @@ namespace SpaceShooter
         [SerializeField] private TurretProperties m_TurretProperties; //Свойства турели.
         public TurretProperties TurretProperties => m_TurretProperties;
 
-        [SerializeField] private float m_VolumeSFX = 1f;
-
-        [SerializeField] private AudioSource m_AudioSource;
-
         private float m_RefireTimer;
         public bool CanFire => m_RefireTimer <= 0;
 
@@ -65,12 +61,9 @@ namespace SpaceShooter
 
             m_RefireTimer = m_TurretProperties.RateOfFire;
 
-            if (m_AudioSource)
-            {
-                m_AudioSource.volume = m_TurretProperties.Volume;
+            Sound sound = m_TurretProperties.ProjectileSound;
 
-                m_AudioSource.PlayOneShot(m_TurretProperties.LaunchSFX, m_VolumeSFX);
-            }
+            sound.Play();
         }
 
         public void AssignLoadout(TurretProperties props)

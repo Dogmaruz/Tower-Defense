@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 2394982871627736644}
   - component: {fileID: 7378287986110396712}
   - component: {fileID: 7376583344827082086}
+  - component: {fileID: -7985481128317666773}
   m_Layer: 0
   m_Name: Projectile_Stone
   m_TagString: Untagged
@@ -140,7 +141,19 @@ MonoBehaviour:
       m_Calls: []
   m_EventOnHit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -7985481128317666773}
+        m_TargetAssemblyTypeName: TowerDefense.SoundHook, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_DamageType: 2
 --- !u!114 &7376583344827082086
 MonoBehaviour:
@@ -155,3 +168,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RorationSpeed: 40
+--- !u!114 &-7985481128317666773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2394982871627736698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11429f2662cff9b48950dc48fa56778c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_sound: 15

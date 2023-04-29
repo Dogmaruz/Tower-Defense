@@ -21,6 +21,8 @@ namespace TowerDefense
         {
             if (--m_activeEnemyCount <= 0)
             {
+                Sound.WaveIsDath.Play();
+
                 ForceNextWave(false);
             }
         }
@@ -34,6 +36,8 @@ namespace TowerDefense
         {
             if (m_currentWave)
             {
+                Sound.NextWaveButton.Play();
+
                 var result = (int)m_currentWave.GetRemainingTime();
 
                 if (IsCallNewWave)

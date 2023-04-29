@@ -61,6 +61,7 @@ namespace TowerDefense
             DisableAll<Tower>();
             DisableAll<NextWaveGUI>();
 
+
             void DisableAll<T>() where T : MonoBehaviour
             {
                 foreach (var obj in FindObjectsOfType<T>())
