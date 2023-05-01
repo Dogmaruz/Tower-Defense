@@ -58,6 +58,7 @@ namespace TowerDefense
 
         private void SpawnEnemies()
         {
+
             Sound.NextWave.Play();
 
             foreach ((EnemyAsset asset, int count, int pathIndex) in m_currentWave.EnumerateSquad())

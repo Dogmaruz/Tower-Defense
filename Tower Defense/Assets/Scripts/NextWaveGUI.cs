@@ -8,16 +8,32 @@ namespace TowerDefense
     {
         [SerializeField] private Text m_bonusAmount;
 
+        [SerializeField] private Image m_BonusAmountProgressBar;
+
+        [SerializeField] private Button m_ButtonNext;
+
+        private float m_FillAmountStep;
+
         private EnemyWaveManager m_Manager;
 
         private float m_timeToNextWave;
 
         private void Start()
         {
+            m_BonusAmountProgressBar.fillAmount = 1;
+
             m_Manager = FindObjectOfType<EnemyWaveManager>();
-            EnemyWawe.OnWavePrepare += (float time) =>
+
+            EnemyWawe.OnWavePrepare += (float time, bool isWavesOver) =>
             {
+                if (isWavesOver)
+                {
+                    m_ButtonNext.interactable = false;
+                }
+
                 m_timeToNextWave = time;
+
+                m_FillAmountStep = 1f / m_timeToNextWave;
             };
         }
 
@@ -31,6 +47,8 @@ namespace TowerDefense
             m_timeToNextWave -= Time.deltaTime;
 
             m_bonusAmount.text = ((int)m_timeToNextWave < 0 ? 0 : (int)m_timeToNextWave).ToString();
+
+            m_BonusAmountProgressBar.fillAmount = m_timeToNextWave * m_FillAmountStep;
         }
     }
 }

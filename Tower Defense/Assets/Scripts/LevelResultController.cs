@@ -7,10 +7,6 @@ namespace SpaceShooter
 {
     public class LevelResultController : SingletonBase<LevelResultController>
     {
-        //[SerializeField] private Text m_Kills;
-        //[SerializeField] private Text m_Score;
-        //[SerializeField] private Text m_Time;
-
         [SerializeField] private Text m_Result;
         [SerializeField] private Text m_ButtonNextText;
         [SerializeField] private AnimationBase m_AnimationSpriteScale;
@@ -25,20 +21,11 @@ namespace SpaceShooter
         private void Start()
         {
             gameObject.SetActive(false);
-
-            //m_AnimationSpriteScale.OnEventEnd.AddListener(StopTime);
         }
 
         public void ShowResults(bool success)
         {
             gameObject.SetActive(true);
-
-            //if (success )
-            //{
-            //    var victory = Instantiate(m_victoryPrefab, transform.position,Quaternion.identity);
-
-            //    Destroy(victory.gameObject, 16);
-            //}
 
             m_Success = success;
 
@@ -52,19 +39,11 @@ namespace SpaceShooter
 
             m_menuImage.sprite = success ? m_winSprite : m_loseSprite;
 
-            //Старый вариант из Space Shooter.
-            //m_Kills.text = "Kills : " + levelResults.NumKills.ToString();
-
-            //m_Score.text = "Score : " + levelResults.Score.ToString();
-
-            //m_Time.text = "Time : " + levelResults.Time.ToString();
-
             m_ButtonNextText.text = success ? "Продолжить" : "Начать заново";
 
             m_AnimationSpriteScale.StartAnimation(true);
 
             OnShowPanel?.Invoke();
-
         }
 
         public void OnButtonNextAction()
@@ -84,10 +63,5 @@ namespace SpaceShooter
                 LevelSequenceController.Instance.RestartLevel();
             }
         }
-
-        //private void StopTime()
-        //{
-        //    Time.timeScale = 0;
-        //}
     }
 }

@@ -812,17 +812,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groups:
   - squads:
-    - asset: {fileID: 11400000, guid: b1cbfec52c85a7d4daa50f99017c0bb7, type: 2}
+    - asset: {fileID: 11400000, guid: bce1a11c873942446bfcf3339f4eaaba, type: 2}
       count: 6
-    - asset: {fileID: 11400000, guid: a71d26f2d873ada4a864424bab07d32d, type: 2}
+    - asset: {fileID: 11400000, guid: 94818b28f5ba47f4bb9ab0f05a886cd6, type: 2}
       count: 4
-    - asset: {fileID: 11400000, guid: fdf7d3cc790dd6c4eb6557dc4e214c46, type: 2}
+    - asset: {fileID: 11400000, guid: f4b36391aa23ccb48aa877463b06605e, type: 2}
       count: 6
   - squads: []
   - squads: []
   - squads: []
   - squads:
-    - asset: {fileID: 11400000, guid: fdf7d3cc790dd6c4eb6557dc4e214c46, type: 2}
+    - asset: {fileID: 11400000, guid: b5b2ff398cb92dc4fb6f5bb3819eec18, type: 2}
       count: 10
   m_PrepareTime: 10
   m_NextWave: {fileID: 0}
@@ -3231,7 +3231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff71db1ce909e2458bced4bdac3c789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_timeLimit: 60
+  m_timeLimit: 5
 --- !u!1 &825057286
 GameObject:
   m_ObjectHideFlags: 0
@@ -7406,7 +7406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DoNotDestroyOnLoad: 0
-  m_ReferenceTime: 300
+  m_ReferenceTime: 180
   m_EventLevelCompleted:
     m_PersistentCalls:
       m_Calls: []

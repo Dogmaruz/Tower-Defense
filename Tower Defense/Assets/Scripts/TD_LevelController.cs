@@ -8,6 +8,8 @@ namespace TowerDefense
 
         private int LevelScore = 3;
 
+        public bool IsStopLevelActivity { get; private set;}
+
         public static new TD_LevelController Instance
         {
             get
@@ -61,6 +63,7 @@ namespace TowerDefense
             DisableAll<Tower>();
             DisableAll<NextWaveGUI>();
 
+            IsStopLevelActivity = true;
 
             void DisableAll<T>() where T : MonoBehaviour
             {

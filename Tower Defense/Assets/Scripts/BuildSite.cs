@@ -43,6 +43,8 @@ namespace TowerDefense
 
         public virtual void OnPointerDown(PointerEventData eventData)
         {
+            if (TD_LevelController.Instance.IsStopLevelActivity) return;
+            
             OnclickEvent(this);
         }
     }

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990765c0be57da544b16855d3ec24165, type: 3}
+  m_Name: Knight_Red_Hard
+  m_EditorClassIdentifier: 
+  color: {r: 0.7924528, g: 0.45168984, b: 0.16820934, a: 1}
+  spriteScale: {x: 0.9, y: 0.9}
+  controller: {fileID: 22100000, guid: e253dd741743c34469b92e4d97a8c54a, type: 2}
+  moveSpeed: 0.4
+  HitPoints: 30
+  Armor: 2
+  ArmorType: 2
+  ScoreValue: 1
+  KillValue: 6
+  ColliderRadius: 0.3
+  Damage: 1
+  Gold: 7

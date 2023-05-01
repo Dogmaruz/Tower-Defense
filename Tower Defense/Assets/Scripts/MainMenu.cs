@@ -47,6 +47,14 @@ namespace TowerDefense
 
             FileHandler.Reset(Upgrades.filename);
 
+            var mapCompletion = FindObjectOfType<MapCompletion>();
+
+            var levelSequenceController = FindObjectOfType<LevelSequenceController>();
+
+            if (levelSequenceController) Destroy(levelSequenceController.gameObject);
+           
+            if (mapCompletion) Destroy(mapCompletion.gameObject);
+           
             Continue();
         }
 

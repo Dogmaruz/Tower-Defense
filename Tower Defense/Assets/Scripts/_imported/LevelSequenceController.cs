@@ -53,24 +53,7 @@ namespace SpaceShooter
                 EpisodeStatistics.NumberOfAttempts++;
             }
 
-            //CalculateLevelStatistics();
-
-            //Старый вариант из Space Sooter.
-            //ResultPanelController.Instance.ShowResults(LevelStatistics, success);
-
-            //Новый вариант без LevelStatistics.
             LevelResultController.Instance.ShowResults(success);
-
-            //Временный код заглушка.
-            //if (success)
-            //{
-            //    AdvanceLevel();
-            //}
-            //else
-            //{
-            //    RestartLevel();
-            //}
-            //конец.
         }
 
         //Переход на другой  уровень если он есть, а иначе завершение эпизода и выход в главное меню.
