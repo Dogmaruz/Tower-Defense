@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 4512
+  controlID: 4056
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 4513
+  controlID: 4057
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 4514
+  controlID: 4058
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -224,9 +224,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 38cd0000
+      m_SelectedIDs: 9c740000
       m_LastClickedID: 0
-      m_ExpandedIDs: 8a95fdff7cc5fdffd032feffd637feff2a4efeffaa52feffea7bfeffe87cfeff527dfefff6b5feffa06cffff528affff64d2ffff24d8ffff92dcffffacddffff06deffff82dfffff4ae2ffff12e5fffffae7ffffe2eaffffaaedffff92f0ffffa2f3ffff32f8ffff36f8ffff06fbfffff4ffffff328b00001c930000ca97000038a3000094a9000098ae00001ecc0000e8ce0000
+      m_ExpandedIDs: 40c1fcffaac4fcffd4e9ffff46f9ffff4cf9ffff52f9ffff9cfaffff06fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -750,7 +750,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 4407
+  controlID: 4035
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -761,7 +761,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -770,15 +770,15 @@ MonoBehaviour:
     y: 0
     width: 798
     height: 312
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 14}
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
   - {fileID: 14}
   - {fileID: 15}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -832,10 +832,10 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 49}
-    m_SelectedIDs: 14650000
-    m_LastClickedID: 25876
-    m_ExpandedIDs: 00000000a45e0000a65e0000a85e0000aa5e0000ac5e0000ae5e0000b05e000000ca9a3b
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: 8e6c0000
+    m_LastClickedID: 27790
+    m_ExpandedIDs: 00000000286600002a6600002c6600002e66000030660000326600003466000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -863,7 +863,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a45e0000a65e0000a85e0000aa5e0000ac5e0000ae5e0000b05e000000ca9a3b
+    m_ExpandedIDs: 00000000286600002a6600002c6600002e66000030660000326600003466000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -888,9 +888,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 9c740000
+    m_LastClickedInstanceID: 29852
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000665a00009e720000945e0000e64f020000000000dc6d0000b65f0000985d0000ce6d0000d06d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -977,7 +977,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 52536
+  m_LastSelectedObjectID: -1710
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1023,8 +1023,8 @@ MonoBehaviour:
     y: 0
     width: 639
     height: 939
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}

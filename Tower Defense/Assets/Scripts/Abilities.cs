@@ -9,11 +9,11 @@ namespace TowerDefense
 
     public class Abilities : SingletonBase<Abilities>
     {
-       
+
         [Serializable]
         public class ExplosionAbility
         {
-            [SerializeField] private int m_Cost = 5;
+            [SerializeField] private int m_Cost = 10; //Стоимость способности.
 
             [SerializeField] private Text m_CostText;
 
@@ -23,13 +23,38 @@ namespace TowerDefense
 
             [SerializeField] private Color m_TargetColor;
 
+            [SerializeField] private float m_CoolDown = 15; // Время до активации способности.
+
             public int Cost { get => m_Cost; set => m_Cost = value; }
             public int Damage { get => m_Damage; set => m_Damage = value; }
             public float DamageRadius { get => m_DamageRadius; set => m_DamageRadius = value; }
             public Text CostText { get => m_CostText; set => m_CostText = value; }
 
+            public void Stop()
+            {
+                Instance.StopAllCoroutines();
+
+                LevelResultController.Instance.OnShowPanel -= Stop;
+
+                Instance.m_ExplosionButton.interactable = false;
+            }
+
             public void Use()
             {
+                
+                IEnumerator ExplosionAbilityButton()
+                {
+                    Instance.m_ExplosionButton.interactable = false;
+
+                    Instance.IsCoolDownExplosion = true;
+
+                    yield return new WaitForSeconds(m_CoolDown);
+
+                    Instance.IsCoolDownExplosion = false;
+
+                    Instance.UpdateExplosionAbility(Instance.Gold);
+                }
+
                 if (Instance.Gold >= m_Cost && Upgrades.GetUpgradeLevel(Instance.ExplosionUpgradeAsset) >= 1)
                 {
                     TD_Player.Instance.ChangeGold(-m_Cost);
@@ -55,6 +80,8 @@ namespace TowerDefense
                         }
                     });
 
+                    Instance.StartCoroutine(ExplosionAbilityButton());
+
                     Instance.UpdateExplosionAbility(Instance.Gold);
                 }
             }
@@ -64,13 +91,13 @@ namespace TowerDefense
         [Serializable]
         public class TimeAbility
         {
-            [SerializeField] private int m_Cost = 10;
+            [SerializeField] private int m_Cost = 10; //Стоимость способности.
 
             [SerializeField] private Text m_CostText;
 
-            [SerializeField] private float m_CoolDown = 15;
+            [SerializeField] private float m_CoolDown = 15; // Время до активации способности.
 
-            [SerializeField] private float m_Duration = 5f;
+            [SerializeField] private float m_Duration = 5f; // Длиттельность эффекта.
 
             private float m_speedSlowRatio = 0.5f;
 
@@ -118,11 +145,11 @@ namespace TowerDefense
                 {
                     Instance.m_TimeButton.interactable = false;
 
-                    Instance.IsCoolDown = true;
+                    Instance.IsCoolDownTime = true;
 
                     yield return new WaitForSeconds(m_CoolDown);
 
-                    Instance.IsCoolDown = false;
+                    Instance.IsCoolDownTime = false;
 
                     //Instance.m_TimeButton.interactable = true;
 
@@ -131,7 +158,7 @@ namespace TowerDefense
                     LevelResultController.Instance.OnShowPanel -= Stop;
                 }
 
-                if (Instance.Manna >= m_Cost && Upgrades.GetUpgradeLevel(Instance.TimeUpgradeAsset) >=1)
+                if (Instance.Manna >= m_Cost && Upgrades.GetUpgradeLevel(Instance.TimeUpgradeAsset) >= 1)
                 {
                     TD_Player.Instance.ChangeManna(-m_Cost);
 
@@ -159,7 +186,7 @@ namespace TowerDefense
         [SerializeField] private Button m_ExplosionButton;
 
         [SerializeField] private UpgradeAsset m_ExplosionUpgradeAsset;
-        public UpgradeAsset ExplosionUpgradeAsset { get => m_ExplosionUpgradeAsset;}
+        public UpgradeAsset ExplosionUpgradeAsset { get => m_ExplosionUpgradeAsset; }
 
         [SerializeField] private Image m_TargetCircle;
         public Image TargetCircle { get => m_TargetCircle; set => m_TargetCircle = value; }
@@ -167,7 +194,9 @@ namespace TowerDefense
         public int Gold { get; set; }
         public int Manna { get; set; }
 
-        public bool IsCoolDown;
+        public bool IsCoolDownTime;
+
+        public bool IsCoolDownExplosion;
 
 
         private void Start()
@@ -175,6 +204,8 @@ namespace TowerDefense
             TD_Player.GoldUpdateSubscrible(UpdateExplosionAbility);
 
             TD_Player.MannaUpdateSubscrible(UpdateTimeAbility);
+
+            LevelResultController.Instance.OnShowPanel += Instance.m_ExplosionAbility.Stop;
 
             if (Upgrades.GetUpgradeLevel(m_TimeUpgradeAsset) < 1 || Manna < Instance.m_TimeAbility.Cost)
             {
@@ -207,7 +238,7 @@ namespace TowerDefense
         {
             Gold = value;
 
-            if (Gold >= Instance.m_ExplosionAbility.Cost != m_ExplosionButton.interactable && Upgrades.GetUpgradeLevel(Instance.ExplosionUpgradeAsset) >= 1)
+            if (Gold >= Instance.m_ExplosionAbility.Cost != m_ExplosionButton.interactable && Upgrades.GetUpgradeLevel(Instance.ExplosionUpgradeAsset) >= 1 && !IsCoolDownExplosion)
             {
                 m_ExplosionButton.interactable = !m_ExplosionButton.interactable;
             }
@@ -217,11 +248,10 @@ namespace TowerDefense
         {
             Manna = value;
 
-            if (Manna >= Instance.m_TimeAbility.Cost != m_TimeButton.interactable && Upgrades.GetUpgradeLevel(Instance.TimeUpgradeAsset) >= 1 && !IsCoolDown)
+            if (Manna >= Instance.m_TimeAbility.Cost != m_TimeButton.interactable && Upgrades.GetUpgradeLevel(Instance.TimeUpgradeAsset) >= 1 && !IsCoolDownTime)
             {
                 m_TimeButton.interactable = !m_TimeButton.interactable;
             }
-
         }
 
         [SerializeField] private ExplosionAbility m_ExplosionAbility;

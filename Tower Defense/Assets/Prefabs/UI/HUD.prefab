@@ -2540,13 +2540,15 @@ MonoBehaviour:
   m_ExplosionButton: {fileID: 1086302117228563036}
   m_ExplosionUpgradeAsset: {fileID: 11400000, guid: 6e210f6f62d029d46857d0df436bf35f, type: 2}
   m_TargetCircle: {fileID: 6758723162451738259}
-  IsCoolDown: 0
+  IsCoolDownTime: 0
+  IsCoolDownExplosion: 0
   m_ExplosionAbility:
-    m_Cost: 5
+    m_Cost: 10
     m_CostText: {fileID: 1086302117932102280}
     m_Damage: 3
     m_DamageRadius: 1
     m_TargetColor: {r: 0.735849, g: 0.19090424, b: 0.19090424, a: 0.3764706}
+    m_CoolDown: 15
   m_TimeAbility:
     m_Cost: 1
     m_CostText: {fileID: 865566176802134418}
