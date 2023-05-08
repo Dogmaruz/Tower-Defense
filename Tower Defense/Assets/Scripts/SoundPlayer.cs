@@ -24,7 +24,6 @@ namespace TowerDefense
             Instance.m_AudioSource.volume = 0.2f;
 
             Instance.m_AudioSource.Play();
-
         }
         
         public void Play(Sound sound)

@@ -9,7 +9,7 @@ namespace TowerDefense
 
         [SerializeField] private Enemy m_EnemyPrefabs; //Ссылка на префаб.
 
-        [SerializeField] private Path[] m_paths;
+        [SerializeField] private Path[] m_paths; //путь.
 
         [SerializeField] private EnemyWawe m_currentWave;
 
@@ -17,6 +17,7 @@ namespace TowerDefense
 
         public event Action OnAllWavesDead;
 
+        //Ведет счет оставшихся врагов и при нуле вызывает новую волну.
         private void RecordEnemyDead()
         {
             if (--m_activeEnemyCount <= 0)
@@ -32,6 +33,7 @@ namespace TowerDefense
             m_currentWave.Prepare(SpawnEnemies);
         }
 
+        //Вызов новой волны.
         public void ForceNextWave(bool IsCallNewWave)
         {
             if (m_currentWave)
@@ -56,9 +58,9 @@ namespace TowerDefense
             }
         }
 
+        //Спавнер врагов.
         private void SpawnEnemies()
         {
-
             Sound.NextWave.Play();
 
             foreach ((EnemyAsset asset, int count, int pathIndex) in m_currentWave.EnumerateSquad())
@@ -86,7 +88,6 @@ namespace TowerDefense
                 {
                     Debug.Log($"Invalid pathIndex in {name}");
                 }
-
             }
 
             m_currentWave = m_currentWave.PrepareNext(SpawnEnemies);

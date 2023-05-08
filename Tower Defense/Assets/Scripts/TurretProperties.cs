@@ -12,7 +12,7 @@ namespace SpaceShooter
 
     [CreateAssetMenu(fileName = "TurretProperties", menuName = "Turret/TurretProperties")]
     public sealed class TurretProperties : ScriptableObject
-    {
+    {//Свойства турели.
         [SerializeField] private TurretMode m_Mode;
         public TurretMode Mode  => m_Mode;
 

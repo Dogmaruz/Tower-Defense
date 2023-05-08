@@ -6,7 +6,7 @@ namespace TowerDefense
 {
 
     public class WindowNavigationController : MonoBehaviour
-    {
+    {//Окно на завершающем уровне.
         [SerializeField] private AnimationBase m_AnimationSpriteScale;
 
         private void Awake()

@@ -35,7 +35,6 @@ namespace TowerDefense
                     TD_Player.MannaUpdateSubscrible(UpdateText);
                     break;
             }
-
         }
 
         private void UpdateText(int value)
@@ -46,10 +45,12 @@ namespace TowerDefense
         private void OnDestroy()
         {
             TD_Player.GoldUpdateUnSubscrible(UpdateText);
-            TD_Player.LifeUpdateUnSubscrible(UpdateText);
-            TD_Player.ScoreUpdateUnSubscrible(UpdateText);
-            TD_Player.MannaUpdateUnSubscrible(UpdateText);
 
+            TD_Player.LifeUpdateUnSubscrible(UpdateText);
+
+            TD_Player.ScoreUpdateUnSubscrible(UpdateText);
+
+            TD_Player.MannaUpdateUnSubscrible(UpdateText);
         }
     }
 }

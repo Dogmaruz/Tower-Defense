@@ -16,6 +16,7 @@ namespace SpaceShooter
         private AIPointPatrol m_PatrolPoint; //Точка патрулирования.
 
         //[SerializeField] private AIPointPatrol[] m_PatrolPoints; //Массив точекк патрулирования.
+
         //public AIPointPatrol[] PatrolPoints { get => m_PatrolPoints; set => m_PatrolPoints = value; }
 
         [SerializeField] private float m_AttackRadius; //Радиус обнаружения для атаки.
@@ -40,6 +41,7 @@ namespace SpaceShooter
         private SpaceShip m_SpaceShip; //Ссылка на корабль игрока.
 
         private Vector3 m_MovePosition;
+
         private Vector3 m_TargetPoint;
 
         private Destructible m_SelectedTarget;
@@ -271,6 +273,7 @@ namespace SpaceShooter
                 if (dist < minDist)
                 {
                     minDist = dist;
+
                     potentialTarget = v;
                 }
             }
@@ -289,8 +292,11 @@ namespace SpaceShooter
         private void InitTimers()
         {
             m_RandomizeDirectionTimer = new Timer(m_RandomSelectMovePointTime);
+
             m_AtionAvadeCollisionTimer = new Timer(m_AtionAvadeCollisionTime);
+
             m_FireTimer = new Timer(m_ShootDelay);
+
             m_FindNewTargetTimer = new Timer(m_FindNewTargetTime);
         }
 
@@ -298,8 +304,11 @@ namespace SpaceShooter
         private void UpdateTimers()
         {
             m_RandomizeDirectionTimer.RemoveTime(Time.deltaTime);
+
             m_AtionAvadeCollisionTimer.RemoveTime(Time.deltaTime);
+
             m_FireTimer.RemoveTime(Time.deltaTime);
+
             m_FindNewTargetTimer.RemoveTime(Time.deltaTime);
         }
 

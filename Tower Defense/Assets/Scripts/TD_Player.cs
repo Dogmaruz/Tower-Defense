@@ -14,7 +14,6 @@ namespace TowerDefense
             }
         }
 
-
         [SerializeField] private UpgradeAsset m_heathUpgrade;
 
         private static event Action<int> OnGoldUpdate;
@@ -28,33 +27,41 @@ namespace TowerDefense
             TD_Player.Instance.m_NumLives += level;
         }
 
+        //Подписываемся на событие обновления монет.
         public static void GoldUpdateSubscrible(Action<int> action)
         {
             OnGoldUpdate += action;
+
             action(Instance.m_gold);
         }
 
         public static event Action<int> OnLifeUpdate;
 
+        //Подписываемся на событие обновления жизней.
         public static void LifeUpdateSubscrible(Action<int> action)
         {
             OnLifeUpdate += action;
+
             action(Instance.m_NumLives);
         }
 
         private static event Action<int> OnScoreUpdate;
 
+        //Подписываемся на событие обновления счета.
         public static void ScoreUpdateSubscrible(Action<int> action)
         {
             OnScoreUpdate += action;
+
             action(Instance.Score);
         }
 
         private static event Action<int> OnMannaUpdate;
 
+        //Подписываемся на событие обновления манны.
         public static void MannaUpdateSubscrible(Action<int> action)
         {
             OnMannaUpdate += action;
+
             action(Instance.Manna);
         }
 
@@ -73,6 +80,7 @@ namespace TowerDefense
             OnGoldUpdate?.Invoke(m_gold);
         }
 
+        //Добавляет манну игроку.
         public void ChangeManna(int change)
         {
             m_Manna += change;
@@ -80,6 +88,7 @@ namespace TowerDefense
             OnMannaUpdate?.Invoke(m_Manna);
         }
 
+        //Обновляем счет.
         public void UpdateScore(int value)
         {
             AddScore(value);
@@ -96,6 +105,8 @@ namespace TowerDefense
         }
 
         [SerializeField] private Tower m_towerPrefabe;
+
+        //Строит башню на месте постоики. Уменьшает колличество монет и удаляет BuilSite.
         public void TryBuild(TowerAsset towerAsset, Transform buildSite)
         {
             ChangeGold(-towerAsset.GoldCost);
@@ -107,6 +118,8 @@ namespace TowerDefense
             Destroy(buildSite.gameObject);
 
         }
+
+        //Производим отписки от событий.
 
         public static void GoldUpdateUnSubscrible(Action<int> action)
         {

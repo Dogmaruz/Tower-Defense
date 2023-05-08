@@ -10,7 +10,7 @@ namespace TowerDefense
 
         [SerializeField] private Text m_PointText;
 
-        [SerializeField] private int m_NeedPoints = 3; //Необходимое колличество звезд(очков)
+        [SerializeField] private int m_NeedPoints = 3; //Необходимое колличество звезд.
 
         private Map_Level m_MapLevel;
 

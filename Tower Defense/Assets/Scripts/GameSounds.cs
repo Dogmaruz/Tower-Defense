@@ -4,7 +4,6 @@ using System;
 using UnityEditor;
 #endif
 
-
 namespace TowerDefense
 {
     [CreateAssetMenu(fileName = "GameSounds", menuName = "Sounds/GameSounds")]
@@ -32,6 +31,8 @@ namespace TowerDefense
             //    {
             //        target.m_sounds[i] = editorguilayout.objectfield($"{(sound)i} : ", target.m_sounds[i], typeof(audioclip), false) as audioclip;
             //    }
+
+            //    EditorUtility.SetDirty(target);
             //}
         }
 #endif

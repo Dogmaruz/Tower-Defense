@@ -12,6 +12,7 @@ namespace TowerDefense
         private class Squad
         {
             public EnemyAsset asset;
+
             public int count;
         }
 
@@ -27,6 +28,7 @@ namespace TowerDefense
 
         [SerializeField] private EnemyWawe m_NextWave;
 
+        //Возвращает остаток времени.
         public float GetRemainingTime()
         {
             return m_PrepareTime - Time.time;
@@ -48,17 +50,19 @@ namespace TowerDefense
                 enabled = false;
             }
         }
+
         public void Prepare(Action spawnEnemies)
         {
             OnWavePrepare?.Invoke(m_PrepareTime, false);
 
-            m_PrepareTime += Time.time;
+            m_PrepareTime += Time.time; //Устанавливаем время волны от тещего временни.
 
             enabled = true;
 
             OnWaveReady += spawnEnemies;
         }
 
+        //Подготавливает новую волну.
         public EnemyWawe PrepareNext(Action spawnEnemies)
         {
             OnWaveReady -= spawnEnemies;
@@ -70,7 +74,6 @@ namespace TowerDefense
             else
             {
                 OnWavePrepare?.Invoke(0, true);
-
             }
 
             return m_NextWave;
@@ -84,7 +87,6 @@ namespace TowerDefense
                     yield return (squad.asset, squad.count, i);
                 }
             }
-
         }
     }
 }

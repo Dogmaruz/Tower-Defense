@@ -12,7 +12,7 @@ namespace TowerDefense
 
         [Serializable]
         public class ExplosionAbility
-        {
+        {//Способность наносить взрыв в радиусе.
             [SerializeField] private int m_Cost = 10; //Стоимость способности.
 
             [SerializeField] private Text m_CostText;
@@ -31,7 +31,7 @@ namespace TowerDefense
             public Text CostText { get => m_CostText; set => m_CostText = value; }
 
             public void Stop()
-            {
+            {//Останавливаем корутины и делаем кнопку не активной.
                 Instance.StopAllCoroutines();
 
                 LevelResultController.Instance.OnShowPanel -= Stop;
@@ -41,9 +41,8 @@ namespace TowerDefense
 
             public void Use()
             {
-                
                 IEnumerator ExplosionAbilityButton()
-                {
+                {//Блокируем кнопку на время.
                     Instance.m_ExplosionButton.interactable = false;
 
                     Instance.IsCoolDownExplosion = true;
@@ -64,7 +63,7 @@ namespace TowerDefense
                     Instance.m_TargetCircle.color = m_TargetColor;
 
                     ClickProtection.Instance.Activate((Vector2 v) =>
-                    {
+                    {//Получаем позицию при клике мыши.
                         Vector3 position = v;
 
                         position.z = -Camera.main.transform.position.z;
@@ -72,7 +71,7 @@ namespace TowerDefense
                         position = Camera.main.ScreenToWorldPoint(position);
 
                         foreach (var collider in Physics2D.OverlapCircleAll(position, m_DamageRadius))
-                        {
+                        {//Наносим урон всем врагам в радиусе.
                             if (collider.transform.root.TryGetComponent<Enemy>(out var enemy))
                             {
                                 enemy.TakeDamage(m_Damage, TD_Projectile.DamageType.Archer);
@@ -90,7 +89,7 @@ namespace TowerDefense
 
         [Serializable]
         public class TimeAbility
-        {
+        {//Способность замедлять врагов.
             [SerializeField] private int m_Cost = 10; //Стоимость способности.
 
             [SerializeField] private Text m_CostText;
@@ -105,7 +104,7 @@ namespace TowerDefense
             public int Cost { get => m_Cost; set => m_Cost = value; }
 
             public void Use()
-            {
+            {//Останавливаем корутины и делаем кнопку не активной.
                 void Stop()
                 {
                     Instance.StopAllCoroutines();
@@ -118,7 +117,7 @@ namespace TowerDefense
                 }
 
                 void Slow(TD_PatrolController patrolController, float speed)
-                {
+                {//Замедляем врагов.
                     LevelResultController.Instance.OnShowPanel += Stop;
 
                     patrolController.SetNavigationLinear(speed);
@@ -134,7 +133,7 @@ namespace TowerDefense
                     yield return new WaitForSeconds(m_Duration);
 
                     foreach (var dest in Destructible.AllDestructible)
-                    {
+                    {//Восстанавливаем скорость в изначальное положение по истечении заданного времени.
                         Slow(dest.GetComponent<TD_PatrolController>(), dest.GetComponent<TD_PatrolController>().PreviousSpeed);
                     }
 
@@ -142,7 +141,7 @@ namespace TowerDefense
                 }
 
                 IEnumerator TimeAbilityButton()
-                {
+                {//Блокируем кнопку на время.
                     Instance.m_TimeButton.interactable = false;
 
                     Instance.IsCoolDownTime = true;
@@ -159,7 +158,7 @@ namespace TowerDefense
                 }
 
                 if (Instance.Manna >= m_Cost && Upgrades.GetUpgradeLevel(Instance.TimeUpgradeAsset) >= 1)
-                {
+                {//Уменьшаем манну и замедляем врагов.
                     TD_Player.Instance.ChangeManna(-m_Cost);
 
                     foreach (var dest in Destructible.AllDestructible)
@@ -198,7 +197,6 @@ namespace TowerDefense
 
         public bool IsCoolDownExplosion;
 
-
         private void Start()
         {
             TD_Player.GoldUpdateSubscrible(UpdateExplosionAbility);
@@ -235,7 +233,7 @@ namespace TowerDefense
         }
 
         private void UpdateExplosionAbility(int value)
-        {
+        {//Активируем способность при достаточном колличестве монет.
             Gold = value;
 
             if (Gold >= Instance.m_ExplosionAbility.Cost != m_ExplosionButton.interactable && Upgrades.GetUpgradeLevel(Instance.ExplosionUpgradeAsset) >= 1 && !IsCoolDownExplosion)
@@ -245,7 +243,7 @@ namespace TowerDefense
         }
 
         private void UpdateTimeAbility(int value)
-        {
+        {//Активируем способность при достаточном колличестве манны.
             Manna = value;
 
             if (Manna >= Instance.m_TimeAbility.Cost != m_TimeButton.interactable && Upgrades.GetUpgradeLevel(Instance.TimeUpgradeAsset) >= 1 && !IsCoolDownTime)
@@ -262,7 +260,7 @@ namespace TowerDefense
         public void UseTimeAbility() => m_TimeAbility.Use();
 
         private void OnDestroy()
-        {
+        {//Отписываемся от событий.
             TD_Player.GoldUpdateUnSubscrible(UpdateExplosionAbility);
 
             TD_Player.MannaUpdateUnSubscrible(UpdateTimeAbility);

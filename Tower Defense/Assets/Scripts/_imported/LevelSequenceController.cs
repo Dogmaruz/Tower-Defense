@@ -6,28 +6,25 @@ namespace SpaceShooter
     {
         public static string MapLevels_SceneNickName = "Map_Levels";
         public Episode CurrentEpisode { get; private set; } //Текущий эпизод.
-
         public int CurrentLevel { get; private set; } //Текущий уровень.
-
         public bool LastLevelResult { get; private set; }
-
         public PlayerStatistics LevelStatistics { get; private set; } //Статистика уровня.
         public EpisodeStatistics EpisodeStatistics { get; set; } //Статистика эпизода.
-
         public static SpaceShip PlayerShip { get; set; }
+        public int EpisodeCount { get; private set; } = 1; //Колличество пройденных эпизодов.
 
         private int m_BonusIndex = 2;
-
-        public int EpisodeCount { get; private set; } = 1; //Колличество пройденных эпизодов.
 
         //Старт эпизода.
         public void StartEpisode(Episode episode)
         {
             CurrentEpisode = episode;
+
             CurrentLevel = 0;
 
             //сбрасываем статы перед началом эпизода.
             LevelStatistics = new PlayerStatistics();
+
             LevelStatistics.Reset();
 
             EpisodeStatistics = new EpisodeStatistics(CurrentEpisode.Levels.Length, CurrentEpisode.EpisodeName);
@@ -64,7 +61,9 @@ namespace SpaceShooter
             EpisodeStatistics.CompletedLevels++;
 
             EpisodeStatistics.LevelStatistics[CurrentLevel - 1].NumKills = LevelStatistics.NumKills;
+
             EpisodeStatistics.LevelStatistics[CurrentLevel - 1].Score = LevelStatistics.Score;
+
             EpisodeStatistics.LevelStatistics[CurrentLevel - 1].Time = LevelStatistics.Time;
 
             if (CurrentEpisode.Levels.Length <= CurrentLevel)

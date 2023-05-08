@@ -1,5 +1,3 @@
-using SpaceShooter;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace TowerDefense
@@ -12,10 +10,11 @@ namespace TowerDefense
         {
             var td_projectile = GetComponent<TD_Projectile>();
 
-            td_projectile.EventOnHit.AddListener(ReduseSpeed);
+            td_projectile.EventOnHit.AddListener(ReduceSpeed);
         }
 
-        public void ReduseSpeed(Enemy enemy)
+        //Уменьшает скорость врага в два раза.
+        public void ReduceSpeed(Enemy enemy)
         {
             enemy.GetComponent<TD_PatrolController>().SetNavigationLinear(m_speedRatio);
         }

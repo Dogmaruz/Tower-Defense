@@ -1,5 +1,4 @@
 ﻿using SpaceShooter;
-using System;
 using UnityEngine;
 
 namespace TowerDefense
@@ -8,12 +7,11 @@ namespace TowerDefense
     public class Tower : MonoBehaviour
     {
         [SerializeField] private float m_Radius;
+        public float Radius { get => m_Radius; set { m_Radius = value; } }
 
         [SerializeField] Transform m_EffectSpawnPoint;
 
         [SerializeField] private UpgradeAsset m_radiusUpgrade;
-        public float Radius { get => m_Radius; set { m_Radius = value; } }
-
 
         [SerializeField] private Color GizmoColor = new Color(1, 0, 0, 0.3f);
 
@@ -28,14 +26,12 @@ namespace TowerDefense
             var level = Upgrades.GetUpgradeLevel(m_radiusUpgrade);
 
             m_Radius += level * 0.2f;
-
         }
 
+        //Задает параметры построенной башне.
         public void Use(TowerAsset towerAsset)
         {
             GetComponentInChildren<SpriteRenderer>().sprite = towerAsset.ElementSprite;
-
-            //m_Turrets = GetComponentsInChildren<Turret>();
 
             foreach (var turret in m_Turrets)
             {
@@ -50,6 +46,7 @@ namespace TowerDefense
             GetComponentInChildren<BuildSite>().SetBuiddableTowers(towerAsset.UpgadesTo);
         }
 
+        //Создает Particle System над башней. Этот эффект есть у башен второго уровня.
         public void IntatiateEffectPrefab(GameObject prefab)
         {
             Instantiate(prefab, m_EffectSpawnPoint.position, Quaternion.identity, m_EffectSpawnPoint);
@@ -58,7 +55,7 @@ namespace TowerDefense
         private void Update()
         {
             if (m_Target)
-            {
+            {//Если есть цель в радиусе зоны поражения башни, то производиться поворот турели и выстрел.
                 Vector3 fromTo = m_Target.transform.position - transform.position;
 
                 if (fromTo.magnitude <= m_Radius)
@@ -114,7 +111,7 @@ namespace TowerDefense
 
             }
             else
-            {
+            {//Поиск цели.
                 var enter = Physics2D.OverlapCircle(transform.position, m_Radius);
 
                 if (enter)
@@ -130,6 +127,7 @@ namespace TowerDefense
         private void OnDrawGizmos()
         {
             Gizmos.color = GizmoColor;
+
             Gizmos.DrawWireSphere(transform.position, m_Radius);
         }
     }

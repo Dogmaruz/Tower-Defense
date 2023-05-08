@@ -14,7 +14,7 @@ namespace TowerDefense
 
         [SerializeField] private DamageType m_DamageType;
 
-        //Проверяет попадание projectile с врагом и вызывает метод TakeDamage.
+        //Проверяет на попадание снаряда во врага и вызывает метод TakeDamage.
         protected override void OnHit(RaycastHit2D hit)
         {
             Enemy enemy = hit.collider.transform.root.GetComponent<Enemy>();

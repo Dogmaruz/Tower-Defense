@@ -1,5 +1,4 @@
-﻿using SpaceShooter;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace TowerDefense
@@ -25,9 +24,9 @@ namespace TowerDefense
             m_Manager = FindObjectOfType<EnemyWaveManager>();
 
             EnemyWawe.OnWavePrepare += (float time, bool isWavesOver) =>
-            {
+            {//При старте новой волны обновляем время до начала старта новой волны.
                 if (isWavesOver)
-                {
+                {//Если волны закончились блокируем кнопку вызова новой волны.
                     m_ButtonNext.interactable = false;
                 }
 
@@ -37,13 +36,14 @@ namespace TowerDefense
             };
         }
 
+        //Вызов волны. Вызывается в инспекторе по нажатию кнопки.
         public void CallWave()
         {
             m_Manager.ForceNextWave(true);
         }
 
         private void Update()
-        {
+        {//Обновляем текст и полосу прогресса начала до следующей волны.
             m_timeToNextWave -= Time.deltaTime;
 
             m_bonusAmount.text = ((int)m_timeToNextWave < 0 ? 0 : (int)m_timeToNextWave).ToString();

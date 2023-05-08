@@ -25,6 +25,7 @@ namespace TowerDefense
                 animation.StartAnimation(true);
             }
         }
+
         public void NewGame()
         {
             if (FileHandler.HasFile(MapCompletion.filename))
@@ -39,6 +40,7 @@ namespace TowerDefense
             }
         }
 
+        //—брос статистики при подтверждении.
         public void ConfirmationNewGame()
         {
             m_confirtionPanel.SetActive(false);

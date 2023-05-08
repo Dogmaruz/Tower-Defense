@@ -14,6 +14,7 @@ namespace TowerDefense
             dataSaver = data;
         }
 
+        //Загрузка данных из файла.
         public static void TryLoad(string filename, ref T data)
         {
             var path = FileHandler.Path(filename);
@@ -28,6 +29,7 @@ namespace TowerDefense
             }
         }
 
+        //Сохранение данных в файл.
         public static void Save(string filename, T data)
         {
             var wrapper = new Saver<T>(data);
@@ -40,13 +42,15 @@ namespace TowerDefense
 
     public static class FileHandler
     {
-        public  static string Path(string fileName)
+        //Возврашает полный путь до файла.
+        public static string Path(string fileName)
         {
             //Debug.Log($"{Application.persistentDataPath}/{fileName}");
 
             return $"{Application.persistentDataPath}/{fileName}";
         }
 
+        //Удаляет файл данных.
         public static void Reset(string filename)
         {
             var path = FileHandler.Path(filename);
@@ -57,6 +61,7 @@ namespace TowerDefense
             }
         }
 
+        //Проверка на наличии файла на диске по заданному пути.
         public static bool HasFile(string filename)
         {
             return File.Exists(Path(filename));

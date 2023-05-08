@@ -13,7 +13,7 @@ namespace TowerDefense
         [SerializeField] private BranchLevel[] m_branchLevels;
 
         private void Start()
-        {
+        {//Отрисовка доступности уровней на карте.
             for (int i = 0; i < m_Levels.Length; i++)
             {
                 m_Levels[i].Initialize(m_openSprite, m_closedSprite, i, m_Levels);

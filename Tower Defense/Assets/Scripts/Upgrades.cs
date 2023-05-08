@@ -85,6 +85,7 @@ namespace TowerDefense
             }
         }
 
+        //Покупка апгрейда с сохранением в файл.
         public static void BuyUpgrade(UpgradeAsset asset)
         {
             foreach (var upgade in Instance.m_save)
@@ -100,11 +101,11 @@ namespace TowerDefense
             }
         }
 
+        //Получает текущий уровень апгрейда.
         public static int GetUpgradeLevel(UpgradeAsset asset)
         {
             foreach (var upgade in Instance.m_save)
             {
-
                 if (upgade.Id == asset.Id)
                 {
                     return upgade.level;
@@ -114,6 +115,7 @@ namespace TowerDefense
             return 0;
         }
 
+        //Получает общую стоимость всех произведенных покупок апгрейдов.
         public static int GetTotalCost()
         {
             int result = 0;

@@ -28,13 +28,14 @@ namespace SpaceShooter
                 m_RefireTimer -= Time.deltaTime;
             }
             else if (m_Mode == TurretMode.Auto)
-            {
+            {//Делает постоянный выстрел в режиме Auto.
                 Fire();
             }
         }
 
         //Public API
 
+        //Производит выстрел.
         public void Fire()
         {
             if (m_TurretProperties == null) return;
@@ -42,7 +43,7 @@ namespace SpaceShooter
             if (m_RefireTimer > 0) return;
 
             if (m_Ship)
-            {
+            {//Проверка на наличии энергии и патронов.
                 if (m_Ship.DrawEnergy(m_TurretProperties.EnergyUsage) == false) return;
 
                 if (m_Ship.DrawAmmo(m_TurretProperties.AmoUsage) == false) return;
@@ -52,10 +53,11 @@ namespace SpaceShooter
             Projectile projectile = Instantiate(m_TurretProperties.ProjectilePrefab).GetComponent<Projectile>();
 
             projectile.transform.position = transform.position;
+
             projectile.transform.up = transform.up;
 
             if (m_Ship)
-            {
+            {//Задает родителя сделавшего выстрел.
                 projectile.SetParentShooter(m_Ship);
             }
 
@@ -75,6 +77,7 @@ namespace SpaceShooter
             m_TurretProperties = props;
         }
 
+        //Задает свойства турели.
         public void AssignTurretProperties(TurretProperties props)
         {
              m_RefireTimer = 0;

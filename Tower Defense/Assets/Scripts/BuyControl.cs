@@ -8,8 +8,6 @@ namespace TowerDefense
     {
         [SerializeField] private TowerBuyControl m_TowerBuyControlPrefabe;
 
-        //[SerializeField] private TowerAsset[] m_TowerAssets;
-
         [SerializeField] private AnimationBase m_AnimationSpriteScale;
 
         [SerializeField] private UpgradeAsset m_UpgradeTowerBuild;
@@ -65,7 +63,6 @@ namespace TowerDefense
 
                 for (int i = 0; i < buildSite.TowerAssets.Count; i++)
                 {
-
                     if (buildSite.TowerAssets[i].IsAvailableToBuild(m_UpgradeTowerBuild))
                     {
                         var newControl = Instantiate(m_TowerBuyControlPrefabe, m_TargetPosition.position, Quaternion.identity, this.transform);
@@ -122,7 +119,6 @@ namespace TowerDefense
 
                 gameObject.SetActive(false);
             }
-
         }
     }
 }

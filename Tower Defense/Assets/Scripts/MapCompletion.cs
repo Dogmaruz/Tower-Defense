@@ -32,17 +32,16 @@ namespace TowerDefense
 
             Saver<List<EpisodeScore>>.TryLoad(filename, ref m_CompletionDate);
 
-
             for (int i = 0; i < m_CompletionDate.Count; i++)
             {
                 m_totalScore += m_CompletionDate[i].Score;
+
                 m_Episodes[i].Id = m_CompletionDate[i].Id;
             }
         }
 
         private void OnValidate()
         {
-
             for (int i = 0; i < m_Episodes.Count; i++)
             {
                 if (m_Episodes[i] == null)
@@ -61,6 +60,7 @@ namespace TowerDefense
             }
         }
 
+        //Сохраняем данные эпизода.
         public static void SaveEpisodeResult(int levelScore)
         {
             if (Instance)
@@ -75,6 +75,7 @@ namespace TowerDefense
                         }
                     }
                 }
+
                 Saver<List<EpisodeScore>>.Save(filename, Instance.m_CompletionDate);
 
                 Instance.m_totalScore = 0;
@@ -86,6 +87,7 @@ namespace TowerDefense
             }
         }
         
+        //Получаем колличество звезд.
         public int GetEpisodeScore(Episode m_episode)
         {
             foreach (var data in m_CompletionDate)

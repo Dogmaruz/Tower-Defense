@@ -13,7 +13,7 @@ namespace TowerDefense
         }
 
         public void Add(Enemy enemy)
-        {
+        {//Добавляем манну. Скрипт предназначен для projectile магической башни.
             if (enemy.GetComponent<Destructible>().CurrentHitPoint <= 0)
             {
                 TD_Player.Instance.ChangeManna(1);

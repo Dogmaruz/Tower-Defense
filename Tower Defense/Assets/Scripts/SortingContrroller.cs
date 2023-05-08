@@ -2,7 +2,6 @@ using UnityEngine;
 
 namespace TowerDefense
 {
-
     public class SortingContrroller : MonoBehaviour
     {
         private SpriteRenderer m_SpriteRenderer;
@@ -13,7 +12,7 @@ namespace TowerDefense
         }
 
         void Update()
-        {
+        {//—ортирует спрайты по sortingOrder в зависимости от положени€ Y.
             m_SpriteRenderer.sortingOrder = -(int)((m_SpriteRenderer.bounds.min.y) * 100);
 
             //float distanceToCamera = Vector3.Distance(transform.position, Camera.main.transform.position);

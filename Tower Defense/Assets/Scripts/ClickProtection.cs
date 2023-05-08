@@ -25,6 +25,7 @@ namespace TowerDefense
             m_OnClickAction = mouseAction;
         }
 
+        //Передает в Action вектор клика мышки и скрывает мишень.
         public void OnPointerClick(PointerEventData eventData)
         {
             m_BlockerImage.enabled = false;
@@ -36,6 +37,7 @@ namespace TowerDefense
             Abilities.Instance.TargetCircle.enabled = false;
         }
 
+        //Перемещает мишень в координаты мышки.
         public void OnPointerMove(PointerEventData eventData)
         {
             Abilities.Instance.TargetCircle.transform.position = eventData.position;

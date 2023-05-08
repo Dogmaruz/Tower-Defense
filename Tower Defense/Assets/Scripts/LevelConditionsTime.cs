@@ -14,7 +14,7 @@ namespace TowerDefense
             get
             {
                 if (LevelController.Instance.LevelTime > m_timeLimit)
-                {
+                {//ѕровер€ет лимит времени прохождени€ уровн€.
                     m_Reached = true;
                 }
 

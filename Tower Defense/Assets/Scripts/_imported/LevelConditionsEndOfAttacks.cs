@@ -33,6 +33,7 @@ namespace TowerDefense
                 //    else
                 //    {
                 //        IsSpawnwersEnded = false;
+
                 //        break;
                 //    }
                 //}
@@ -42,7 +43,6 @@ namespace TowerDefense
                 //    m_Reached = true;
                 //}
                 #endregion
-
 
                 return m_Reached;
             }

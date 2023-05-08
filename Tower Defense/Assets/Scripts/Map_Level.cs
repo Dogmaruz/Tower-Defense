@@ -1,7 +1,5 @@
 ﻿using SpaceShooter;
-using System;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 namespace TowerDefense
@@ -35,6 +33,7 @@ namespace TowerDefense
             m_Image.sprite = sprite;
         }
 
+        //Инициализация отрисовкки уровня на карте.
         public void Initialize(Sprite openSprite, Sprite closedSprite, int index, Map_Level[] m_Levels)
         {
             var score = MapCompletion.Instance.GetEpisodeScore(m_episode);

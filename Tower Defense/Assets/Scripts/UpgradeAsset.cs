@@ -16,6 +16,7 @@ namespace TowerDefense
 
         public int[] costByLevel = { 3 };
 
+        //Получение индификатора ID.
         public void UpdateGUI()
         {
             if (string.IsNullOrEmpty(Id))

@@ -7,6 +7,7 @@ namespace SpaceShooter
     public class Timer
     {
         private float m_currentTime;
+
         private float m_startTime;
         public bool IsFinished => m_currentTime <= 0;
 

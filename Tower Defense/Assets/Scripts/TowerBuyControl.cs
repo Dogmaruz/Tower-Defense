@@ -24,6 +24,7 @@ namespace TowerDefense
             m_towerAsset = towerAsset;
         }
 
+        //Задает место для строительства башни.
         public void SetBuildSite(Transform value)
         {
             buildSite = value;
@@ -42,16 +43,16 @@ namespace TowerDefense
             var level = Upgrades.GetUpgradeLevel(m_towerUpgrade);
 
             if (level >= m_towerAsset.BuildLevel)
-            {
+            {//Проверяет на доступность уровня строительства.
                 gameObject.SetActive(true);
             }
             else
             {
                 gameObject.SetActive(false);
             }
-
-
         }
+
+        //Делает активной кнопку покупки башни при достаточном колличестве монет.
         private void GoldStatusCheck(int gold)
         {
             if (gold >= m_towerAsset.GoldCost != m_button.interactable)
@@ -62,6 +63,7 @@ namespace TowerDefense
             }
         }
 
+        //Производит покупку башни с строит ее на месте постоики. Уменьшает колличество монет и удаляет BuilSite.
         public void Buy()
         {
             Sound.TowerBuilding.Play();
@@ -72,7 +74,7 @@ namespace TowerDefense
         }
 
         private void OnDestroy()
-        {
+        {//Отписываемся от события.
             TD_Player.GoldUpdateUnSubscrible(GoldStatusCheck);
         }
     }

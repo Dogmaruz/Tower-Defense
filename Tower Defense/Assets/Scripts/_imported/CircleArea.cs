@@ -9,6 +9,7 @@ namespace SpaceShooter
     public class CircleArea : MonoBehaviour
     {
         [SerializeField] private float m_Radius;
+
         [SerializeField] private Color m_Color;
         public float Radius => m_Radius;
 
@@ -22,6 +23,7 @@ namespace SpaceShooter
         private void OnDrawGizmos()
         {
             Handles.color = m_Color;
+
             Handles.DrawSolidDisc(transform.position, transform.forward, m_Radius);
         }
         #endif

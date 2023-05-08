@@ -19,7 +19,7 @@ namespace TowerDefense
         public AIPointPatrol this[int i] { get => m_Points[i]; }
 
         private void OnDrawGizmos()
-        {
+        {//Отрисовываем путь.
             Gizmos.color = GizmoColor;
 
             for (int i = 0; i < m_Points.Length; i++)

@@ -12,6 +12,7 @@ namespace TowerDefense
 
         public static event Action<BuildSite> OnclickEvent;
 
+        //Задет возможные варианты постройки башен.
         public void SetBuiddableTowers(List<TowerAsset> towerAssets)
         {
             if (towerAssets == null || towerAssets.Count == 0)
@@ -32,7 +33,6 @@ namespace TowerDefense
                 {
                     Destroy(transform.parent.gameObject);
                 }
-                //m_TowerAssets = towerAssets;
             }
         }
 

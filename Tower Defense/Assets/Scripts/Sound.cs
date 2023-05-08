@@ -22,7 +22,7 @@ namespace TowerDefense
     }
 
     public static class SoundExtensions
-    {
+    {//Метод расширения.
         public static void Play(this Sound sound) 
         {
             SoundPlayer.Instance.Play(sound);

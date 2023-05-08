@@ -13,7 +13,8 @@ namespace SpaceShooter
             if (m_Timer < m_LifeTime)
             {
                 m_Timer += Time.deltaTime;
-            } else
+            } 
+            else
             {
                 Destroy(gameObject);
             }

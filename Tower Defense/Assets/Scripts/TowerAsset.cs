@@ -9,13 +9,21 @@ namespace TowerDefense
     public class TowerAsset : ScriptableObject
     {
         public int GoldCost = 15;
+
         public Sprite GUISprite;
+
         public Sprite ElementSprite;
+
         public TurretProperties TurretProperties;
+
         public GameObject EffectPrefab;
+
         public UpgradeAsset m_UpgradeAsset;
+
         public int UpgradeLevel;
+
         public int BuildLevel;
+
         public List<TowerAsset> UpgadesTo;
 
         public bool IsAvailableToBuild(UpgradeAsset upgradeTowerBuild) =>

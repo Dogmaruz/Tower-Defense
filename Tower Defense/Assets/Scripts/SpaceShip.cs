@@ -102,7 +102,9 @@ namespace SpaceShooter
         protected override void Start()
         {
             base.Start();
+
             m_Rigidbody = GetComponent<Rigidbody2D>();
+
             m_Rigidbody.mass = m_Mass;
 
             m_Rigidbody.inertia = 1;
@@ -141,36 +143,42 @@ namespace SpaceShooter
         //    if (ThrustControl < 0)
         //    {
         //        m_ForwardInjectors.SetActive(true);
+
         //        m_BackInjectors.SetActive(false);
         //    }
 
         //    if (ThrustControl > 0)
         //    {
         //        m_ForwardInjectors.SetActive(false);
+
         //        m_BackInjectors.SetActive(true);
         //    }
 
         //    if (ThrustControl == 0)
         //    {
         //        m_ForwardInjectors.SetActive(false);
+
         //        m_BackInjectors.SetActive(false);
         //    }
 
         //    if (TorqueControl > -0.5f && TorqueControl < 0.5f)
         //    {
         //        m_LeftInjectors.SetActive(false);
+
         //        m_RightInjectors.SetActive(false);
         //    }
 
         //    if (TorqueControl < -0.5f)
         //    {
         //        m_LeftInjectors.SetActive(true);
+
         //        m_RightInjectors.SetActive(false);
         //    }
 
         //    if (TorqueControl > 0.5f)
         //    {
         //        m_LeftInjectors.SetActive(false);
+
         //        m_RightInjectors.SetActive(true);
         //    }
         //}
@@ -195,7 +203,6 @@ namespace SpaceShooter
         //Использование снарядов.
         public bool DrawAmmo(int count)
         {
-
             return true;
         }
 
@@ -203,7 +210,6 @@ namespace SpaceShooter
         //Использование энергии для выстрела первичной турели.
         public bool DrawEnergy(int count)
         {
-
             return true;
         }
 
@@ -374,6 +380,7 @@ namespace SpaceShooter
         new public void Use(EnemyAsset asset)
         {
             m_MaxLinearVelosity = asset.moveSpeed;
+
             base.Use(asset);
         }
 

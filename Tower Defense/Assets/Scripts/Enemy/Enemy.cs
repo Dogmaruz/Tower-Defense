@@ -114,7 +114,6 @@ namespace TowerDefense
 
         public void Use(EnemyAsset asset)
         {
-
             var sr = GetComponentInChildren<SpriteRenderer>();
 
             sr.color = asset.color;
@@ -138,19 +137,21 @@ namespace TowerDefense
             m_armorType = asset.ArmorType;
 
             m_Gold = asset.Gold;
-
         }
 
+        //Добавляет золото игроку.
         public void GivePlayerGold()
         {
             TD_Player.Instance.ChangeGold(m_Gold);
         }
 
+        //Наносит урон игроку.
         public void DamagePlayer()
         {
             TD_Player.Instance.ReduceLife(m_Damage);
         }
 
+        //Наносит урон врагу.
         public void TakeDamage(int damage, TD_Projectile.DamageType damageType)
         {
             m_Destructible.ApplyDamage(ArmorDamageFunction[(int)m_armorType](damage, damageType, m_armor));

@@ -13,7 +13,6 @@ namespace SpaceShooter
         [SerializeField] protected float m_AnimationScale; // Скелинг времени анимации.
         public float AnimationTime => m_AnimationTime / m_AnimationScale; // Полное время анимации с учетом скецлинга.
 
-
         [SerializeField] private bool m_Looping; // Флаг повторяющейся анимации.
 
         [SerializeField] private bool m_Reverse;

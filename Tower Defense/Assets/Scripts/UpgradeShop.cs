@@ -13,7 +13,6 @@ namespace TowerDefense
         [SerializeField] private UpgradeAsset m_TowerUpgrades;
 
         [SerializeField] private List<BuyUpgrade> m_sales;
-
         public List<BuyUpgrade> Sales { get => m_sales; }
 
         private void Start()
@@ -28,7 +27,7 @@ namespace TowerDefense
             UpdateRestrictions();
         }
 
-
+        //Обновление данных по апгрейдам на покупку. Если монет не хватает, то кнопка покупки блокируется.
         public void UpdateRestrictions()
         {
             foreach (var sales in m_sales)
@@ -44,12 +43,10 @@ namespace TowerDefense
                     sales.CheckCost(m_money);
                 }
             }
-
         }
 
         private void OnValidate()
         {
-
             var buyUpgrades = GetComponentsInChildren<BuyUpgrade>();
 
             if (m_sales.Count < buyUpgrades.Length || m_sales.Count > buyUpgrades.Length)

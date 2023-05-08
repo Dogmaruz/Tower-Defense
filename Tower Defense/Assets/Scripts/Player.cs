@@ -18,7 +18,9 @@ namespace SpaceShooter
         public SpaceShip ActiveShip => m_Ship; //Ссылка на корабль игрока.
 
         //[SerializeField] private CameraController m_CameraController;
+
         //[SerializeField] private MovementController m_MovementController;
+
         //[SerializeField] private LivesUI m_LivesUI; //Ссылка на UI отображения колличества жизней.
 
         protected override void Awake()
@@ -38,8 +40,11 @@ namespace SpaceShooter
         }
 
         //[SerializeField] private Text m_TextGameOver;
+
         //[SerializeField] private UIEnergyProgress m_UIEnergyProgress; //UI уровня энергии.
+
         //[SerializeField] private UIAccelerationProgress m_UIAccelerationProgress; //UI уровня ускорения.
+
         //[SerializeField] private UIShieldProgress m_UIShieldProgress;//UI уровня щита.
 
         private void Start()
@@ -66,7 +71,6 @@ namespace SpaceShooter
             }
         }
 
-
         /// <summary>
         /// Перерождает кораль игрока.
         /// </summary>
@@ -88,7 +92,6 @@ namespace SpaceShooter
                 {
                     m_Ship.EventOnDeath?.AddListener(OnShipDeath);
                 }
-
 
                 //m_CameraController.SetTarget(m_Ship.transform);
 
@@ -112,6 +115,7 @@ namespace SpaceShooter
         {
             Score += num;
         }
+
         //Наносит урон игроку и если жизни меньше или раны нулю перезапуск уровня.
         protected void TakeDamage(int damage)
         {

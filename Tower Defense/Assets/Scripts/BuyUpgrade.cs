@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace TowerDefense
@@ -18,7 +17,6 @@ namespace TowerDefense
         [SerializeField] private int m_AccessLevel;
 
         private int m_CostNumber = 0;
-
 
         /// <summary>
         /// Инициализация слота покупки в зависимости от его уровня.
@@ -45,7 +43,6 @@ namespace TowerDefense
                 m_CostText.text = "";
 
                 m_CostNumber = int.MaxValue;
-
             }
             else
             {
@@ -59,6 +56,7 @@ namespace TowerDefense
             }
         }
 
+        //Покупка апгрейда.
         public void Buy()
         {
             Upgrades.BuyUpgrade(m_Asset);
@@ -66,11 +64,13 @@ namespace TowerDefense
             Initialize();
         }
 
+        //Проверка на достаточность монет для покупки.
         public void CheckCost(int money)
         {
             m_BuyButton.interactable = money >= m_CostNumber;
         }
 
+        //Проверка на доступность уровня для покупки апгрейда.
         public bool CheckLevel(UpgradeAsset m_TowerUpgrades)
         {
             var result = m_BuyButton.interactable = Upgrades.GetUpgradeLevel(m_TowerUpgrades) + 1 >= m_AccessLevel;

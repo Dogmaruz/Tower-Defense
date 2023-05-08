@@ -1,14 +1,15 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
-
-namespace SpaceShooter
+﻿namespace SpaceShooter
 {
     public class EpisodeStatistics
     {
         public string EpisodeName;
+
         public PlayerStatistics[] LevelStatistics;
+
         public int NumberOfAttempts;
+
         public int NumberOfDeaths;
+
         public int CompletedLevels;
 
         public EpisodeStatistics(int levelStatisticsCount, string episodeName)
@@ -31,7 +32,9 @@ namespace SpaceShooter
             }
 
             NumberOfAttempts = 1;
+
             NumberOfDeaths = 0;
+
             CompletedLevels = 0;
         }
     }

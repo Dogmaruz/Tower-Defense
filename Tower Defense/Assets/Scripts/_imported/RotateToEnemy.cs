@@ -1,7 +1,5 @@
 using TowerDefense;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 namespace SpaceShooter
 {
@@ -10,8 +8,6 @@ namespace SpaceShooter
         [SerializeField] protected float m_RorationSpeed;
 
         protected Transform m_nearestEnemy;
-
-        private float m_timer;
 
         void Start()
         {
@@ -26,6 +22,7 @@ namespace SpaceShooter
                 if (dist < nearestEnemyDistance)
                 {
                     m_nearestEnemy = enemy.transform;
+
                     nearestEnemyDistance = dist;
                 }
             }
@@ -48,8 +45,6 @@ namespace SpaceShooter
                 Vector3 fromToXY = new Vector3(fromTo.x, fromTo.y, 0f);
 
                 transform.up = Vector3.Slerp(transform.up, fromToXY, Time.deltaTime * m_RorationSpeed);
-
-                //transform.rotation = Quaternion.LookRotation(Vector3.forward, fromToXY);
         }
     }
 }

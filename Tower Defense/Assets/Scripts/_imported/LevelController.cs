@@ -52,6 +52,7 @@ namespace SpaceShooter
             if (numCompleted == m_Conditions.Length)
             {
                 m_IsLevelCompleted = true;
+
                 m_EventLevelCompleted?.Invoke();
 
                 LevelSequenceController.Instance?.FinishCurrentLevel(true);

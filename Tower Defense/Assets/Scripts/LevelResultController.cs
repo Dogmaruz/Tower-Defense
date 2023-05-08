@@ -8,10 +8,15 @@ namespace SpaceShooter
     public class LevelResultController : SingletonBase<LevelResultController>
     {
         [SerializeField] private Text m_Result;
+
         [SerializeField] private Text m_ButtonNextText;
+
         [SerializeField] private AnimationBase m_AnimationSpriteScale;
+
         [SerializeField] private Image m_menuImage;
+
         [SerializeField] private Sprite m_loseSprite;
+
         [SerializeField] private Sprite m_winSprite;
 
         public event Action OnShowPanel;
@@ -23,6 +28,7 @@ namespace SpaceShooter
             gameObject.SetActive(false);
         }
 
+        //Открывает окно победы - поражения.
         public void ShowResults(bool success)
         {
             gameObject.SetActive(true);
@@ -46,6 +52,7 @@ namespace SpaceShooter
             OnShowPanel?.Invoke();
         }
 
+        //Обработчик нажатия кнопки в инспекторе из окна победы - поражения.
         public void OnButtonNextAction()
         {
             SoundPlayer.Instance.AudioSource.Stop();

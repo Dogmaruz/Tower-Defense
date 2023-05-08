@@ -98,7 +98,6 @@ namespace SpaceShooter
         /// Статическое поле всех объектов типа Destructible.
         /// </summary>
         private static HashSet<Destructible> m_AllDestructibles;
-
         public static IReadOnlyCollection<Destructible> AllDestructible => m_AllDestructibles;
 
         //Добавляет в коллекцию обект при создании.

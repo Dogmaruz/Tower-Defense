@@ -15,6 +15,7 @@ namespace SpaceShooter
         private void OnDrawGizmos()
         {
             Gizmos.color = GizmoColor;
+
             Gizmos.DrawSphere(transform.position, m_Radius);
         }
     }

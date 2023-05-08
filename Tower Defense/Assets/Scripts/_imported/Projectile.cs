@@ -27,7 +27,6 @@ namespace SpaceShooter
         [SerializeField] private UnityEvent<Enemy> m_EventOnHit;
         public UnityEvent<Enemy> EventOnHit => m_EventOnHit;
 
-        //private bool m_IsPlayer;
 #if UNITY_EDITOR
         //Метод для инспектора чтобы можно было передать параметры другому projectile.
         public void SetFromOtherProjectile(Projectile projectile)
@@ -48,7 +47,6 @@ namespace SpaceShooter
 #endif
         private void Update()
         {
-
             float stepLenght = Time.deltaTime * m_Velocity;
 
             Vector2 step = transform.up * stepLenght;
@@ -144,6 +142,7 @@ namespace SpaceShooter
             if (destructible.CurrentHitPoint <= 0)
             {
                 Player.Instance.AddKill();
+
                 TD_Player.Instance.UpdateScore(destructible.KillValue);
             }
             else
